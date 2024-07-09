@@ -1,0 +1,13 @@
+name = "TypedMatrices"
+uuid = "a0429a07-0388-4c37-a18a-23d110f8915c"
+authors = ["Andy Zhang <37402126+AnzhiZhang@users.noreply.github.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.6.7"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
