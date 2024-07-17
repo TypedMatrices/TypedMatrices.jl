@@ -1,12 +1,15 @@
 export
     list_groups,
-    list_matrices
+    list_matrices,
+    Minij
 
 # include all matrices
+include("minij.jl")
 
 # matrix groups
 const MATRIX_GROUPS = Dict{Group,Set{Type{<:AbstractMatrix}}}()
 MATRIX_GROUPS[Group(:builtin)] = Set([
+    Minij,
 ])
 MATRIX_GROUPS[Group(:user)] = Set([])
 
