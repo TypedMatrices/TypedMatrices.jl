@@ -7,6 +7,9 @@ using LinearAlgebra
 
 import Base: getindex, size
 
+include("types.jl")
+include("metadata.jl")
+
 # all matrices
 include("matrices/index.jl")
 
