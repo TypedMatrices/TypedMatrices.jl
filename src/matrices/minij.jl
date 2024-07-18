@@ -40,7 +40,7 @@ LinearAlgebra.adjoint(A::Minij) = A
 LinearAlgebra.transpose(A::Minij) = A
 
 # functions
-@inline Base.Base.@propagate_inbounds function getindex(A::Minij{T}, i::Integer, j::Integer) where {T}
+@inline Base.@propagate_inbounds function getindex(A::Minij{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
     return T(min(i, j))
 end
