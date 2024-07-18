@@ -16,16 +16,16 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
             Linear Algebra Appl., 264 (1997), 173-188.  (For the eigensystem of A.)
 """
 struct Minij{T<:Integer} <: AbstractMatrix{T}
-    n::Int
+    n::Integer
 
-    function Minij(::Type{T}, n::Int) where {T<:Integer}
+    function Minij(::Type{T}, n::Integer) where {T<:Integer}
         n > 0 || throw(ArgumentError("$n ≤ 0"))
         return new{T}(n)
     end
 end
 
 # constructors
-Minij(n::Int) = Minij(Int, n)
+Minij(n::Integer) = Minij(Int, n)
 
 # metadata
 @properties Minij [:symmetric, :inverse, :posdef, :eigen]
