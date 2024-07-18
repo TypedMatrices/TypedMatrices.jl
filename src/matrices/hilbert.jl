@@ -9,7 +9,7 @@ positive definite and totally positive.
 
 + [type,] dim: the dimension of the matrix.
 
-+ [type,] row_dim, col_dim: the row and column dimensions.
++ [type,] row\\_dim, col\\_dim: the row and column dimensions.
 
 *References:*
 
