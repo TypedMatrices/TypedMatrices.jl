@@ -9,8 +9,6 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
 
 + [type,] dim: the dimension of the matrix.
 
-*Groups:* ["inverse", "symmetric", "posdef", "eigen"]
-
 *References:*
 
 **J. Fortiana and C. M. Cuadras**, A family of matrices,
