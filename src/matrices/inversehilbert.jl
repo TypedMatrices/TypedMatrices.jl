@@ -25,6 +25,7 @@ end
 
 # constructors
 InverseHilbert(n::Integer) = InverseHilbert{Int}(n)
+InverseHilbert{Rational{T}}(n::Integer) where {T} = InverseHilbert{T}(n)
 
 # metadata
 @properties InverseHilbert [:symmetric, :inverse, :illcond, :posdef]
