@@ -2,16 +2,19 @@ export
     list_groups,
     list_matrices,
     Hilbert,
+    InverseHilbert,
     Minij
 
 # include all matrices
 include("hilbert.jl")
+include("inversehilbert.jl")
 include("minij.jl")
 
 # matrix groups
 const MATRIX_GROUPS = Dict{Group,Set{Type{<:AbstractMatrix}}}()
 MATRIX_GROUPS[Group(:builtin)] = Set([
     Hilbert,
+    InverseHilbert,
     Minij,
 ])
 MATRIX_GROUPS[Group(:user)] = Set([])
