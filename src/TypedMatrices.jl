@@ -5,7 +5,7 @@ module TypedMatrices
 
 using LinearAlgebra
 
-import Base: getindex, size
+import Base: getindex, size, inv
 
 include("types.jl")
 include("metadata.jl")
