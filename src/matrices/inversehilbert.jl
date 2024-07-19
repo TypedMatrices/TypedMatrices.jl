@@ -48,7 +48,7 @@ end
     @boundscheck checkbounds(A, i, j)
     n = big(A.n)
     out = (-1)^(i + j) * (i + j - 1) * binomial(n + i - 1, n - j) * binomial(n + j - 1, n - i) * binomial(big(i + j - 2), i - 1)^2
-    return out
+    return T(out)
 end
 
 LinearAlgebra.det(A::InverseHilbert{T}) where {T} = prod(T, (2k + 1) * binomial(2k, k)^2 for k in 1:A.n-1)
