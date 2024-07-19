@@ -7,7 +7,7 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
 
 *Input options:*
 
-+ [type,] dim: the dimension of the matrix.
++ dim: the dimension of the matrix.
 
 *References:*
 
@@ -18,14 +18,14 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
 struct Minij{T<:Integer} <: AbstractMatrix{T}
     n::Integer
 
-    function Minij(::Type{T}, n::Integer) where {T<:Integer}
+    function Minij{T}(n::Integer) where {T<:Integer}
         n > 0 || throw(ArgumentError("$n ≤ 0"))
         return new{T}(n)
     end
 end
 
 # constructors
-Minij(n::Integer) = Minij(Int, n)
+Minij(n::Integer) = Minij{Int}(n)
 
 # metadata
 @properties Minij [:symmetric, :inverse, :posdef, :eigen]

@@ -7,9 +7,9 @@ positive definite and totally positive.
 
 *Input options:*
 
-+ [type,] dim: the dimension of the matrix.
++ dim: the dimension of the matrix.
 
-+ [type,] row\\_dim, col\\_dim: the row and column dimensions.
++ row\\_dim, col\\_dim: the row and column dimensions.
 
 *References:*
 
@@ -24,7 +24,7 @@ struct Hilbert{T<:Number} <: AbstractMatrix{T}
     m::Integer
     n::Integer
 
-    function Hilbert(::Type{T}, m::Integer, n::Integer) where {T<:Number}
+    function Hilbert{T}(m::Integer, n::Integer) where {T<:Number}
         m > 0 || throw(ArgumentError("$m ≤ 0"))
         n > 0 || throw(ArgumentError("$n ≤ 0"))
         return new{T}(m, n)
@@ -33,9 +33,9 @@ end
 
 # constructors
 Hilbert(n::Integer) = Hilbert(n, n)
-Hilbert(m::Integer, n::Integer) = Hilbert(Int, m, n)
-Hilbert(::Type{T}, n::Integer) where {T<:Number} = Hilbert(T, n, n)
-Hilbert(::Type{T}, m::Integer, n::Integer) where {T<:Integer} = Hilbert(Rational{T}, m, n)
+Hilbert(m::Integer, n::Integer) = Hilbert{Int}(m, n)
+Hilbert{T}(n::Integer) where {T<:Number} = Hilbert{T}(n, n)
+Hilbert{T}(m::Integer, n::Integer) where {T<:Integer} = Hilbert{Rational{T}}(m, n)
 
 # metadata
 @properties Hilbert [:symmetric, :inverse, :illcond, :posdef]
