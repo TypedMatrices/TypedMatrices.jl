@@ -49,7 +49,7 @@ LinearAlgebra.issymmetric(A::Hilbert) = A.m == A.n
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Hilbert{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
-    return one(T) / (i + j - 1)
+    return T(one(T) / (i + j - 1))
 end
 
 LinearAlgebra.det(A::Hilbert) = inv(det(inv(A)))
