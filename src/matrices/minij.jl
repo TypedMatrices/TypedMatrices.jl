@@ -52,3 +52,5 @@ function LinearAlgebra.inv(A::Minij{T}) where {T}
         return SymTridiagonal(2 * ones(T, A.n), -ones(T, A.n - 1))
     end
 end
+
+LinearAlgebra.eigvals(A::Minij) = [0.25 * sec(i * π / (2 * A.n + 1))^2 for i = 1:A.n]
