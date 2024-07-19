@@ -31,7 +31,7 @@ Minij(n::Integer) = Minij(Int, n)
 @properties Minij [:symmetric, :inverse, :posdef, :eigen]
 
 # properties
-size(s::Minij) = (s.n, s.n)
+size(A::Minij) = (A.n, A.n)
 LinearAlgebra.isdiag(::Minij) = false
 LinearAlgebra.ishermitian(::Minij) = true
 LinearAlgebra.isposdef(::Minij) = true
