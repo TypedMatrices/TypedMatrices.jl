@@ -3,7 +3,7 @@ Inverse of the Hilbert Matrix
 =============================
 *Input options:*
 
-+ [type,] dim: the dimension of the matrix.
++ dim: the dimension of the matrix.
 
 *References:*
 
