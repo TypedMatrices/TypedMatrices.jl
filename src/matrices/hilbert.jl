@@ -53,3 +53,8 @@ LinearAlgebra.issymmetric(A::Hilbert) = A.m == A.n
 end
 
 LinearAlgebra.det(A::Hilbert) = inv(det(inv(A)))
+
+function inv(A::Hilbert{T}) where {T}
+    A.m == A.n || throw(ArgumentError("Works only for square Hilbert matrices."))
+    return InverseHilbert{T}(A.n)
+end
