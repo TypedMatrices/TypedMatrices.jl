@@ -15,10 +15,10 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
             the discretized Brownian bridge, and distance-based regression,
             Linear Algebra Appl., 264 (1997), 173-188.  (For the eigensystem of A.)
 """
-struct Minij{T<:Integer} <: AbstractMatrix{T}
+struct Minij{T<:Number} <: AbstractMatrix{T}
     n::Integer
 
-    function Minij{T}(n::Integer) where {T<:Integer}
+    function Minij{T}(n::Integer) where {T<:Number}
         n > 0 || throw(ArgumentError("$n ≤ 0"))
         return new{T}(n)
     end
