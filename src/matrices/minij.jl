@@ -45,7 +45,7 @@ LinearAlgebra.transpose(A::Minij) = A
     return T(min(i, j))
 end
 
-function LinearAlgebra.inv(A::Minij{T}) where {T}
+function inv(A::Minij{T}) where {T}
     if A.n == 1
         return ones(T, 1, 1)
     else
