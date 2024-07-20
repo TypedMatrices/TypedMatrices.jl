@@ -51,8 +51,8 @@ end
     return T(out)
 end
 
-LinearAlgebra.det(A::InverseHilbert{T}) where {T} = prod(T, (2k + 1) * binomial(2k, k)^2 for k in 1:A.n-1)
-LinearAlgebra.det(A::InverseHilbert{T}) where {T<:Union{BigInt,BigFloat}} = prod(T, (2k + 1) * binomial(big(2k), k)^2 for k in 1:A.n-1)
+LinearAlgebra.det(A::InverseHilbert{T}) where {T} = prod(T, (2k + 1) * binomial(2k, k)^2 for k = 1:A.n-1)
+LinearAlgebra.det(A::InverseHilbert{T}) where {T<:Union{BigInt,BigFloat}} = prod(T, (2k + 1) * binomial(big(2k), k)^2 for k = 1:A.n-1)
 
 function inv(A::InverseHilbert{T}) where {T}
     HT = promote_type(T, typeof(Rational(one(T))))
