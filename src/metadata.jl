@@ -28,7 +28,7 @@ function check_propertie_types(props::DataType...)
     end
 end
 
-# assert properties exists
+# check properties exists
 function check_properties_exists(props::Property...)
     for prop = props
         prop ∈ values(PROPERTIES) || throw(ArgumentError("Property $prop not exists"))
