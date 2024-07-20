@@ -41,7 +41,7 @@ function register_properties(T::Type, props::Vector{Property})
     assert_properties_exists(props)
 
     # register properties
-    @eval properties(::Type{$T}) = $props
+    @eval properties(::Union{Type{$T},Type{$T{T}}}) where {T} = $props
 end
 
 # register properties alternative interfaces
@@ -51,4 +51,4 @@ register_properties(T::Type, props::Property...) = register_properties(T, collec
 
 # properties function interfaces
 properties(::Type{<:AbstractMatrix})::Vector{Property} = []
-properties(m::AbstractMatrix{}) = properties(typeof(m).name.wrapper)
+properties(m::AbstractMatrix) = properties(typeof(m))
