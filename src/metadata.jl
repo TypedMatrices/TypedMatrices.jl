@@ -54,7 +54,7 @@ function register_properties(T::Type, props::Vector{Property})
     check_properties_exists(props...)
 
     # register properties
-    @eval properties(::Union{Type{$T},Type{$T{T}}}) where {T} = $props
+    @eval properties(::Type{<:$T}) = $props
 end
 
 # register properties alternative interfaces
