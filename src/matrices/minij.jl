@@ -46,11 +46,7 @@ LinearAlgebra.transpose(A::Minij) = A
 end
 
 function inv(A::Minij{T}) where {T}
-    if A.n == 1
-        return ones(T, 1, 1)
-    else
-        return SymTridiagonal(2 * ones(T, A.n), -ones(T, A.n - 1))
-    end
+    return SymTridiagonal([2 * ones(T, A.n - 1); 1], -ones(T, A.n - 1))
 end
 
 LinearAlgebra.eigvals(A::Minij) = [0.25 * sec(i * π / (2 * A.n + 1))^2 for i = 1:A.n]
