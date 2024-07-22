@@ -19,12 +19,12 @@ const GROUP_BUILTIN = Group(:builtin)
 const GROUP_USER = Group(:user)
 
 # default groups and matrices
-MATRIX_GROUPS[Group(:builtin)] = Set([
+MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Hilbert,
     InverseHilbert,
     Minij,
 ])
-MATRIX_GROUPS[Group(:user)] = Set([])
+MATRIX_GROUPS[GROUP_USER] = Set([])
 
 # group functions
 list_groups() = collect(keys(MATRIX_GROUPS))
