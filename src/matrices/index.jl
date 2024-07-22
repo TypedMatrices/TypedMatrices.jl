@@ -1,5 +1,8 @@
 export
     list_groups,
+    add_to_groups,
+    remove_from_group,
+    remove_from_all_groups,
     list_matrices,
     Hilbert,
     InverseHilbert,
@@ -12,6 +15,10 @@ include("minij.jl")
 
 # matrix groups
 const MATRIX_GROUPS = Dict{Group,Set{Type{<:AbstractMatrix}}}()
+const GROUP_BUILTIN = Group(:builtin)
+const GROUP_USER = Group(:user)
+
+# default groups and matrices
 MATRIX_GROUPS[Group(:builtin)] = Set([
     Hilbert,
     InverseHilbert,
@@ -21,9 +28,66 @@ MATRIX_GROUPS[Group(:user)] = Set([])
 
 # group functions
 list_groups() = collect(keys(MATRIX_GROUPS))
-# function add_to_group(::Type{<:AbstractMatrix}, group::Symbol...=:user)
-# function remove_from_all_groups(::Type{<:AbstractMatrix})
-# function remove_from_group(::Type{<:AbstractMatrix}, group::Symbol)
+
+# add to groups
+function add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Group})
+    for group = groups
+        # check group is builtin
+        if group == GROUP_BUILTIN
+            throw(ArgumentError("Cannot add matrix to builtin group"))
+        end
+
+        # add to group
+        if group ∉ keys(MATRIX_GROUPS)
+            MATRIX_GROUPS[group] = Set([type])
+        else
+            push!(MATRIX_GROUPS[group], type)
+        end
+    end
+end
+
+# add to groups alternative interfaces
+add_to_groups(type::Type{<:AbstractMatrix}, groups::Group...) = add_to_groups(type, collect(groups))
+add_to_groups(type::Type{<:AbstractMatrix}, groups::Symbol...) = add_to_groups(type, collect(groups))
+add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Symbol}) = add_to_groups(type, [Group(group) for group = groups])
+
+# remove from group
+function remove_from_group(type::Type{<:AbstractMatrix}, group::Group)
+    # check group is not builtin
+    if group == GROUP_BUILTIN
+        throw(ArgumentError("Cannot remove matrix from builtin group"))
+    end
+
+    # check group exists
+    if group ∉ keys(MATRIX_GROUPS)
+        throw(ArgumentError("Group $group not exists"))
+    end
+
+    # check type exists in group
+    if type ∉ MATRIX_GROUPS[group]
+        throw(ArgumentError("Matrix type $type not exists in group $group"))
+    end
+
+    # remove from group
+    delete!(MATRIX_GROUPS[group], type)
+
+    # check if group is empty
+    if isempty(MATRIX_GROUPS[group]) && group != GROUP_USER
+        delete!(MATRIX_GROUPS, group)
+    end
+end
+
+# remove from group alternative interfaces
+remove_from_group(type::Type{<:AbstractMatrix}, group::Symbol) = remove_from_group(type, Group(group))
+
+# remove from all groups
+function remove_from_all_groups(type::Type{<:AbstractMatrix})
+    for group = keys(MATRIX_GROUPS)
+        if group != GROUP_BUILTIN && type ∈ MATRIX_GROUPS[group]
+            remove_from_group(type, group)
+        end
+    end
+end
 
 # list matrices
 function list_matrices(groups::Vector{Group}, props::Vector{Property})
