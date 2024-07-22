@@ -6,11 +6,13 @@ export
     list_matrices,
     Hilbert,
     InverseHilbert,
+    Involutory,
     Minij
 
 # include all matrices
 include("hilbert.jl")
 include("inversehilbert.jl")
+include("involutory.jl")
 include("minij.jl")
 
 # matrix groups
@@ -22,6 +24,7 @@ const GROUP_USER = Group(:user)
 MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Hilbert,
     InverseHilbert,
+    Involutory,
     Minij,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
