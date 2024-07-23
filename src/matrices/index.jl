@@ -4,6 +4,7 @@ export
     remove_from_group,
     remove_from_all_groups,
     list_matrices,
+    Binomial,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -11,6 +12,7 @@ export
 
 # include all matrices
 include("linearalgebra.jl")
+include("binomial.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -23,6 +25,7 @@ const GROUP_USER = Group(:user)
 
 # default groups and matrices
 MATRIX_GROUPS[GROUP_BUILTIN] = Set([
+    Binomial,
     Hilbert,
     InverseHilbert,
     Involutory,
