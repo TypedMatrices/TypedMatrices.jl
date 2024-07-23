@@ -29,17 +29,9 @@ size(A::Binomial) = (A.n, A.n)
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Binomial{T}, k::Integer, j::Integer) where {T}
-    # TODO: implement getindex
-    return one(T)
-
-    # n = A.n
-
-    # 2.6
-    # return sum([binomial(k, i) * ((-1)^i) * binomial(n - k, j - i) for i = max(0, j + k - n):min(j, k)])
-
-    # 2.1
-    # function test(k, x, n, q=2)
-    #     return sum([(-1)^j * (q - 1)^(k - j) * binomial(x, j) * binomial(n - x, k - j) for j = 0:k])
-    # end
-    # return test(k, j, n)
+    n = A.n - 1
+    k = k - 1
+    j = j - 1
+    element = sum([binomial(k, i) * (-1)^i * binomial(n - k, j - i) for i = max(0, j + k - n):min(j, k)])
+    return T(element)
 end
