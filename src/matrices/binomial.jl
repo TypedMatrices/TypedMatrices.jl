@@ -6,6 +6,11 @@ The matrix is a multiple of an involutory matrix.
 *Input options:*
 
 + dim: the dimension of the matrix.
+
+*References:*
+
+**G. Boyd, C.A. Micchelli, G. Strang and D.X. Zhou**,
+Binomial matrices, Adv. in Comput. Math., 14 (2001), pp 379-391.
 """
 struct Binomial{T<:Number} <: AbstractMatrix{T}
     n::Integer
