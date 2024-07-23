@@ -10,6 +10,7 @@ export
     Minij
 
 # include all matrices
+include("linearalgebra.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
