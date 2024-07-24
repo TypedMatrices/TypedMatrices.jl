@@ -10,6 +10,7 @@ export
     Hilbert,
     InverseHilbert,
     Involutory,
+    Lotkin,
     Minij
 
 # include all matrices
@@ -20,6 +21,7 @@ include("chebspec.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
+include("lotkin.jl")
 include("minij.jl")
 
 # matrix groups
@@ -35,6 +37,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Hilbert,
     InverseHilbert,
     Involutory,
+    Lotkin,
     Minij,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
