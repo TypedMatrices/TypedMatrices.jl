@@ -32,7 +32,7 @@ Minij(n::Integer) = Minij{Int}(n)
 
 # properties
 size(A::Minij) = (A.n, A.n)
-LinearAlgebra.isdiag(::Minij) = false
+LinearAlgebra.isdiag(A::Minij) = A.n <= 1 ? true : false
 LinearAlgebra.ishermitian(::Minij) = true
 LinearAlgebra.isposdef(::Minij) = true
 LinearAlgebra.issymmetric(::Minij) = true
