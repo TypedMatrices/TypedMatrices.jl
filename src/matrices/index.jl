@@ -9,6 +9,7 @@ export
     ChebSpec,
     Chow,
     Circulant,
+    Companion,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -22,6 +23,7 @@ include("cauchy.jl")
 include("chebspec.jl")
 include("chow.jl")
 include("circulant.jl")
+include("companion.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -40,6 +42,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     ChebSpec,
     Chow,
     Circulant,
+    Companion,
     Hilbert,
     InverseHilbert,
     Involutory,
