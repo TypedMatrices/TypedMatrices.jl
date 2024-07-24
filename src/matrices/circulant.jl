@@ -32,6 +32,10 @@ Circulant(n::T) where {T<:Integer} = Circulant(T[1:n;])
 
 # properties
 size(A::Circulant) = (A.n, A.n)
+LinearAlgebra.isdiag(A::Circulant) = A.n <= 1 ? true : false
+LinearAlgebra.ishermitian(A::Circulant) = A.n <= 2 ? true : false
+LinearAlgebra.isposdef(A::Circulant) = A.n <= 1 ? true : false
+LinearAlgebra.issymmetric(A::Circulant) = A.n <= 2 ? true : false
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Circulant{T}, i::Integer, j::Integer) where {T}
