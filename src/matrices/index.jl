@@ -6,6 +6,7 @@ export
     list_matrices,
     Binomial,
     Cauchy,
+    ChebSpec,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -15,6 +16,7 @@ export
 include("linearalgebra.jl")
 include("binomial.jl")
 include("cauchy.jl")
+include("chebspec.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -29,6 +31,7 @@ const GROUP_USER = Group(:user)
 MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Binomial,
     Cauchy,
+    ChebSpec,
     Hilbert,
     InverseHilbert,
     Involutory,
