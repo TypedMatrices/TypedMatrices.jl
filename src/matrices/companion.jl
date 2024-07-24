@@ -26,6 +26,8 @@ Companion(n::T) where {T<:Integer} = Companion(T[1:n;])
 
 # properties
 size(A::Companion) = (A.n, A.n)
+LinearAlgebra.isdiag(A::Companion) = A.n <= 1 ? true : false
+LinearAlgebra.isposdef(A::Companion) = A.n <= 1 ? true : false
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Companion{T}, i::Integer, j::Integer) where {T}
