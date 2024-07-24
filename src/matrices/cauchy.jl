@@ -20,11 +20,11 @@ Given two vectors `x` and `y`, the `(i,j)` entry of the Cauchy matrix is
 second edition, Society for Industrial and Applied Mathematics, Philadelphia, PA, USA,
 2002; sec. 28.1
 """
-struct Cauchy{T<:Number,X<:AbstractArray,Y<:AbstractArray} <: AbstractMatrix{T}
+struct Cauchy{T<:Number,X<:AbstractVector,Y<:AbstractVector} <: AbstractMatrix{T}
     x::X
     y::Y
 
-    function Cauchy{T}(x::AbstractArray{S}, y::AbstractArray{N}) where {T<:Number,S<:Number,N<:Number}
+    function Cauchy{T}(x::AbstractVector{S}, y::AbstractVector{N}) where {T<:Number,S<:Number,N<:Number}
         allunique(x) || throw(ArgumentError("x elements should be unique"))
         allunique(y) || throw(ArgumentError("y elements should be unique"))
         Tc = promote_type(T, S, N)
@@ -35,10 +35,10 @@ end
 # constructors
 Cauchy(x::Integer) = Cauchy(x, x)
 Cauchy(x::Integer, y::Integer) = Cauchy([1:x;], [1:y;])
-Cauchy(x::AbstractArray) = Cauchy(x, x)
-Cauchy{T}(x::AbstractArray) where {T} = Cauchy{T}(x, x)
-Cauchy(x::AbstractArray{S}, y::AbstractArray{N}) where {S<:Number,N<:Number} = Cauchy{promote_type(S, N)}(x, y)
-Cauchy{T}(x::AbstractArray{S}, y::AbstractArray{N}) where {T<:Integer,S<:Number,N<:Number} = Cauchy{Rational{T}}(x, y)
+Cauchy(x::AbstractVector) = Cauchy(x, x)
+Cauchy{T}(x::AbstractVector) where {T} = Cauchy{T}(x, x)
+Cauchy(x::AbstractVector{S}, y::AbstractVector{N}) where {S<:Number,N<:Number} = Cauchy{promote_type(S, N)}(x, y)
+Cauchy{T}(x::AbstractVector{S}, y::AbstractVector{N}) where {T<:Integer,S<:Number,N<:Number} = Cauchy{Rational{T}}(x, y)
 
 # metadata
 @properties Cauchy [:symmetric, :inverse, :illcond, :posdef]
