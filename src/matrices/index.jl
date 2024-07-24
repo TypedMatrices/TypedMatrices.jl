@@ -7,6 +7,7 @@ export
     Binomial,
     Cauchy,
     ChebSpec,
+    Chow,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -18,6 +19,7 @@ include("linearalgebra.jl")
 include("binomial.jl")
 include("cauchy.jl")
 include("chebspec.jl")
+include("chow.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -34,6 +36,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Binomial,
     Cauchy,
     ChebSpec,
+    Chow,
     Hilbert,
     InverseHilbert,
     Involutory,
