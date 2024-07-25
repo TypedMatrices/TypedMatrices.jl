@@ -14,6 +14,7 @@ export
     Fiedler,
     Forsythe,
     Frank,
+    Golub,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -32,6 +33,7 @@ include("dingdong.jl")
 include("fiedler.jl")
 include("forsythe.jl")
 include("frank.jl")
+include("golub.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -55,6 +57,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Fiedler,
     Forsythe,
     Frank,
+    Golub,
     Hilbert,
     InverseHilbert,
     Involutory,
