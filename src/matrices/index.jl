@@ -10,6 +10,7 @@ export
     Chow,
     Circulant,
     Companion,
+    DingDong,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -24,6 +25,7 @@ include("chebspec.jl")
 include("chow.jl")
 include("circulant.jl")
 include("companion.jl")
+include("dingdong.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -43,6 +45,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Chow,
     Circulant,
     Companion,
+    DingDong,
     Hilbert,
     InverseHilbert,
     Involutory,
