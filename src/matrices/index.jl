@@ -16,6 +16,7 @@ export
     Frank,
     Golub,
     Grcar,
+    Hadamard,
     Hilbert,
     InverseHilbert,
     Involutory,
@@ -36,6 +37,7 @@ include("forsythe.jl")
 include("frank.jl")
 include("golub.jl")
 include("grcar.jl")
+include("hadamard.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
@@ -61,6 +63,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Frank,
     Golub,
     Grcar,
+    Hadamard,
     Hilbert,
     InverseHilbert,
     Involutory,
