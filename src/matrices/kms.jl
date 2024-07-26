@@ -35,6 +35,9 @@ KMS{T}(n::Integer, rho::Number) where {T} = KMS{T}(n, convert(T, rho))
 
 # properties
 size(A::KMS) = (A.n, A.n)
+LinearAlgebra.ishermitian(::KMS) = true
+LinearAlgebra.isposdef(A::KMS) = A.n <= 1 || 0 < abs(A.rho) < 1 ? true : false
+LinearAlgebra.issymmetric(A::KMS) = A.n <= 1 && typeof(A.rho) <: Real ? true : false
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::KMS{T}, i::Integer, j::Integer) where {T}
