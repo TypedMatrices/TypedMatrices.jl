@@ -22,6 +22,7 @@ export
     InverseHilbert,
     Involutory,
     Kahan,
+    KMS,
     Lotkin,
     Minij
 
@@ -45,6 +46,7 @@ include("hilbert.jl")
 include("inversehilbert.jl")
 include("involutory.jl")
 include("kahan.jl")
+include("kms.jl")
 include("lotkin.jl")
 include("minij.jl")
 
@@ -73,6 +75,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     InverseHilbert,
     Involutory,
     Kahan,
+    KMS,
     Lotkin,
     Minij,
 ])
