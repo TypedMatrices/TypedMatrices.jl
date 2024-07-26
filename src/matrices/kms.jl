@@ -39,5 +39,10 @@ size(A::KMS) = (A.n, A.n)
 # functions
 @inline Base.@propagate_inbounds function getindex(A::KMS{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
-    return A.rho^(abs(i - j))
+    element = A.rho^(abs(i - j))
+    if i > j && typeof(A.rho) <: Complex
+        return conj(element)
+    else
+        return element
+    end
 end
