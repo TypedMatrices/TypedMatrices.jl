@@ -26,7 +26,8 @@ export
     Lehmer,
     Lotkin,
     Magic,
-    Minij
+    Minij,
+    Triw
 
 # include all matrices
 include("linearalgebra.jl")
@@ -53,6 +54,7 @@ include("lehmer.jl")
 include("lotkin.jl")
 include("magic.jl")
 include("minij.jl")
+include("triw.jl")
 
 # matrix groups
 const MATRIX_GROUPS = Dict{Group,Set{Type{<:AbstractMatrix}}}()
@@ -84,6 +86,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Lotkin,
     Magic,
     Minij,
+    Triw,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
 
