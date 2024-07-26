@@ -22,7 +22,7 @@ struct Chow{T<:Number} <: AbstractMatrix{T}
     delta::T
 
     function Chow{T}(n::Integer, alpha, delta) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(n, convert(T, alpha), convert(T, delta))
     end
 end

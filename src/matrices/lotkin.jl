@@ -18,7 +18,7 @@ struct Lotkin{T<:Number} <: AbstractMatrix{T}
     hilbert::Hilbert{T}
 
     function Lotkin{T}(n::Integer) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(n, Hilbert{T}(n))
     end
 end

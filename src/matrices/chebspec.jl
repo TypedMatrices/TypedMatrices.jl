@@ -25,7 +25,7 @@ struct ChebSpec{T<:Number} <: AbstractMatrix{T}
     x::Vector{T}
 
     function ChebSpec{T}(n::Integer, k::Integer) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         k == 0 || k == 1 || throw(ArgumentError("k should be 0 or 1"))
 
         kn = k == 0 ? n : n + 1

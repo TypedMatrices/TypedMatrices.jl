@@ -19,7 +19,7 @@ struct Hadamard{T<:Number} <: AbstractMatrix{T}
     H::Matrix{T}
 
     function Hadamard{T}(n::Integer) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         ispow2(n) || throw(ArgumentError("$n is not a power of 2"))
 
         # generate Hadamard matrix

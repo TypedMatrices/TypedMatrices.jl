@@ -25,8 +25,8 @@ struct Hilbert{T<:Number} <: AbstractMatrix{T}
     n::Integer
 
     function Hilbert{T}(m::Integer, n::Integer) where {T<:Number}
-        m > 0 || throw(ArgumentError("$m ≤ 0"))
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        m >= 0 || throw(ArgumentError("$m < 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(m, n)
     end
 end

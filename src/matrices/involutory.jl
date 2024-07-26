@@ -17,7 +17,7 @@ struct Involutory{T<:Number} <: AbstractMatrix{T}
     n::Integer
 
     function Involutory{T}(n::Integer) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(n)
     end
 end

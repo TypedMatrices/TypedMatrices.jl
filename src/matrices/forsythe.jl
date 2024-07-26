@@ -17,7 +17,7 @@ struct Forsythe{T<:Number} <: AbstractMatrix{T}
     lambda::T
 
     function Forsythe{T}(n::Integer, alpha::T, lambda::T) where {T<:Number}
-        n > 0 || throw(ArgumentError("$n ≤ 0"))
+        n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(n, alpha, lambda)
     end
 end
