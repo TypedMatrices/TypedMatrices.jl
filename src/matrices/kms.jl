@@ -27,8 +27,9 @@ end
 
 # constructors
 KMS(n::Integer) = KMS(n, 0.5)
-KMS(n::Integer, rho::Number) = KMS{typeof(rho)}(n, rho)
-KMS{T}(n::Integer, rho::Number) where {T} = KMS{T}(n, convert(T, rho))
+KMS(n::Integer, rho::T) where {T<:Number} = KMS{T}(n, rho)
+KMS{T}(n::Integer) where {T<:Number} = KMS{T}(n, 0.5)
+KMS{T}(n::Integer, rho::Number) where {T<:Number} = KMS{T}(n, convert(T, rho))
 
 # metadata
 @properties KMS [:symmetric, :inverse, :illcond, :posdef]
