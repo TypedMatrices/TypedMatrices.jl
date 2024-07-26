@@ -27,6 +27,7 @@ export
     Lotkin,
     Magic,
     Minij,
+    Moler,
     Triw
 
 # include all matrices
@@ -54,6 +55,7 @@ include("lehmer.jl")
 include("lotkin.jl")
 include("magic.jl")
 include("minij.jl")
+include("moler.jl")
 include("triw.jl")
 
 # matrix groups
@@ -86,6 +88,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Lotkin,
     Magic,
     Minij,
+    Moler,
     Triw,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
