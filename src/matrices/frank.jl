@@ -24,7 +24,7 @@ struct Frank{T<:Number} <: AbstractMatrix{T}
 
     function Frank{T}(n::Integer, k::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
-        k ∈ (0, 1) || throw(ArgumentError("k ≠ 0 or 1"))
+        k == 0 || k == 1 || throw(ArgumentError("k ≠ 0 or 1"))
         return new{T}(n, k)
     end
 end
