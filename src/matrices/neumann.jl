@@ -20,11 +20,19 @@ struct Neumann{T<:Number} <: AbstractMatrix{T}
     function Neumann{T}(n::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
 
+        # 0 and 1
+        if n == 0
+            return new{T}(n, Matrix{T}(undef, 0, 0))
+        elseif n == 1
+            return new{T}(n, 4 * ones(T, 1, 1))
+        end
+
+        # get sqrt of n
         sqrtn = sqrt(n)
         isinteger(sqrtn) || throw(ArgumentError("$n is not a perfect square integer"))
         sqrtn = Int(sqrtn)
 
-        S = Tridiagonal(-ones(T, sqrtn - 1), 2 * ones(T, sqrtn), -ones(T, sqrtn - 1))
+        # generate matrix
         S[1, 2] = -2
         S[sqrtn, sqrtn-1] = -2
         A = Matrix(I, sqrtn, sqrtn)
