@@ -33,6 +33,7 @@ struct Neumann{T<:Number} <: AbstractMatrix{T}
         sqrtn = Int(sqrtn)
 
         # generate matrix
+        S = Tridiagonal(-ones(T, sqrtn - 1), T(2) * ones(T, sqrtn), -ones(T, sqrtn - 1))
         S[1, 2] = -2
         S[sqrtn, sqrtn-1] = -2
         A = Matrix(I, sqrtn, sqrtn)
