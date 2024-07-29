@@ -1,0 +1,50 @@
+"""
+Neumann Matrix
+==============
+A singular matrix from the discrete Neumann problem.
+       The matrix is sparse and the null space is formed by a vector of ones
+
+*Input options:*
+
++ dim: the dimension of the matrix, must be a perfect square integer.
+
+*References:*
+
+**R. J. Plemmons**, Regular splittings and the
+          discrete Neumann problem, Numer. Math., 25 (1976), pp. 153-161.
+"""
+struct Neumann{T<:Number} <: AbstractMatrix{T}
+    n::Integer
+    M::Matrix{T}
+
+    function Neumann{T}(n::Integer) where {T<:Number}
+        n >= 0 || throw(ArgumentError("$n < 0"))
+
+        sqrtn = sqrt(n)
+        isinteger(sqrtn) || throw(ArgumentError("$n is not a perfect square integer"))
+        sqrtn = Int(sqrtn)
+
+        S = Tridiagonal(-ones(T, sqrtn - 1), 2 * ones(T, sqrtn), -ones(T, sqrtn - 1))
+        S[1, 2] = -2
+        S[sqrtn, sqrtn-1] = -2
+        A = Matrix(I, sqrtn, sqrtn)
+        M = kron(S, A) + kron(A, S)
+
+        return new{T}(n, M)
+    end
+end
+
+# constructors
+Neumann(n::Integer) = Neumann{Int}(n)
+
+# metadata
+@properties Neumann [:eigen, :sparse]
+
+# properties
+size(A::Neumann) = (A.n, A.n)
+
+# functions
+@inline Base.@propagate_inbounds function getindex(A::Neumann{T}, i::Integer, j::Integer) where {T}
+    @boundscheck checkbounds(A, i, j)
+    return A.M[i, j]
+end
