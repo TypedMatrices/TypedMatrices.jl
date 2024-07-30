@@ -31,6 +31,7 @@ export
     Neumann,
     Oscillate,
     Parter,
+    Pascal,
     Triw
 
 # include all matrices
@@ -62,6 +63,7 @@ include("moler.jl")
 include("neumann.jl")
 include("oscillate.jl")
 include("parter.jl")
+include("pascal.jl")
 include("triw.jl")
 
 # matrix groups
@@ -98,6 +100,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Neumann,
     Oscillate,
     Parter,
+    Pascal,
     Triw,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
