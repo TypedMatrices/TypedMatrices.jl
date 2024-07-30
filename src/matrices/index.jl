@@ -33,6 +33,7 @@ export
     Parter,
     Pascal,
     Pei,
+    Poisson,
     Triw
 
 # include all matrices
@@ -66,6 +67,7 @@ include("oscillate.jl")
 include("parter.jl")
 include("pascal.jl")
 include("pei.jl")
+include("poisson.jl")
 include("triw.jl")
 
 # matrix groups
@@ -104,6 +106,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Parter,
     Pascal,
     Pei,
+    Poisson,
     Triw,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
