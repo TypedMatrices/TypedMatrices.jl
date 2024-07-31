@@ -34,7 +34,7 @@ end
 # constructors
 Prolate(n::Integer) = Prolate{Float64}(n, 0.25)
 Prolate(n::Integer, w::T) where {T<:Number} = Prolate{T}(n, w)
-Prolate{T}(n::Integer) where {T} = Prolate{T}(n, T(0.25))
+Prolate{T}(n::Integer) where {T<:Number} = Prolate{T}(n, T(0.25))
 
 # metadata
 @properties Prolate [:symmetric, :illcond]

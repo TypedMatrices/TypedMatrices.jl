@@ -40,8 +40,8 @@ end
 Rando(n::Integer) = Rando(n, 1)
 Rando(n::Integer, k::Integer) = Rando(n, n, k)
 Rando(m::Integer, n::Integer, k::Integer) = Rando{Int}(m, n, k)
-Rando{T}(n::Integer) where {T} = Rando{T}(n, 1)
-Rando{T}(n::Integer, k::Integer) where {T} = Rando{T}(n, n, k)
+Rando{T}(n::Integer) where {T<:Number} = Rando{T}(n, 1)
+Rando{T}(n::Integer, k::Integer) where {T<:Number} = Rando{T}(n, n, k)
 
 # metadata
 @properties Rando [:random]

@@ -27,8 +27,8 @@ end
 
 # constructors
 Pei(n::Integer) = Pei(n, 1)
-Pei(n::Integer, alpha::T) where {T} = Pei{T}(n, alpha)
-Pei{T}(n::Integer) where {T} = Pei{T}(n, one(T))
+Pei(n::Integer, alpha::T) where {T<:Number} = Pei{T}(n, alpha)
+Pei{T}(n::Integer) where {T<:Number} = Pei{T}(n, one(T))
 
 # metadata
 @properties Pei [:symmetric, :inverse, :illcond, :posdef]

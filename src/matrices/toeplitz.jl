@@ -29,9 +29,9 @@ end
 # constructors
 Toeplitz(v::AbstractVector) = Toeplitz(v, v)
 Toeplitz(n::T) where {T<:Integer} = Toeplitz(T[1:n;])
-Toeplitz(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T} = Toeplitz{T}(vc, vr)
-Toeplitz{T}(v::AbstractVector) where {T} = Toeplitz{T}(v, v)
-Toeplitz{T}(n::Integer) where {T} = Toeplitz(T[1:n;])
+Toeplitz(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T<:Number} = Toeplitz{T}(vc, vr)
+Toeplitz{T}(v::AbstractVector) where {T<:Number} = Toeplitz{T}(v, v)
+Toeplitz{T}(n::Integer) where {T<:Number} = Toeplitz(T[1:n;])
 
 # properties
 size(A::Toeplitz) = (A.n, A.n)
