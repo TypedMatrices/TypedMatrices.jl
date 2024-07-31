@@ -39,6 +39,7 @@ export
     Rando,
     RandSVD,
     Rohess,
+    Rosser,
     Toeplitz,
     Triw
 
@@ -79,6 +80,7 @@ include("randcorr.jl")
 include("rando.jl")
 include("randsvd.jl")
 include("rohess.jl")
+include("rosser.jl")
 include("toeplitz.jl")
 include("triw.jl")
 
@@ -124,6 +126,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Rando,
     RandSVD,
     Rohess,
+    Rosser,
     Toeplitz,
     Triw,
 ])
