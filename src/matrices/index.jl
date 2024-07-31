@@ -42,7 +42,8 @@ export
     Rosser,
     Sampling,
     Toeplitz,
-    Triw
+    Triw,
+    Wilkinson
 
 # include all matrices
 include("linearalgebra.jl")
@@ -85,6 +86,7 @@ include("rosser.jl")
 include("sampling.jl")
 include("toeplitz.jl")
 include("triw.jl")
+include("wilkinson.jl")
 
 # matrix groups
 const MATRIX_GROUPS = Dict{Group,Set{Type{<:AbstractMatrix}}}()
@@ -132,6 +134,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Sampling,
     Toeplitz,
     Triw,
+    Wilkinson
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
 
