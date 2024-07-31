@@ -16,7 +16,6 @@ Random Matrix with Element -1, 0, 1
 struct Rando{T<:Number} <: AbstractMatrix{T}
     m::Integer
     n::Integer
-    k::Integer
     M::AbstractMatrix{T}
 
     function Rando{T}(m::Integer, n::Integer, k::Integer) where {T<:Number}
@@ -33,7 +32,7 @@ struct Rando{T<:Number} <: AbstractMatrix{T}
             M = round.(3 * rand(m, n) .- 1.5)
         end
 
-        return new{T}(m, n, k, M)
+        return new{T}(m, n, M)
     end
 end
 
