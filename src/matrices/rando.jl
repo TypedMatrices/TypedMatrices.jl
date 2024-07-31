@@ -43,12 +43,13 @@ Rando(m::Integer, n::Integer, k::Integer) = Rando{Int}(m, n, k)
 Rando{T}(n::Integer) where {T} = Rando{T}(n, 1)
 Rando{T}(n::Integer, k::Integer) where {T} = Rando{T}(n, n, k)
 
-# properties
+# metadata
 @properties Rando [:random]
 
-# functions
+# properties
 size(A::Rando) = (A.m, A.n)
 
+# functions
 @inline Base.@propagate_inbounds function getindex(A::Rando{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
     return A.M[i, j]
