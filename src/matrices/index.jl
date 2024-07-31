@@ -43,6 +43,7 @@ export
     Sampling,
     Toeplitz,
     Triw,
+    Wathen,
     Wilkinson
 
 # include all matrices
@@ -86,6 +87,7 @@ include("rosser.jl")
 include("sampling.jl")
 include("toeplitz.jl")
 include("triw.jl")
+include("wathen.jl")
 include("wilkinson.jl")
 
 # matrix groups
@@ -134,6 +136,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Sampling,
     Toeplitz,
     Triw,
+    Wathen,
     Wilkinson
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
