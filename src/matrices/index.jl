@@ -35,6 +35,7 @@ export
     Pei,
     Poisson,
     Prolate,
+    Randcorr,
     Toeplitz,
     Triw
 
@@ -71,6 +72,7 @@ include("pascal.jl")
 include("pei.jl")
 include("poisson.jl")
 include("prolate.jl")
+include("randcorr.jl")
 include("toeplitz.jl")
 include("triw.jl")
 
@@ -112,6 +114,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Pei,
     Poisson,
     Prolate,
+    Randcorr,
     Toeplitz,
     Triw,
 ])
