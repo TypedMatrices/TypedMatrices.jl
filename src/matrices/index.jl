@@ -150,7 +150,7 @@ MATRIX_GROUPS[GROUP_USER] = Set([])
 List all matrix groups.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> list_groups()
 2-element Vector{Group}:
  Group(:builtin)
@@ -172,13 +172,13 @@ See also [`remove_from_group`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
 ```jldoctest
-julia> add_to_groups(Tridiagonal, [Group(:user), Group(:test)])
+julia> add_to_groups(Matrix, [Group(:user), Group(:test)])
 
-julia> add_to_groups(Tridiagonal, Group(:user), Group(:test))
+julia> add_to_groups(Matrix, Group(:user), Group(:test))
 
-julia> add_to_groups(Tridiagonal, [:user, :test])
+julia> add_to_groups(Matrix, [:user, :test])
 
-julia> add_to_groups(Tridiagonal, :user, :test)
+julia> add_to_groups(Matrix, :user, :test)
 ```
 """
 function add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Group})
@@ -211,9 +211,13 @@ See also [`add_to_groups`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
 ```jldoctest
-julia> remove_from_group(Tridiagonal, Group(:user))
+julia> add_to_groups(Matrix, Group(:user))
 
-julia> remove_from_group(Tridiagonal, :user)
+julia> remove_from_group(Matrix, Group(:user))
+
+julia> add_to_groups(Matrix, :user)
+
+julia> remove_from_group(Matrix, :user)
 ```
 """
 function remove_from_group(type::Type{<:AbstractMatrix}, group::Group)
@@ -253,7 +257,7 @@ See also [`add_to_groups`](@ref), [`remove_from_group`](@ref).
 
 # Examples
 ```jldoctest
-julia> remove_from_all_groups(Tridiagonal)
+julia> remove_from_all_groups(Matrix)
 ```
 """
 function remove_from_all_groups(type::Type{<:AbstractMatrix})
@@ -274,7 +278,7 @@ List all matrices that are in groups and have properties.
 `props` can be vector/varargs of `Property`, symbol, subtype of PropertyTypes.AbstractProperty or instance of AbstractProperty.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> list_matrices()
 42-element Vector{Type{<:AbstractMatrix}}:
  Fiedler

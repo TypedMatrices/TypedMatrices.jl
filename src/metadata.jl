@@ -45,7 +45,7 @@ list_properties() = collect(values(PROPERTIES))
 Check properties types are valid, i.e., are subtypes of `PropertyTypes.AbstractProperty`.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> check_propertie_types(PropertyTypes.Symmetric, PropertyTypes.Inverse)
 
 julia> check_propertie_types(Int)
@@ -64,7 +64,7 @@ end
 Check properties exists.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> check_properties_exists(Property(:symmetric), Property(:inverse))
 
 julia> check_properties_exists(Property(:symmetric), Property(:notexists))
@@ -83,7 +83,7 @@ end
 Convert property types to properties.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> property_types_to_properties(PropertyTypes.Symmetric, PropertyTypes.Inverse)
 2-element Vector{Property}:
  Property(:symmetric)
@@ -100,9 +100,11 @@ end
 
 Register properties for a type. The properties are a vector of symbols.
 
+See also: [`properties`](@ref).
+
 # Examples
 ```jldoctest
-julia> @properties SymTridiagonal [:symmetric, :inverse, :illcond, :posdef, :eigen]
+julia> @properties Matrix [:symmetric, :inverse, :illcond, :posdef, :eigen]
 ```
 """
 macro properties(type::Symbol, ex::Expr)
@@ -119,20 +121,20 @@ Register properties for a type.
 See also: [`@properties`](@ref).
 
 # Examples
-```jldoctest
-julia> register_properties(SymTridiagonal, [Property(:symmetric), Property(:inverse), Property(:illcond), Property(:posdef), Property(:eigen)])
+```julia-repl
+julia> register_properties(Matrix, [Property(:symmetric), Property(:inverse), Property(:illcond), Property(:posdef), Property(:eigen)])
 
-julia> register_properties(SymTridiagonal, Property(:symmetric), Property(:inverse), Property(:illcond), Property(:posdef), Property(:eigen))
+julia> register_properties(Matrix, Property(:symmetric), Property(:inverse), Property(:illcond), Property(:posdef), Property(:eigen))
 
-julia> register_properties(SymTridiagonal, [:symmetric, :inverse, :illcond, :posdef, :eigen])
+julia> register_properties(Matrix, [:symmetric, :inverse, :illcond, :posdef, :eigen])
 
-julia> register_properties(SymTridiagonal, PropertyTypes.Symmetric, PropertyTypes.Inverse, PropertyTypes.IllCond, PropertyTypes.PosDef, PropertyTypes.Eigen)
+julia> register_properties(Matrix, PropertyTypes.Symmetric, PropertyTypes.Inverse, PropertyTypes.IllCond, PropertyTypes.PosDef, PropertyTypes.Eigen)
 
-julia> register_properties(SymTridiagonal, [PropertyTypes.Symmetric, PropertyTypes.Inverse, PropertyTypes.IllCond, PropertyTypes.PosDef, PropertyTypes.Eigen])
+julia> register_properties(Matrix, [PropertyTypes.Symmetric, PropertyTypes.Inverse, PropertyTypes.IllCond, PropertyTypes.PosDef, PropertyTypes.Eigen])
 
-julia> register_properties(SymTridiagonal, PropertyTypes.Symmetric(), PropertyTypes.Inverse(), PropertyTypes.IllCond(), PropertyTypes.PosDef(), PropertyTypes.Eigen())
+julia> register_properties(Matrix, PropertyTypes.Symmetric(), PropertyTypes.Inverse(), PropertyTypes.IllCond(), PropertyTypes.PosDef(), PropertyTypes.Eigen())
 
-julia> register_properties(SymTridiagonal, [PropertyTypes.Symmetric(), PropertyTypes.Inverse(), PropertyTypes.IllCond(), PropertyTypes.PosDef(), PropertyTypes.Eigen()])
+julia> register_properties(Matrix, [PropertyTypes.Symmetric(), PropertyTypes.Inverse(), PropertyTypes.IllCond(), PropertyTypes.PosDef(), PropertyTypes.Eigen()])
 ```
 """
 function register_properties(T::Type, props::Vector{Property})
@@ -161,21 +163,21 @@ register_properties(T::Type, props::Vector{PropertyTypes.AbstractProperty}) = re
 
 Get the properties of a type or matrix.
 
+See also: [`@properties`](@ref).
+
 # Examples
 ```jldoctest
-julia> properties(Minij)
-4-element Vector{Property}:
- Property(:symmetric)
- Property(:inverse)
- Property(:posdef)
- Property(:eigen)
+julia> @properties Matrix [:symmetric, :posdef]
 
-julia> properties(Minij(5))
-4-element Vector{Property}:
+julia> properties(Matrix)
+2-element Vector{Property}:
  Property(:symmetric)
- Property(:inverse)
  Property(:posdef)
- Property(:eigen)
+
+julia> properties(Matrix(ones(1, 1)))
+2-element Vector{Property}:
+ Property(:symmetric)
+ Property(:posdef)
 """
 properties(::Type{<:AbstractMatrix})::Vector{Property} = []
 properties(m::AbstractMatrix) = properties(typeof(m))
