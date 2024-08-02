@@ -9,6 +9,7 @@ export
     ChebSpec,
     Chow,
     Circulant,
+    Clement,
     Companion,
     DingDong,
     Fiedler,
@@ -53,6 +54,7 @@ include("cauchy.jl")
 include("chebspec.jl")
 include("chow.jl")
 include("circulant.jl")
+include("clement.jl")
 include("companion.jl")
 include("dingdong.jl")
 include("fiedler.jl")
@@ -102,6 +104,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     ChebSpec,
     Chow,
     Circulant,
+    Clement,
     Companion,
     DingDong,
     Fiedler,
