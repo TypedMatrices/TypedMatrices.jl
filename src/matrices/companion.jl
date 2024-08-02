@@ -32,8 +32,8 @@ LinearAlgebra.isposdef(A::Companion) = A.n <= 1 ? true : false
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Companion{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
-    if j == A.n
-        return A.v[i]
+    if i == 1
+        return A.v[j]
     elseif j == i - 1
         return one(T)
     else
