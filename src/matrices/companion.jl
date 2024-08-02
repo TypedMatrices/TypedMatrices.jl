@@ -1,3 +1,5 @@
+using Polynomials: Polynomial
+
 """
 Companion Matrix
 ================
@@ -11,6 +13,8 @@ The companion matrix to a monic polynomial
 + vec: `vec` is a vector of coefficients.
 
 + dim: `vec = [1:dim;]`. `dim` is the dimension of the matrix.
+
++ polynomial: `polynomial` is a polynomial. vector will be appropriate values from coefficients.
 """
 struct Companion{T<:Number} <: AbstractMatrix{T}
     n::Integer
@@ -23,6 +27,7 @@ end
 
 # constructors
 Companion(n::T) where {T<:Integer} = Companion(T[1:n;])
+Companion(polynomial::Polynomial) = Companion(-polynomial.coeffs[end-1:-1:begin] ./ polynomial.coeffs[end])
 
 # properties
 size(A::Companion) = (A.n, A.n)
