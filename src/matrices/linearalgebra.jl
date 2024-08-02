@@ -1,2 +1,2 @@
-@properties Tridiagonal [:inverse, :illcond, :posdef, :eigen]
+@properties Tridiagonal [:illcond]
 @properties SymTridiagonal [:symmetric, :inverse, :illcond, :posdef, :eigen]
