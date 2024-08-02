@@ -162,9 +162,13 @@ list_groups() = collect(keys(MATRIX_GROUPS))
 """
     add_to_groups(type, groups)
 
-Add a matrix type to groups.
+Add a matrix type to groups. If a group is not exists, it will be created.
 
-groups can be vector/varargs of `Group` or symbol.
+Groups `:builtin` and `:user` are special groups. It is suggested always to add matrices to the `:user` group.
+
+`groups` can be vector/varargs of `Group` or symbol.
+
+See also [`remove_from_group`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
 ```jldoctest
@@ -201,9 +205,9 @@ add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Symbol}) = add_to_gro
 """
     remove_from_group(type, group)
 
-Remove a matrix type from a group.
+Remove a matrix type from a group. If the group is empty, it will be deleted.
 
-See also [`remove_from_all_groups`](@ref).
+See also [`add_to_groups`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
 ```jldoctest
@@ -243,9 +247,9 @@ remove_from_group(type::Type{<:AbstractMatrix}, group::Symbol) = remove_from_gro
 """
     remove_from_all_groups(type)
 
-Remove a matrix type from all groups.
+Remove a matrix type from all groups. If a group is empty, it will be deleted.
 
-See also [`remove_from_group`](@ref).
+See also [`add_to_groups`](@ref), [`remove_from_group`](@ref).
 
 # Examples
 ```jldoctest
@@ -265,9 +269,9 @@ end
 
 List all matrices that are in groups and have properties.
 
-groups can be vector/varargs of `Group` or symbol.
+`groups` can be vector/varargs of `Group` or symbol.
 
-props can be vector/varargs of `Property`, symbol, data type or property type.
+`props` can be vector/varargs of `Property`, symbol, subtype of PropertyTypes.AbstractProperty or instance of AbstractProperty.
 
 # Examples
 ```jldoctest
