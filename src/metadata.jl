@@ -141,6 +141,9 @@ function register_properties(T::Type, props::Vector{Property})
 
     # register properties
     @eval properties(::Type{<:$T}) = $props
+
+    # return nothing
+    return
 end
 
 # register properties alternative interfaces
