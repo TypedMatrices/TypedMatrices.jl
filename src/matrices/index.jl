@@ -144,10 +144,39 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
 
-# group functions
+"""
+    list_groups()
+
+List all matrix groups.
+
+# Examples
+```jldoctest
+julia> list_groups()
+2-element Vector{Group}:
+ Group(:builtin)
+ Group(:user)
+```
+"""
 list_groups() = collect(keys(MATRIX_GROUPS))
 
-# add to groups
+"""
+    add_to_groups(type, groups)
+
+Add a matrix type to groups.
+
+groups can be vector/varargs of `Group` or symbol.
+
+# Examples
+```jldoctest
+julia> add_to_groups(Tridiagonal, [Group(:user), Group(:test)])
+
+julia> add_to_groups(Tridiagonal, Group(:user), Group(:test))
+
+julia> add_to_groups(Tridiagonal, [:user, :test])
+
+julia> add_to_groups(Tridiagonal, :user, :test)
+```
+"""
 function add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Group})
     for group = groups
         # check group is builtin
@@ -169,7 +198,20 @@ add_to_groups(type::Type{<:AbstractMatrix}, groups::Group...) = add_to_groups(ty
 add_to_groups(type::Type{<:AbstractMatrix}, groups::Symbol...) = add_to_groups(type, collect(groups))
 add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Symbol}) = add_to_groups(type, [Group(group) for group = groups])
 
-# remove from group
+"""
+    remove_from_group(type, group)
+
+Remove a matrix type from a group.
+
+See also [`remove_from_all_groups`](@ref).
+
+# Examples
+```jldoctest
+julia> remove_from_group(Tridiagonal, Group(:user))
+
+julia> remove_from_group(Tridiagonal, :user)
+```
+"""
 function remove_from_group(type::Type{<:AbstractMatrix}, group::Group)
     # check group is not builtin
     if group == GROUP_BUILTIN
@@ -198,7 +240,18 @@ end
 # remove from group alternative interfaces
 remove_from_group(type::Type{<:AbstractMatrix}, group::Symbol) = remove_from_group(type, Group(group))
 
-# remove from all groups
+"""
+    remove_from_all_groups(type)
+
+Remove a matrix type from all groups.
+
+See also [`remove_from_group`](@ref).
+
+# Examples
+```jldoctest
+julia> remove_from_all_groups(Tridiagonal)
+```
+"""
 function remove_from_all_groups(type::Type{<:AbstractMatrix})
     for group = keys(MATRIX_GROUPS)
         if group != GROUP_BUILTIN && type ∈ MATRIX_GROUPS[group]
@@ -207,7 +260,59 @@ function remove_from_all_groups(type::Type{<:AbstractMatrix})
     end
 end
 
-# list matrices
+"""
+    list_matrices(groups, props)
+
+List all matrices that are in groups and have properties.
+
+groups can be vector/varargs of `Group` or symbol.
+
+props can be vector/varargs of `Property`, symbol, data type or property type.
+
+# Examples
+```jldoctest
+julia> list_matrices()
+42-element Vector{Type{<:AbstractMatrix}}:
+ Fiedler
+ Prolate
+ RandSVD
+ DingDong
+ Hankel
+ Companion
+ KMS
+ Moler
+ ⋮
+ Involutory
+ Sampling
+ Lotkin
+ Grcar
+ Triw
+ Hilbert
+ Pascal
+
+julia> list_matrices([Group(:builtin), Group(:user)], [Property(:symmetric), Property(:inverse)])
+
+julia> list_matrices(Property(:symmetric), Property(:inverse))
+
+julia> list_matrices([Property(:symmetric), Property(:inverse)])
+
+julia> list_matrices(:symmetric, :inverse)
+
+julia> list_matrices([:symmetric, :inverse])
+
+julia> list_matrices(PropertyTypes.Symmetric, PropertyTypes.Inverse)
+
+julia> list_matrices([PropertyTypes.Symmetric, PropertyTypes.Inverse])
+
+julia> list_matrices(PropertyTypes.Symmetric(), PropertyTypes.Inverse())
+
+julia> list_matrices([PropertyTypes.Symmetric(), PropertyTypes.Inverse()])
+
+julia> list_matrices(Group(:builtin), Group(:user))
+
+julia> list_matrices([Group(:builtin), Group(:user)])
+```
+"""
 function list_matrices(groups::Vector{Group}, props::Vector{Property})
     # check properties
     check_properties_exists(props...)
