@@ -18,10 +18,6 @@ makedocs(
         "Manual" => [
             "manual/getting-started.md",
         ],
-        "Reference" => [
-            "reference/types.md",
-            "reference/interfaces.md",
-            "reference/matrices.md",
-        ],
+        "Reference" => "reference.md",
     ]
 )

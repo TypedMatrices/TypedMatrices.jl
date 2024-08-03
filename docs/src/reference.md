@@ -1,6 +1,24 @@
-# Matrices
+# Reference
 
-```@index
+## Types
+
+```@docs
+TypedMatrices.PropertyTypes
+TypedMatrices.Property
+TypedMatrices.Group
+```
+
+## Interfaces
+
+```@docs
+TypedMatrices.list_properties
+TypedMatrices.@properties
+TypedMatrices.properties
+TypedMatrices.list_groups
+TypedMatrices.add_to_groups
+TypedMatrices.remove_from_group
+TypedMatrices.remove_from_all_groups
+TypedMatrices.list_matrices
 ```
 
 ## Builtin Matrices
