@@ -171,7 +171,7 @@ Groups `:builtin` and `:user` are special groups. It is suggested always to add 
 See also [`remove_from_group`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
-```jldoctest
+```julia-repl
 julia> add_to_groups(Matrix, [Group(:user), Group(:test)])
 
 julia> add_to_groups(Matrix, Group(:user), Group(:test))
@@ -210,7 +210,7 @@ Remove a matrix type from a group. If the group is empty, it will be deleted.
 See also [`add_to_groups`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
-```jldoctest
+```julia-repl
 julia> add_to_groups(Matrix, Group(:user))
 
 julia> remove_from_group(Matrix, Group(:user))
@@ -256,7 +256,7 @@ Remove a matrix type from all groups. If a group is empty, it will be deleted.
 See also [`add_to_groups`](@ref), [`remove_from_group`](@ref).
 
 # Examples
-```jldoctest
+```julia-repl
 julia> remove_from_all_groups(Matrix)
 ```
 """

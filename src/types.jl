@@ -8,8 +8,10 @@ export
 
 Types of properties.
 
+See also [`Property`](@ref), [`list_properties`](@ref).
+
 # Examples
-```jldoctest
+```julia-repl
 julia> PropertyTypes.Symmetric
 TypedMatrices.PropertyTypes.Symmetric
 ```

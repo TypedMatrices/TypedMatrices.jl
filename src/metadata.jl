@@ -24,7 +24,7 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
 List all properties.
 
 # Examples
-```jldoctest
+```julia-repl
 julia> list_properties()
 9-element Vector{Property}:
  Property(:posdef)
@@ -36,6 +36,7 @@ julia> list_properties()
  Property(:graph)
  Property(:regprob)
  Property(:eigen)
+```
 """
 list_properties() = collect(values(PROPERTIES))
 
@@ -103,7 +104,7 @@ Register properties for a type. The properties are a vector of symbols.
 See also: [`properties`](@ref).
 
 # Examples
-```jldoctest
+```julia-repl
 julia> @properties Matrix [:symmetric, :inverse, :illcond, :posdef, :eigen]
 ```
 """
@@ -166,7 +167,7 @@ Get the properties of a type or matrix.
 See also: [`@properties`](@ref).
 
 # Examples
-```jldoctest
+```julia-repl
 julia> @properties Matrix [:symmetric, :posdef]
 
 julia> properties(Matrix)
@@ -178,6 +179,7 @@ julia> properties(Matrix(ones(1, 1)))
 2-element Vector{Property}:
  Property(:symmetric)
  Property(:posdef)
+```
 """
 properties(::Type{<:AbstractMatrix})::Vector{Property} = []
 properties(m::AbstractMatrix) = properties(typeof(m))
