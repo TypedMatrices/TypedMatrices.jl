@@ -19,5 +19,5 @@ makedocs(
             "manual/getting-started.md",
         ],
         "Reference" => "reference.md",
-    ]
+    ],
 )
