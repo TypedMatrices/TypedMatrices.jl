@@ -87,3 +87,37 @@ remove_from_group(Hilbert, :test)
 remove_from_all_groups(Matrix)
 list_groups()
 ```
+
+## Finding Matrices
+
+[`list_matrices`](@ref) is very powerful to list matrices, and filter by groups and properties. All arguments are "and" relationship, i.e. listed matrices must satisfy all conditions.
+
+For example, to list all matrices in the `builtin` group, and all matrices with `symmetric` property:
+
+```@repl getting-started
+list_matrices(Group(:builtin))
+list_matrices(Property(:symmetric))
+```
+
+To list all matrices in the `builtin` group with `inverse`, `illcond`, and `eigen` properties:
+
+```@repl getting-started
+list_matrices(
+    [
+        Group(:builtin),
+    ],
+    [
+        Property(:inverse),
+        Property(:illcond),
+        Property(:eigen),
+    ]
+)
+```
+
+To list all matrices with `symmetric`, `eigen`, and `posdef` properties:
+
+```@repl getting-started
+list_matrices(:symmetric, :eigen, :posdef)
+```
+
+There are many alternative interfaces using `list_matrices`, please check the [`list_matrices`](@ref) or use Julia help system for more information.
