@@ -2,6 +2,7 @@
 
 [![license][license-img]][license-url]
 [![action status][action-img]][action-url]
+[![codecov][codecov-img]][codecov-url]
 [![docs-stable][docs-stable-img]][docs-stable-url]
 [![docs-dev][docs-dev-img]][docs-dev-url]
 [![release][release-img]][release-url]
@@ -29,6 +30,8 @@ We sincerly appreciate the following packages:
 [license-url]: LICENSE
 [action-img]: https://github.com/AnzhiZhang/TypedMatrices.jl/actions/workflows/CI.yml/badge.svg?branch=master
 [action-url]: https://github.com/AnzhiZhang/TypedMatrices.jl/actions/workflows/CI.yml?query=branch%3Amaster
+[codecov-img]: https://codecov.io/github/AnzhiZhang/TypedMatrices.jl/coverage.svg
+[codecov-url]: https://codecov.io/github/AnzhiZhang/TypedMatrices.jl
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-stable-url]: https://typedmatrices.zhanganzhi.com/stable
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
