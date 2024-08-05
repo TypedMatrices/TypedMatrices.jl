@@ -22,20 +22,6 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
     list_properties()
 
 List all properties.
-
-# Examples
-```julia-repl
-julia> list_properties()
-9-element Vector{Property}:
- Property(:posdef)
- Property(:symmetric)
- Property(:sparse)
- Property(:inverse)
- Property(:illcond)
- Property(:random)
- Property(:graph)
- Property(:regprob)
- Property(:eigen)
 ```
 """
 list_properties() = collect(values(PROPERTIES))

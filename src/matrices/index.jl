@@ -148,14 +148,6 @@ MATRIX_GROUPS[GROUP_USER] = Set([])
     list_groups()
 
 List all matrix groups.
-
-# Examples
-```julia-repl
-julia> list_groups()
-2-element Vector{Group}:
- Group(:builtin)
- Group(:user)
-```
 """
 list_groups() = collect(keys(MATRIX_GROUPS))
 
@@ -280,23 +272,6 @@ List all matrices that are in groups and have properties.
 # Examples
 ```julia-repl
 julia> list_matrices()
-42-element Vector{Type{<:AbstractMatrix}}:
- Fiedler
- Prolate
- RandSVD
- DingDong
- Hankel
- Companion
- KMS
- Moler
- ⋮
- Involutory
- Sampling
- Lotkin
- Grcar
- Triw
- Hilbert
- Pascal
 
 julia> list_matrices([Group(:builtin), Group(:user)], [Property(:symmetric), Property(:inverse)])
 
