@@ -21,3 +21,11 @@ makedocs(
         "Reference" => "reference.md",
     ],
 )
+
+if "deploy" in ARGS
+    deploydocs(
+        repo = "github.com/AnzhiZhang/TypedMatrices.jl.git",
+    )
+else
+    @info "Skipping deployment ('deploy' not passed)"
+end
