@@ -4,18 +4,13 @@ Cauchy Matrix
 Given two vectors `x` and `y`, the `(i,j)` entry of the Cauchy matrix is
 `1/(x[i]+y[j])`.
 
-*Input options*:
+# Input Options
+- x: an integer, as vectors 1:x and 1:x.
+- x, y: two integers, as vectors 1:x and 1:y.
+- x: a vector. `y` defaults to `x`.
+- x, y: two vectors.
 
- + x: an integer, as vectors 1:x and 1:x.
-
- + x, y: two integers, as vectors 1:x and 1:y.
-
- + x: a vector. `y` defaults to `x`.
-
- + x, y: two vectors.
-
-*References:*
-
+# References
 **N. J. Higham**, Accuracy and Stability of Numerical Algorithms,
 second edition, Society for Industrial and Applied Mathematics, Philadelphia, PA, USA,
 2002; sec. 28.1

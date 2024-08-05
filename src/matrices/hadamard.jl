@@ -5,12 +5,10 @@ The Hadamard matrix is a square matrix whose entries are
 1 or -1. It was named after Jacques Hadamard. The rows of
 a Hadamard matrix are orthogonal.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix, `dim` is a power of 2.
 
-+ dim: the dimension of the matrix, `dim` is a power of 2.
-
-*References:*
-
+# References
 **S. W. Golomb and L. D. Baumert**, The search for
 Hadamard matrices, Amer. Math. Monthly, 70 (1963) pp. 12-17
 """

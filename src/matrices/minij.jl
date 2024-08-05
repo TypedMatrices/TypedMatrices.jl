@@ -5,12 +5,10 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
      definite matrix. The eigenvalues and eigenvectors are known
      explicitly. Its inverse is tridiagonal.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **J. Fortiana and C. M. Cuadras**, A family of matrices,
             the discretized Brownian bridge, and distance-based regression,
             Linear Algebra Appl., 264 (1997), 173-188.  (For the eigensystem of A.)

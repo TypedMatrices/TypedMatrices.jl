@@ -3,12 +3,10 @@ Random Orthogonal Upper Hessenberg Matrix
 =========================================
 The matrix is constructed via a product of Givens rotations.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **W. B. Gragg**, The QR algorithm for unitary
     Hessenberg matrices, J. Comp. Appl. Math., 16 (1986), pp. 1-8.
 """

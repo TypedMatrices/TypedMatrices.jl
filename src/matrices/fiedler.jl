@@ -4,14 +4,11 @@ Fiedler Matrix
 The Fiedler matrix is symmetric matrix with a dominant
       positive eigenvalue and all the other eigenvalues are negative.
 
-*Input options:*
+# Input Options
+- vec: a vector.
+- dim: `dim` is the dimension of the matrix. `vec=[1:dim;]`.
 
-+ vec: a vector.
-
-+ dim: `dim` is the dimension of the matrix. `vec=[1:dim;]`.
-
-*References:*
-
+# References
 **G. Szego**, Solution to problem 3705, Amer. Math.
             Monthly, 43 (1936), pp. 246-259.
 

@@ -3,15 +3,12 @@ Matrix with Application in Sampling Theory
 ==========================================
 A nonsymmetric matrix with eigenvalues 0, 1, 2, ... n-1.
 
-*Input options:*
-
-+ vec: `vec` is a vector with no repeated elements.
-
-+ dim: `dim` is the dimension of the matrix.
+# Input Options
+- vec: `vec` is a vector with no repeated elements.
+- dim: `dim` is the dimension of the matrix.
             `vec = [1:dim;]/dim`.
 
-*References:*
-
+# References
 **L. Bondesson and I. Traat**, A nonsymmetric matrix
             with integer eigenvalues, linear and multilinear algebra, 55(3)
             (2007), pp. 239-247

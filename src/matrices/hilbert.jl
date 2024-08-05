@@ -5,14 +5,11 @@ The Hilbert matrix has `(i,j)` element `1/(i+j-1)`. It is
 notorious for being ill conditioned. It is symmetric
 positive definite and totally positive.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
+- row\\_dim, col\\_dim: the row and column dimensions.
 
-+ dim: the dimension of the matrix.
-
-+ row\\_dim, col\\_dim: the row and column dimensions.
-
-*References:*
-
+# References
 **M. D. Choi**, Tricks or treats with the Hilbert matrix,
 Amer. Math. Monthly, 90 (1983), pp. 301-312.
 

@@ -3,12 +3,10 @@ Involutory Matrix
 =================
 An involutory matrix is a matrix that is its own inverse.
 
-*Input options:*
+# Input Options
+- dim: `dim` is the dimension of the matrix.
 
-+ dim: `dim` is the dimension of the matrix.
-
-*References:*
-
+# References
 **A. S. Householder and J. A. Carpenter**, The
         singular values of involutory and of idempotent matrices,
         Numer. Math. 5 (1963), pp. 234-237.

@@ -2,16 +2,13 @@
 Random Matrix with Element -1, 0, 1
 ===================================
 
-*Input options:*
-
-+ row_dim, col_dim, k: `row_dim` and `col_dim` are row and column dimensions,
+# Input Options
+- row_dim, col_dim, k: `row_dim` and `col_dim` are row and column dimensions,
    `k = 1`: entries are 0 or 1.
    `k = 2`: entries are -1 or 1.
    `k = 3`: entries are -1, 0 or 1.
-
-+ dim, k: `row_dim = col_dim = dim`.
-
-+ dim: `k = 1`.
+- dim, k: `row_dim = col_dim = dim`.
+- dim: `k = 1`.
 """
 struct Rando{T<:Number} <: AbstractMatrix{T}
     m::Integer

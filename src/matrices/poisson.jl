@@ -5,12 +5,10 @@ A block tridiagonal matrix from Poisson’s equation.
      This matrix is sparse, symmetric positive definite and
      has known eigenvalues.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **G. H. Golub and C. F. Van Loan**, Matrix Computations,
           second edition, Johns Hopkins University Press, Baltimore,
           Maryland, 1989 (Section 4.5.4).

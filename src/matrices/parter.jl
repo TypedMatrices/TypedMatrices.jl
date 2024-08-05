@@ -4,12 +4,10 @@ Parter Matrix
 The Parter matrix is a Toeplitz and Cauchy matrix
             with singular values near `π`.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 The MathWorks Newsletter, Volume 1, Issue 1,
             March 1986, page 2. S. V. Parter, On the distribution of the
             singular values of Toeplitz matrices, Linear Algebra and

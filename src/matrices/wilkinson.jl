@@ -5,12 +5,10 @@ The Wilkinson matrix is a symmetric tridiagonal matrix with pairs
 of nearly equal eigenvalues. The most frequently used case
 is `matrixdepot("wilkinson", 21)`. The result is of type `Tridiagonal`.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **J. H. Wilkinson**, Error analysis of direct methods
 of matrix inversion, J. Assoc. Comput. Mach., 8 (1961),  pp. 281-330.
 """

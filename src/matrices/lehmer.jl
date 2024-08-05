@@ -5,12 +5,10 @@ The Lehmer matrix is a symmetric positive definite matrix.
             It is totally nonnegative. The inverse is tridiagonal and
             explicitly known
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **M. Newman and J. Todd**, The evaluation of
             matrix inversion programs, J. Soc. Indust. Appl. Math.,
             6 (1958), pp. 466-476.

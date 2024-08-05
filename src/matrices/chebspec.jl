@@ -6,15 +6,12 @@ If `k = 0`,the generated matrix is nilpotent and a vector with
         matrix is nonsingular and well-conditioned. Its eigenvalues
         have negative real parts.
 
-*Input options:*
-
-+ dim, k: `dim` is the dimension of the matrix and
+# Input Options
+- dim, k: `dim` is the dimension of the matrix and
         `k = 0 or 1`.
+- dim: `k=0`.
 
-+ dim: `k=0`.
-
-*References:*
-
+# References
 **L. N. Trefethen and M. R. Trummer**, An instability
         phenomenon in spectral methods, SIAM J. Numer. Anal., 24 (1987), pp. 1008-1023.
 """

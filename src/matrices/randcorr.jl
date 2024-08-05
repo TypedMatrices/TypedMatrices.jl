@@ -11,9 +11,8 @@ Random Correlation Matrix
 A random correlation matrix is a symmetric positive
      semidefinite matrix with 1s on the diagonal.
 
-*Input options:*
-
-+ dim: the dimension of the matrix.
+# Input Options
+- dim: the dimension of the matrix.
 """
 struct Randcorr{T<:Number} <: AbstractMatrix{T}
     n::Integer

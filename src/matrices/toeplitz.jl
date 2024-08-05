@@ -4,13 +4,10 @@ Toeplitz Matrix
 A Toeplitz matrix is a matrix in which each descending
        diagonal from left to right is constant.
 
-*Input options:*
-
-+ vc, vr: `vc` and `vr` are the first column and row of the matrix.
-
-+ v: symmatric case, i.e., `vc = vr = v`.
-
-+ dim: `dim` is the dimension of the matrix. `v = [1:dim;]` is the first
+# Input Options
+- vc, vr: `vc` and `vr` are the first column and row of the matrix.
+- v: symmatric case, i.e., `vc = vr = v`.
+- dim: `dim` is the dimension of the matrix. `v = [1:dim;]` is the first
         row and column vector.
 """
 struct Toeplitz{T<:Number} <: AbstractMatrix{T}

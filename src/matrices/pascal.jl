@@ -3,12 +3,10 @@ Pascal Matrix
 =============
 The Pascal matrix’s anti-diagonals form the Pascal’s triangle.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **R. Brawer and M. Pirovino**, The linear algebra of
     the Pascal matrix, Linear Algebra and Appl., 174 (1992),
     pp. 13-23 (this paper gives a factorization of L = PASCAL(N,1)

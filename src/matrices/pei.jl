@@ -3,15 +3,12 @@ Pei Matrix
 ==========
 The Pei matrix is a symmetric matrix with known inversion.
 
-*Input options:*
-
-+ dim, alpha: `dim` is the dimension of the matrix.
+# Input Options
+- dim, alpha: `dim` is the dimension of the matrix.
     `alpha` is a scalar.
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **M. L. Pei**, A test matrix for inversion procedures,
     Comm. ACM, 5 (1962), p. 508.
 """

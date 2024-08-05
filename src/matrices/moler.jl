@@ -4,15 +4,12 @@ Moler Matrix
 The Moler matrix is a symmetric positive definite matrix.
 It has one small eigenvalue.
 
-*Input options:*
-
-+ dim, alpha: `dim` is the dimension of the matrix,
+# Input Options
+- dim, alpha: `dim` is the dimension of the matrix,
         `alpha` is a scalar.
+- dim: `alpha = -1`.
 
-+ dim: `alpha = -1`.
-
-*References:*
-
+# References
 **J.C. Nash**, Compact Numerical Methods for Computers:
     Linear Algebra and Function Minimisation, second edition,
     Adam Hilger, Bristol, 1990 (Appendix 1).

@@ -24,9 +24,8 @@ The magic matrix is a matrix with integer entries such that
     the row elements, column elements, diagonal elements and
     anti-diagonal elements all add up to the same number.
 
-*Input options:*
-
-+ dim: the dimension of the matrix.
+# Input Options
+- dim: the dimension of the matrix.
 """
 struct Magic{T<:Number} <: AbstractMatrix{T}
     n::Integer

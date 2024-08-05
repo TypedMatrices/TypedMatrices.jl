@@ -3,17 +3,14 @@ Triw Matrix
 ===========
 Upper triangular matrices discussed by Wilkinson and others.
 
-*Input options:*
-
-+ row_dim, col_dim, α, k: `row_dim` and `col_dim`
+# Input Options
+- row_dim, col_dim, α, k: `row_dim` and `col_dim`
         are row and column dimension of the matrix. `α` is a
         scalar representing the entries on the superdiagonals.
         `k` is the number of superdiagonals.
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **G. H. Golub and J. H. Wilkinson**, Ill-conditioned
 eigensystems and the computation of the Jordan canonical form,
 SIAM Review, 18(4), 1976, pp. 578-6

@@ -32,9 +32,8 @@ end
 """
 Random Matrix with Pre-assigned Singular Values
 ===============================================
-*Input options:*
-
-+ row_dim, col_dim, kappa, mode: `row_dim` and `col_dim`
+# Input Options
+- row_dim, col_dim, kappa, mode: `row_dim` and `col_dim`
     are the row and column dimensions.
   `kappa` is the condition number of the matrix.
   `mode = 1`: one large singular value.
@@ -42,15 +41,11 @@ Random Matrix with Pre-assigned Singular Values
   `mode = 3`: geometrically distributed singular values.
   `mode = 4`: arithmetrically distributed singular values.
   `mode = 5`: random singular values with  unif. dist. logarithm.
+- dim, kappa, mode: `row_dim = col_dim = dim`.
+- dim, kappa: `mode = 3`.
+- dim: `kappa = sqrt(1/eps())`, `mode = 3`.
 
-+ dim, kappa, mode: `row_dim = col_dim = dim`.
-
-+ dim, kappa: `mode = 3`.
-
-+ dim: `kappa = sqrt(1/eps())`, `mode = 3`.
-
-*References:*
-
+# References
 **N. J. Higham**, Accuracy and Stability of Numerical
 Algorithms, second edition, Society for Industrial and Applied Mathematics,
 Philadelphia, PA, USA, 2002; sec. 28.3.

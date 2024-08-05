@@ -4,12 +4,10 @@ Neumann Matrix
 A singular matrix from the discrete Neumann problem.
        The matrix is sparse and the null space is formed by a vector of ones
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix, must be a perfect square integer.
 
-+ dim: the dimension of the matrix, must be a perfect square integer.
-
-*References:*
-
+# References
 **R. J. Plemmons**, Regular splittings and the
           discrete Neumann problem, Numer. Math., 25 (1976), pp. 153-161.
 """

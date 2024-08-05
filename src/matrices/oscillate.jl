@@ -5,18 +5,14 @@ A matrix `A` is called oscillating if `A` is totally
     nonnegative and if there exists an integer `q > 0` such that
     `A^q` is totally positive.
 
-*Input options:*
-
-+ Σ: the singular value spectrum of the matrix.
-
-+ dim, mode: `dim` is the dimension of the matrix.
+# Input Options
+- Σ: the singular value spectrum of the matrix.
+- dim, mode: `dim` is the dimension of the matrix.
         `mode = 1`: geometrically distributed singular values.
         `mode = 2`: arithmetrically distributed singular values.
+- dim: `mode = 1`.
 
-+ dim: `mode = 1`.
-
-*References:*
-
+# References
 **Per Christian Hansen**, Test matrices for
     regularization methods. SIAM J. SCI. COMPUT Vol 16,
     No2, pp 506-512 (1995).

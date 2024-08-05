@@ -3,14 +3,11 @@ Prolate Matrix
 ==============
 A prolate matrix is a symmetirc, ill-conditioned Toeplitz matrix.
 
-*Input options:*
+# Input Options
+- dim, alpha: `dim` is the dimension of the matrix. `w` is a real scalar.
+- dim: the case when `w = 0.25`.
 
-+ dim, alpha: `dim` is the dimension of the matrix. `w` is a real scalar.
-
-+ dim: the case when `w = 0.25`.
-
-*References:*
-
+# References
 **J. M. Varah**. The Prolate Matrix. Linear Algebra and Appl.
              187:267--278, 1993.
 """

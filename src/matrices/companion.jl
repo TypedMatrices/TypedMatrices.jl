@@ -8,13 +8,10 @@ The companion matrix to a monic polynomial
     is the n-by-n matrix with ones on the subdiagonal and
     the last column given by the coefficients of `a(x)`.
 
-*Input options:*
-
-+ vec: `vec` is a vector of coefficients.
-
-+ dim: `vec = [1:dim;]`. `dim` is the dimension of the matrix.
-
-+ polynomial: `polynomial` is a polynomial. vector will be appropriate values from coefficients.
+# Input Options
+- vec: `vec` is a vector of coefficients.
+- dim: `vec = [1:dim;]`. `dim` is the dimension of the matrix.
+- polynomial: `polynomial` is a polynomial. vector will be appropriate values from coefficients.
 """
 struct Companion{T<:Number} <: AbstractMatrix{T}
     n::Integer

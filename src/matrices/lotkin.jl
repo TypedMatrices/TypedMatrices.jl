@@ -5,12 +5,10 @@ The Lotkin matrix is the Hilbert matrix with its first row
         altered to all ones. It is unsymmetric, illcond and
         has many negative eigenvalues of small magnitude.
 
-*Input options:*
+# Input Options
+- dim: `dim` is the dimension of the matrix.
 
-+ dim: `dim` is the dimension of the matrix.
-
-*References:*
-
+# References
 **M. Lotkin**, A set of test matrices, MTAC, 9 (1955), pp. 153-161.
 """
 struct Lotkin{T<:Number} <: AbstractMatrix{T}

@@ -6,17 +6,13 @@ The Kahan matrix is an upper trapezoidal matrix, i.e., the
     `θ` is `0 < θ < π`. The diagonal is perturbed by
     `pert*eps()*diagm([n:-1:1;])`.
 
-*Input options:*
-
-+ rowdim, coldim, θ, pert: `rowdim` and `coldim` are the row and column
+# Input Options
+- rowdim, coldim, θ, pert: `rowdim` and `coldim` are the row and column
     dimensions of the matrix. `θ` and `pert` are scalars.
+- dim, θ, pert: `dim` is the dimension of the matrix.
+- dim: `θ = 1.2`, `pert = 25`.
 
-+ dim, θ, pert: `dim` is the dimension of the matrix.
-
-+ dim: `θ = 1.2`, `pert = 25`.
-
-*References:*
-
+# References
 **W. Kahan**, Numerical linear algebra, Canadian Math.
     Bulletin, 9 (1966), pp. 757-801.
 """

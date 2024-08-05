@@ -5,14 +5,11 @@ A circulant matrix has the property that each row is obtained
 by cyclically permuting the entries of the previous row one
 step forward.
 
-*Input options:*
+# Input Options
+- vec: a vector.
+- dim: an integer, as vector 1:dim.
 
-+ vec: a vector.
-
-+ dim: an integer, as vector 1:dim.
-
-*References:*
-
+# References
 **P. J. Davis**, Circulant Matrices, John Wiley, 1977.
 """
 struct Circulant{T<:Number} <: AbstractMatrix{T}

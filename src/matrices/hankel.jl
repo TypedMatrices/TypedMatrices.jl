@@ -4,15 +4,12 @@ Hankel Matrix
 A Hankel matrix is a matrix that is symmetric and constant
                 across the anti-diagonals.
 
-*Input options:*
-
-+ vc, vr: `vc` and `vc` are the first column and last row of the
+# Input Options
+- vc, vr: `vc` and `vc` are the first column and last row of the
        matrix. If the last element of `vc` differs from the first element
                 of `vr`, the last element of `rc` prevails.
-
-+ v: a vector, as `vc = v` and `vr` will be zeros.
-
-+ dim: `dim` is the dimension of the matrix. `v = [1:dim;]`.
+- v: a vector, as `vc = v` and `vr` will be zeros.
+- dim: `dim` is the dimension of the matrix. `v = [1:dim;]`.
 """
 struct Hankel{T<:Number} <: AbstractMatrix{T}
     m::Integer

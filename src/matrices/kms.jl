@@ -2,15 +2,12 @@
 Kac-Murdock-Szego Toeplitz matrix
 =================================
 
-*Input options:*
-
-+ dim, rho: `dim` is the dimension of the matrix, `rho` is a
+# Input Options
+- dim, rho: `dim` is the dimension of the matrix, `rho` is a
     scalar such that `A[i,j] = rho^(abs(i-j))`.
+- dim: `rho = 0.5`.
 
-+ dim: `rho = 0.5`.
-
-*References:*
-
+# References
 **W. F. Trench**, Numerical solution of the eigenvalue
     problem for Hermitian Toeplitz matrices, SIAM J. Matrix Analysis
     and Appl., 10 (1989), pp. 135-146 (and see the references therein).

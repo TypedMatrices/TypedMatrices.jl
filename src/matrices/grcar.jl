@@ -4,15 +4,12 @@ Grcar Matrix
 The Grcar matrix is a Toeplitz matrix with sensitive
 eigenvalues.
 
-*Input options:*
-
-+ dim, k: `dim` is the dimension of the matrix and
+# Input Options
+- dim, k: `dim` is the dimension of the matrix and
     `k` is the number of superdiagonals.
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **J. F. Grcar**, Operator coefficient methods
     for linear equations, Report SAND89-8691, Sandia National
     Laboratories, Albuquerque, New Mexico, 1989 (Appendix 2).

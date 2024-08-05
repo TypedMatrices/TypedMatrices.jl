@@ -3,16 +3,13 @@ Chow Matrix
 ===========
 The Chow matrix is a singular Toeplitz lower Hessenberg matrix.
 
-*Input options:*
-
-+ dim, alpha, delta: `dim` is dimension of the matrix.
+# Input Options
+- dim, alpha, delta: `dim` is dimension of the matrix.
             `alpha`, `delta` are scalars such that `A[i,i] = alpha + delta` and
             `A[i,j] = alpha^(i + 1 -j)` for `j + 1 <= i`.
+- dim: `alpha = 1`, `delta = 0`.
 
-+ dim: `alpha = 1`, `delta = 0`.
-
-*References:*
-
+# References
 **T. S. Chow**, A class of Hessenberg matrices with known
                 eigenvalues and inverses, SIAM Review, 11 (1969), pp. 391-395.
 """

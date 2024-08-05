@@ -5,15 +5,12 @@ The Frank matrix is an upper Hessenberg matrix with
 determinant 1. The eigenvalues are real, positive and
 very ill conditioned.
 
-*Input options:*
-
-+ dim, k: `dim` is the dimension of the matrix, `k = 0 or 1`.
+# Input Options
+- dim, k: `dim` is the dimension of the matrix, `k = 0 or 1`.
     If `k = 1` the matrix reflect about the anti-diagonal.
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **W. L. Frank**, Computing eigenvalues of complex matrices
     by determinant evaluation and by methods of Danilewski and Wielandt,
     J. Soc. Indust. Appl. Math., 6 (1958), pp. 378-392 (see pp. 385, 388).

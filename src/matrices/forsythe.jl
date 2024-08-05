@@ -4,12 +4,10 @@ Forsythe Matrix
 The Forsythe matrix is a n-by-n perturbed Jordan block.
 This generator is adapted from N. J. Higham's Test Matrix Toolbox.
 
-*Input options:*
-
-+ dim, alpha, lambda: `dim` is the dimension of the matrix.
+# Input Options
+- dim, alpha, lambda: `dim` is the dimension of the matrix.
     `alpha` and `lambda` are scalars.
-
-+ dim: `alpha = sqrt(eps(type))` and `lambda = 0`.
+- dim: `alpha = sqrt(eps(type))` and `lambda = 0`.
 """
 struct Forsythe{T<:Number} <: AbstractMatrix{T}
     n::Integer

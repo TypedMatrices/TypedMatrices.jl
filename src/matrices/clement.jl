@@ -4,16 +4,13 @@ Clement Matrix
 The Clement matrix is a tridiagonal matrix with zero
         diagonal entries. If k = 1, the matrix is symmetric.
 
-*Input options:*
-
-+ dim, k: `dim` is the dimension of the matrix.
+# Input Options
+- dim, k: `dim` is the dimension of the matrix.
         If `k = 0`, the matrix is of type `Tridiagonal`.
         If `k = 1`, the matrix is of type `SymTridiagonal`.
+- dim: `k = 0`.
 
-+ dim: `k = 0`.
-
-*References:*
-
+# References
 **P. A. Clement**, A class of triple-diagonal
         matrices for test purposes, SIAM Review, 1 (1959), pp. 50-52.
 """

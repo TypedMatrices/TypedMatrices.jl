@@ -1,12 +1,11 @@
 """
 Inverse of the Hilbert Matrix
 =============================
-*Input options:*
 
-+ dim: the dimension of the matrix.
+# Input Options
+- dim: the dimension of the matrix.
 
-*References:*
-
+# References
 **M. D. Choi**, Tricks or treats with the Hilbert matrix,
     Amer. Math. Monthly, 90 (1983), pp. 301-312.
 

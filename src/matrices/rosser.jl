@@ -13,17 +13,14 @@ Rosser Matrix
 The Rosser matrix’s eigenvalues are very close together
         so it is a challenging matrix for many eigenvalue algorithms.
 
-*Input options:*
-
-+ dim, a, b: `dim` is the dimension of the matrix.
+# Input Options
+- dim, a, b: `dim` is the dimension of the matrix.
             `dim` must be a power of 2.
             `a` and `b` are scalars. For `dim = 8, a = 2` and `b = 1`, the generated
             matrix is the test matrix used by Rosser.
+- dim: `a = rand(1:5), b = rand(1:5)`.
 
-+ dim: `a = rand(1:5), b = rand(1:5)`.
-
-*References:*
-
+# References
 **J. B. Rosser, C. Lanczos, M. R. Hestenes, W. Karush**,
             Separation of close eigenvalues of a real symmetric matrix,
             Journal of Research of the National Bureau of Standards, v(47)

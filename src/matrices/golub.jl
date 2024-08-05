@@ -5,12 +5,10 @@ Golub matrix is the product of two random unit lower and upper
     triangular matrices respectively. LU factorization without pivoting
     fails to reveal that such matrices are badly conditioned.
 
-*Input options:*
+# Input Options
+- dim: the dimension of the matrix.
 
-+ dim: the dimension of the matrix.
-
-*References:*
-
+# References
 **D. Viswanath and N. Trefethen**. Condition Numbers of
     Random Triangular Matrices, SIAM J. Matrix Anal. Appl. 19, 564-581,
     1998.
