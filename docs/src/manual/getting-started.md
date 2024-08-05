@@ -8,7 +8,7 @@ TypedMatrices.jl is a registered package in the Julia package registry. Use Juli
 pkg> add TypedMatrices
 ```
 
-## Usage
+## Setup
 
 Use the package:
 
