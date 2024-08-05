@@ -2,6 +2,8 @@
 Inverse of the Hilbert Matrix
 =============================
 
+See also [`Hilbert`](@ref).
+
 # Input Options
 - dim: the dimension of the matrix.
 
