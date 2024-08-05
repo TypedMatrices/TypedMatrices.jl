@@ -19,7 +19,7 @@ Check [documentation][docs-stable-url] for more details.
 
 We sincerly appreciate the following packages:
 
-- [MatrixDepot.jl](https://github.com/JuliaLinearAlgebra/MatrixDepot.jl): some matrices' generation algorithm are inspired and adapted from this package.
+- [MatrixDepot.jl](https://github.com/JuliaLinearAlgebra/MatrixDepot.jl): some matrices' generation algorithm are inspired and adapted from this package. Also, most matrices' documentation are adapted from this package.
 - [SpecialMatrices.jl](https://github.com/JuliaLinearAlgebra/SpecialMatrices.jl): code structure and some matrices' manipulation functions are inspired and adapted from this package.
 
 ## References
