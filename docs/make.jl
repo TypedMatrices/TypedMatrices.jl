@@ -1,5 +1,3 @@
-push!(LOAD_PATH, "../src/")
-
 using Documenter, TypedMatrices
 
 DocMeta.setdocmeta!(TypedMatrices, :DocTestSetup, :(using TypedMatrices); recursive=true)
