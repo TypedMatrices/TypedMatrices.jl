@@ -8,7 +8,7 @@ export
 
 Types of properties.
 
-See also [`Property`](@ref), [`list_properties`](@ref).
+See also [`TypedMatrices.Property`](@ref), [`TypedMatrices.list_properties`](@ref).
 
 # Examples
 ```julia-repl
