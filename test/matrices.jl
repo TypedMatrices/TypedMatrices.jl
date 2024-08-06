@@ -30,6 +30,11 @@ remove_from_group(Matrix, USER_GROUP)
 @test_throws ArgumentError remove_from_group(Matrix, USER_GROUP)
 @test_throws ArgumentError remove_from_group(Matrix, Group(:notexists))
 
+# remove_from_group alternative interfaces
+add_to_groups(Matrix, USER_GROUP)
+remove_from_group(Matrix, :user)
+@test Matrix ∉ list_matrices(USER_GROUP)
+
 # remove_from_all_groups
 add_to_groups(Matrix, USER_GROUP, TEST_GROUP)
 add_to_groups(Tridiagonal, USER_GROUP, TEST_GROUP)
