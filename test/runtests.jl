@@ -1,5 +1,6 @@
-using TypedMatrices
 using Test
+using TypedMatrices
+using LinearAlgebra
 
 const builtin_matrices = list_matrices(Group(:builtin))
 
