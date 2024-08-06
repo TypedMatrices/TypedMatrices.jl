@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Getting Started · TypedMatrices.jl</title><meta name="title" content="Getting Started · TypedMatrices.jl"/><meta property="og:title" content="Getting Started · TypedMatrices.jl"/><meta property="twitter:title" content="Getting Started · TypedMatrices.jl"/><meta name="description" content="Documentation for TypedMatrices.jl."/><meta property="og:description" content="Documentation for TypedMatrices.jl."/><meta property="twitter:description" content="Documentation for TypedMatrices.jl."/><script data-outdated-warner src="../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../assets/documenter.js"></script><script src="../../search_index.js"></script><script src="../../siteinfo.js"></script><script src="../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../../">TypedMatrices.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../">Home</a></li><li><input class="collapse-toggle" id="menuitem-2" type="checkbox" checked/><label class="tocitem" for="menuitem-2"><span class="docs-label">Manual</span><i class="docs-chevron"></i></label><ul class="collapsed"><li class="is-active"><a class="tocitem" href>Getting Started</a><ul class="internal"><li><a class="tocitem" href="#Installation"><span>Installation</span></a></li><li><a class="tocitem" href="#Setup"><span>Setup</span></a></li><li><a class="tocitem" href="#Creating-Matrices"><span>Creating Matrices</span></a></li><li><a class="tocitem" href="#Properties"><span>Properties</span></a></li><li><a class="tocitem" href="#Grouping"><span>Grouping</span></a></li><li><a class="tocitem" href="#Finding-Matrices"><span>Finding Matrices</span></a></li></ul></li></ul></li><li><a class="tocitem" href="../../reference/">Reference</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Manual</a></li><li class="is-active"><a href>Getting Started</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Getting Started</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/AnzhiZhang/TypedMatrices.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/AnzhiZhang/TypedMatrices.jl/blob/master/docs/src/manual/getting-started.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Getting-Started"><a class="docs-heading-anchor" href="#Getting-Started">Getting Started</a><a id="Getting-Started-1"></a><a class="docs-heading-anchor-permalink" href="#Getting-Started" title="Permalink"></a></h1><h2 id="Installation"><a class="docs-heading-anchor" href="#Installation">Installation</a><a id="Installation-1"></a><a class="docs-heading-anchor-permalink" href="#Installation" title="Permalink"></a></h2><p>TypedMatrices.jl is a registered package in the Julia package registry. Use Julia&#39;s package manager to install it:</p><pre><code class="language-julia-repl hljs">pkg&gt; add TypedMatrices</code></pre><h2 id="Setup"><a class="docs-heading-anchor" href="#Setup">Setup</a><a id="Setup-1"></a><a class="docs-heading-anchor-permalink" href="#Setup" title="Permalink"></a></h2><p>Use the package:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; using TypedMatrices</code><code class="nohighlight hljs ansi" style="display:block;"></code></pre><p>You can list all matrices available with <a href="../../reference/#TypedMatrices.list_matrices"><code>list_matrices</code></a>:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices()</code><code class="nohighlight hljs ansi" style="display:block;">42-element Vector{Type{&lt;:AbstractMatrix}}:
+ Prolate
+ Hilbert
+ Kahan
+ Sampling
+ Circulant
+ Companion
+ Hankel
+ Neumann
+ Clement
+ Lehmer
+ ⋮
+ Randcorr
+ Grcar
+ Minij
+ Parter
+ Poisson
+ Wilkinson
+ Involutory
+ Chow
+ KMS</code></pre><h2 id="Creating-Matrices"><a class="docs-heading-anchor" href="#Creating-Matrices">Creating Matrices</a><a id="Creating-Matrices-1"></a><a class="docs-heading-anchor-permalink" href="#Creating-Matrices" title="Permalink"></a></h2><p>Each type of matrix has its own type and constructors. For example, to create a 5x5 <a href="../../reference/#TypedMatrices.Hilbert">Hilbert</a> matrix:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; h = Hilbert(5)</code><code class="nohighlight hljs ansi" style="display:block;">5×5 Hilbert{Rational{Int64}}:
+  1    1//2  1//3  1//4  1//5
+ 1//2  1//3  1//4  1//5  1//6
+ 1//3  1//4  1//5  1//6  1//7
+ 1//4  1//5  1//6  1//7  1//8
+ 1//5  1//6  1//7  1//8  1//9</code></pre><p>Most matrices can accept a type parameter to specify the element type. For example, to create a 5x5 Hilbert matrix with <code>Float64</code> elements:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; Hilbert{Float64}(5)</code><code class="nohighlight hljs ansi" style="display:block;">5×5 Hilbert{Float64}:
+ 1.0       0.5       0.333333  0.25      0.2
+ 0.5       0.333333  0.25      0.2       0.166667
+ 0.333333  0.25      0.2       0.166667  0.142857
+ 0.25      0.2       0.166667  0.142857  0.125
+ 0.2       0.166667  0.142857  0.125     0.111111</code></pre><p>Please check <a href="../../reference/#Builtin-Matrices">Builtin Matrices</a> in <a href="../../reference/#Reference">Reference</a> for all available builtin matrices.</p><h2 id="Properties"><a class="docs-heading-anchor" href="#Properties">Properties</a><a id="Properties-1"></a><a class="docs-heading-anchor-permalink" href="#Properties" title="Permalink"></a></h2><p>Matrix has properties like <code>symmetric</code>, <code>illcond</code>, and <code>posdef</code>. Function <a href="../../reference/#TypedMatrices.properties"><code>properties</code></a> can be used to get the properties of a matrix:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; properties(Hilbert)</code><code class="nohighlight hljs ansi" style="display:block;">4-element Vector{Property}:
+ Property(:symmetric)
+ Property(:inverse)
+ Property(:illcond)
+ Property(:posdef)</code></pre><p>You can also check properties of a matrix instance for convinience:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; properties(h)</code><code class="nohighlight hljs ansi" style="display:block;">4-element Vector{Property}:
+ Property(:symmetric)
+ Property(:inverse)
+ Property(:illcond)
+ Property(:posdef)</code></pre><p>To view all available properties, use <a href="../../reference/#TypedMatrices.list_properties"><code>list_properties</code></a>:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_properties()</code><code class="nohighlight hljs ansi" style="display:block;">9-element Vector{Property}:
+ Property(:regprob)
+ Property(:eigen)
+ Property(:symmetric)
+ Property(:posdef)
+ Property(:sparse)
+ Property(:random)
+ Property(:inverse)
+ Property(:graph)
+ Property(:illcond)</code></pre><h2 id="Grouping"><a class="docs-heading-anchor" href="#Grouping">Grouping</a><a id="Grouping-1"></a><a class="docs-heading-anchor-permalink" href="#Grouping" title="Permalink"></a></h2><p>This package has a grouping feature to group matrices. All builtin matrices are in the <code>builtin</code> group, we also create a <code>user</code> group for user-defined matrices. You can list all groups with:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_groups()</code><code class="nohighlight hljs ansi" style="display:block;">2-element Vector{Group}:
+ Group(:user)
+ Group(:builtin)</code></pre><p>To add a matrix to groups and enable it to be listed by <a href="../../reference/#TypedMatrices.list_matrices"><code>list_matrices</code></a>, use <a href="../../reference/#TypedMatrices.add_to_groups"><code>add_to_groups</code></a>:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Matrix, :user, :test)</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(Group(:user))</code><code class="nohighlight hljs ansi" style="display:block;">1-element Vector{Type{&lt;:AbstractMatrix}}:
+ Matrix<span class="sgr90"> (alias for Array{T, 2} where T)</span></code></pre><p>We can also add builtin matrices to our own groups:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Hilbert, :test)</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(Group(:test))</code><code class="nohighlight hljs ansi" style="display:block;">2-element Vector{Type{&lt;:AbstractMatrix}}:
+ Hilbert
+ Matrix<span class="sgr90"> (alias for Array{T, 2} where T)</span></code></pre><p>To remove a matrix from a group or all groups, use <a href="../../reference/#TypedMatrices.remove_from_group"><code>remove_from_group</code></a> or <a href="../../reference/#TypedMatrices.remove_from_all_groups"><code>remove_from_all_groups</code></a>. The empty group will automatically be removed:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; remove_from_group(Hilbert, :test)</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; remove_from_all_groups(Matrix)</code><code class="nohighlight hljs ansi" style="display:block;"></code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_groups()</code><code class="nohighlight hljs ansi" style="display:block;">2-element Vector{Group}:
+ Group(:user)
+ Group(:builtin)</code></pre><h2 id="Finding-Matrices"><a class="docs-heading-anchor" href="#Finding-Matrices">Finding Matrices</a><a id="Finding-Matrices-1"></a><a class="docs-heading-anchor-permalink" href="#Finding-Matrices" title="Permalink"></a></h2><p><a href="../../reference/#TypedMatrices.list_matrices"><code>list_matrices</code></a> is very powerful to list matrices, and filter by groups and properties. All arguments are &quot;and&quot; relationship, i.e. listed matrices must satisfy all conditions.</p><p>For example, to list all matrices in the <code>builtin</code> group, and all matrices with <code>symmetric</code> property:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(Group(:builtin))</code><code class="nohighlight hljs ansi" style="display:block;">42-element Vector{Type{&lt;:AbstractMatrix}}:
+ Prolate
+ Hilbert
+ Kahan
+ Sampling
+ Circulant
+ Companion
+ Hankel
+ Neumann
+ Clement
+ Lehmer
+ ⋮
+ Randcorr
+ Grcar
+ Minij
+ Parter
+ Poisson
+ Wilkinson
+ Involutory
+ Chow
+ KMS</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(Property(:symmetric))</code><code class="nohighlight hljs ansi" style="display:block;">20-element Vector{Type{&lt;:AbstractMatrix}}:
+ Prolate
+ Hilbert
+ Circulant
+ Hankel
+ Clement
+ Lehmer
+ Wathen
+ Fiedler
+ Pei
+ Moler
+ DingDong
+ InverseHilbert
+ Cauchy
+ Oscillate
+ Pascal
+ Randcorr
+ Minij
+ Poisson
+ Wilkinson
+ KMS</code></pre><p>To list all matrices in the <code>builtin</code> group with <code>inverse</code>, <code>illcond</code>, and <code>eigen</code> properties:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(
+           [
+               Group(:builtin),
+           ],
+           [
+               Property(:inverse),
+               Property(:illcond),
+               Property(:eigen),
+           ]
+       )</code><code class="nohighlight hljs ansi" style="display:block;">4-element Vector{Type{&lt;:AbstractMatrix}}:
+ Forsythe
+ Lotkin
+ Pascal
+ Involutory</code></pre><p>To list all matrices with <code>symmetric</code>, <code>eigen</code>, and <code>posdef</code> properties:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; list_matrices(:symmetric, :eigen, :posdef)</code><code class="nohighlight hljs ansi" style="display:block;">6-element Vector{Type{&lt;:AbstractMatrix}}:
+ Circulant
+ Wathen
+ Oscillate
+ Pascal
+ Minij
+ Poisson</code></pre><p>There are many alternative interfaces using <code>list_matrices</code>, please check the <a href="../../reference/#TypedMatrices.list_matrices"><code>list_matrices</code></a> or use Julia help system for more information.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../">« Home</a><a class="docs-footer-nextpage" href="../../reference/">Reference »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.5.0 on <span class="colophon-date" title="Tuesday 6 August 2024 11:40">Tuesday 6 August 2024</span>. Using Julia version 1.10.4.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
