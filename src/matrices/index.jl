@@ -135,9 +135,9 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
 
 # """
 #     @builtin MatrixType
-
+#
 # Add a matrix type to the builtin group and export it.
-
+#
 # # Examples
 # ```julia-repl
 # julia> @builtin Matrix
@@ -150,7 +150,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
 #         push!(MATRIX_GROUPS[GROUP_BUILTIN], $type)
 #     end
 # end
-
+#
 # include("linearalgebra.jl")
 # @builtin Binomial "binomial.jl"
 # @builtin Cauchy "cauchy.jl"
