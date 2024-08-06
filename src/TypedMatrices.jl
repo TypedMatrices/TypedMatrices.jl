@@ -9,8 +9,6 @@ import Base: getindex, size, inv
 
 include("types.jl")
 include("metadata.jl")
-
-# all matrices
-include("matrices/index.jl")
+include("matrices.jl")
 
 end
