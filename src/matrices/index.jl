@@ -140,7 +140,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Toeplitz,
     Triw,
     Wathen,
-    Wilkinson
+    Wilkinson,
 ])
 MATRIX_GROUPS[GROUP_USER] = Set([])
 
