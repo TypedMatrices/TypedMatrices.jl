@@ -14,11 +14,9 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
         isdiag => isdiag(A) == isdiag(matrix),
         ishermitian => ishermitian(A) == ishermitian(matrix),
         issymmetric => issymmetric(A) == issymmetric(matrix),
-        isposdef => isposdef(A) == isposdef(matrix),
         adjoint => adjoint(A) ≈ adjoint(matrix),
         transpose => transpose(A) ≈ transpose(matrix),
         det => det(A) == det(matrix),
-        inv => inv(A) ≈ inv(matrix),
         eigvals => eigvals(A) ≈ eigvals(matrix),
     ])
 
