@@ -18,4 +18,4 @@
 ])
 
 # linear algebra functions
-@test test_linearalgrbra_functions(Cauchy{Float64}(5))
+test_linearalgrbra_functions(Cauchy{Float64}.(1:5))

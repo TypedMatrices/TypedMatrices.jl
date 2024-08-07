@@ -11,4 +11,4 @@
 ])
 
 # linear algebra functions
-@test test_linearalgrbra_functions(Binomial(5))
+test_linearalgrbra_functions(Binomial.(1:5))
