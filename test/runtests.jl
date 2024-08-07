@@ -34,6 +34,12 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     end
 end
 
+function test_linearalgrbra_functions(matrices::Vector{<:AbstractMatrix})
+    for matrix = matrices
+        @test test_linearalgrbra_functions(matrix)
+    end
+end
+
 if VERSION < v"1.8"
     allequal(itr) = isempty(itr) ? true : all(isequal(first(itr)), itr)
 end
