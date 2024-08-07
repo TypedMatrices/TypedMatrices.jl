@@ -29,6 +29,10 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     end
 end
 
+if VERSION < v"1.8"
+    allequal(itr) = isempty(itr) ? true : all(isequal(first(itr)), itr)
+end
+
 @testset "TypedMatrices.jl" begin
     include("types.jl")
     include("metadata.jl")
