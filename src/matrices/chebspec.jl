@@ -46,6 +46,7 @@ end
 # constructors
 ChebSpec(n::Integer) = ChebSpec(n, 0)
 ChebSpec(n::Integer, k::Integer) = ChebSpec{Float64}(n, k)
+ChebSpec{T}(n::Integer) where {T<:Number} = ChebSpec{T}(n, 0)
 
 # metadata
 @properties ChebSpec [:eigen]
