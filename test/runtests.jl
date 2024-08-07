@@ -39,12 +39,14 @@ if VERSION < v"1.8"
 end
 
 @testset "TypedMatrices.jl" begin
-    include("types.jl")
-    include("metadata.jl")
-    include("matrices.jl")
+    @testset "core" begin
+        include("types.jl")
+        include("metadata.jl")
+        include("matrices.jl")
+    end
 
     @testset "matrices" begin
-        for file = readdir("matrices")
+        @testset "$file" for file = readdir("matrices")
             include("matrices/$file")
         end
     end
