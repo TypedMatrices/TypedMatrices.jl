@@ -31,8 +31,10 @@ end
 Cauchy(x::Integer) = Cauchy(x, x)
 Cauchy(x::Integer, y::Integer) = Cauchy([1:x;], [1:y;])
 Cauchy(x::AbstractVector) = Cauchy(x, x)
-Cauchy{T}(x::AbstractVector) where {T} = Cauchy{T}(x, x)
 Cauchy(x::AbstractVector{S}, y::AbstractVector{N}) where {S<:Number,N<:Number} = Cauchy{promote_type(S, N)}(x, y)
+Cauchy{T}(x::Integer) where {T<:Number} = Cauchy{T}(x, x)
+Cauchy{T}(x::Integer, y::Integer) where {T<:Number} = Cauchy{T}([1:x;], [1:y;])
+Cauchy{T}(x::AbstractVector) where {T} = Cauchy{T}(x, x)
 Cauchy{T}(x::AbstractVector{S}, y::AbstractVector{N}) where {T<:Integer,S<:Number,N<:Number} = Cauchy{Rational{T}}(x, y)
 
 # metadata
