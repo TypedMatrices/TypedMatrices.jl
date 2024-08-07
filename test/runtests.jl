@@ -22,6 +22,12 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
         eigvals => eigvals(A) ≈ eigvals(matrix),
     ])
 
+    # https://github.com/JuliaLang/julia/issues/55404
+    if VERSION >= v"1.10"
+        result[isposdef] = isposdef(A) == isposdef(matrix)
+        result[inv] = inv(A) ≈ inv(matrix)
+    end
+
     if all(values(result))
         return true
     else
