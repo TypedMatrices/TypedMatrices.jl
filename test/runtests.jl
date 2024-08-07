@@ -10,7 +10,7 @@ end
 
 function test_linearalgrbra_functions(A::AbstractMatrix)
     matrix = Matrix(A)
-    return all([
+    result = [
         isdiag(A) == isdiag(matrix),
         ishermitian(A) == ishermitian(matrix),
         isposdef(A) == isposdef(matrix),
@@ -20,7 +20,13 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
         det(A) == det(matrix),
         inv(A) ≈ inv(matrix),
         eigvals(A) ≈ eigvals(matrix),
-    ])
+    ]
+    if all(result)
+        return true
+    else
+        @error result
+        return false
+    end
 end
 
 @testset "TypedMatrices.jl" begin
