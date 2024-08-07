@@ -52,7 +52,7 @@ matrices = list_matrices()
 @test_throws ArgumentError list_matrices(Group(:notexists))
 
 # list_matrices filtering
-@properties Matrix [:symmetric, :inverse]
+@suppress @properties Matrix [:symmetric, :inverse]
 add_to_groups(Matrix, USER_GROUP, TEST_GROUP)
 @test Matrix ∉ list_matrices(:posdef)
 @test Matrix ∈ list_matrices(:symmetric)
