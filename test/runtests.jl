@@ -10,18 +10,19 @@ end
 
 function test_linearalgrbra_functions(A::AbstractMatrix)
     matrix = Matrix(A)
-    result = [
-        isdiag(A) == isdiag(matrix),
-        ishermitian(A) == ishermitian(matrix),
-        isposdef(A) == isposdef(matrix),
-        issymmetric(A) == issymmetric(matrix),
-        adjoint(A) ≈ adjoint(matrix),
-        transpose(A) ≈ transpose(matrix),
-        det(A) == det(matrix),
-        inv(A) ≈ inv(matrix),
-        eigvals(A) ≈ eigvals(matrix),
-    ]
-    if all(result)
+    result = Dict([
+        isdiag => isdiag(A) == isdiag(matrix),
+        ishermitian => ishermitian(A) == ishermitian(matrix),
+        issymmetric => issymmetric(A) == issymmetric(matrix),
+        isposdef => isposdef(A) == isposdef(matrix),
+        adjoint => adjoint(A) ≈ adjoint(matrix),
+        transpose => transpose(A) ≈ transpose(matrix),
+        det => det(A) == det(matrix),
+        inv => inv(A) ≈ inv(matrix),
+        eigvals => eigvals(A) ≈ eigvals(matrix),
+    ])
+
+    if all(values(result))
         return true
     else
         @error result
