@@ -25,7 +25,8 @@ struct Fiedler{T<:Number} <: AbstractMatrix{T}
 end
 
 # constructors
-Fiedler(n::T) where {T<:Integer} = Fiedler(T[1:n;])
+Fiedler(n::Integer) = Fiedler{Int}(n)
+Fiedler{T}(n::Integer) where {T<:Number} = Fiedler(T[1:n;])
 
 # metadata
 @properties Fiedler [:inverse, :symmetric, :eigen]
