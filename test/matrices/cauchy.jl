@@ -5,7 +5,7 @@
     Cauchy([1:5;]),
     Cauchy([1:5;], [1:5;]),
     Cauchy{Int}(5),
-    Cauchy{Int}(5,5),
+    Cauchy{Int}(5, 5),
     Cauchy{Int}([1:5;]),
     Cauchy{Int}([1:5;], [1:5;]),
     Cauchy{Int}([1:5;], [1:5;]),
