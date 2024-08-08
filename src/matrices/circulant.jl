@@ -22,7 +22,8 @@ struct Circulant{T<:Number} <: AbstractMatrix{T}
 end
 
 # constructors
-Circulant(n::T) where {T<:Integer} = Circulant(T[1:n;])
+Circulant(n::Integer) = Circulant{Int}(n)
+Circulant{T}(n::Integer) where {T<:Number} = Circulant(T[1:n;])
 
 # metadata
 @properties Circulant [:symmetric, :posdef, :eigen]
