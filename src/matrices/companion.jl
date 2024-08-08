@@ -23,8 +23,10 @@ struct Companion{T<:Number} <: AbstractMatrix{T}
 end
 
 # constructors
-Companion(n::T) where {T<:Integer} = Companion(T[1:n;])
-Companion(polynomial::Polynomial) = Companion(-polynomial.coeffs[end-1:-1:begin] ./ polynomial.coeffs[end])
+Companion(n::Integer) = Companion{Int}(n)
+Companion(polynomial::Polynomial) = Companion{Float64}(polynomial)
+Companion{T}(n::Integer) where {T<:Number} = Companion(T[1:n;])
+Companion{T}(polynomial::Polynomial) where {T<:Number} = Companion(T.(-polynomial.coeffs[end-1:-1:begin] ./ polynomial.coeffs[end]))
 
 # properties
 size(A::Companion) = (A.n, A.n)
