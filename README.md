@@ -33,8 +33,8 @@ We sincerly appreciate the following packages:
 [codecov-img]: https://codecov.io/github/AnzhiZhang/TypedMatrices.jl/coverage.svg
 [codecov-url]: https://codecov.io/github/AnzhiZhang/TypedMatrices.jl
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
-[docs-stable-url]: https://typedmatrices.zhanganzhi.com/stable
+[docs-stable-url]: https://typedmatrices.github.io/TypedMatrices.jl/stable/
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
-[docs-dev-url]: https://typedmatrices.zhanganzhi.com/dev/
+[docs-dev-url]: https://typedmatrices.github.io/TypedMatrices.jl/dev/
 [release-img]: https://shields.io/github/v/release/AnzhiZhang/TypedMatrices.jl?display_name=tag&include_prereleases
 [release-url]: https://github.com/AnzhiZhang/TypedMatrices.jl/releases/latest
