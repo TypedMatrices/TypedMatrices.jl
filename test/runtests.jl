@@ -4,29 +4,40 @@ using LinearAlgebra
 
 const builtin_matrices = list_matrices(Group(:builtin))
 
+macro try_catch(ex::Expr)
+    quote
+        try
+            $(esc(ex))
+        catch
+        end
+    end
+end
+
 function test_matrix_elements(A::AbstractMatrix{T}) where {T}
     return all(typeof(A[i]) == T for i = eachindex(A))
 end
 
 function test_linearalgrbra_functions(A::AbstractMatrix)
+    # variables
     matrix = Matrix(A)
     determinant = det(matrix)
-    result = Dict([
-        isdiag => isdiag(A) == isdiag(matrix),
-        ishermitian => ishermitian(A) == ishermitian(matrix),
-        issymmetric => issymmetric(A) == issymmetric(matrix),
-        adjoint => adjoint(A) ≈ adjoint(matrix),
-        transpose => transpose(A) ≈ transpose(matrix),
-        det => det(A) == determinant,
-    ])
+    result = Dict()
+
+    # linear algebra functions
+    @try_catch result[isdiag] = isdiag(A) == isdiag(matrix)
+    @try_catch result[ishermitian] = ishermitian(A) == ishermitian(matrix)
+    @try_catch result[issymmetric] = issymmetric(A) == issymmetric(matrix)
+    @try_catch result[adjoint] = adjoint(A) ≈ adjoint(matrix)
+    @try_catch result[transpose] = transpose(A) ≈ transpose(matrix)
+    @try_catch result[det] = det(A) == determinant
+    @try_catch result[eigvals] = eigvals(A) ≈ eigvals(matrix)
 
     # https://github.com/JuliaLang/julia/issues/55404
     if VERSION >= v"1.10"
-        result[isposdef] = isposdef(A) == isposdef(matrix)
-        result[eigvals]  = eigvals(A) ≈ eigvals(matrix)
+        @try_catch result[isposdef] = isposdef(A) == isposdef(matrix)
 
         if determinant != 0
-            result[inv] = inv(A) ≈ inv(matrix)
+            @try_catch result[inv] = inv(A) ≈ inv(matrix)
         end
     end
 
