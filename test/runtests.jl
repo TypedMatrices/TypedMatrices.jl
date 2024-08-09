@@ -69,6 +69,7 @@ if VERSION < v"1.8"
 end
 
 @testset "TypedMatrices.jl" begin
+    @info "Testing core features"
     @testset "core" begin
         include("types.jl")
         include("metadata.jl")
@@ -77,6 +78,7 @@ end
 
     @testset "matrices" begin
         @testset "$file" for file = readdir("matrices")
+            @info "Testing $file"
             include("matrices/$file")
         end
     end
