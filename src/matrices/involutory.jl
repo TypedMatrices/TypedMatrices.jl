@@ -36,7 +36,7 @@ size(A::Involutory) = (A.n, A.n)
     @boundscheck checkbounds(A, i, j)
 
     # size and hilbert element
-    n = A.n
+    n = T(A.n)
     element = A.M[i, j]
 
     # compute element
@@ -45,13 +45,15 @@ size(A::Involutory) = (A.n, A.n)
         element = d * element
     end
 
+    # update element if i > 1
     if i > 1
         for k = 1:i-1
             d = -(n + k) * (n - k) * d / (k * k)
         end
 
-        element = d * element
+        element = T(d) * element
     end
 
-    return T(element)
+    # return
+    return element
 end
