@@ -58,7 +58,7 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     end
 end
 
-function test_linearalgrbra_functions(matrices::Vector{<:AbstractMatrix})
+function run_test_linearalgrbra_functions(matrices::Vector{<:AbstractMatrix})
     for matrix = matrices
         @test test_linearalgrbra_functions(matrix)
     end

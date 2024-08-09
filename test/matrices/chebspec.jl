@@ -7,7 +7,7 @@
 ])
 
 # linear algebra functions
-test_linearalgrbra_functions(ChebSpec.(1:5))
+run_test_linearalgrbra_functions(ChebSpec.(1:5))
 
 # eltype
 @test test_matrix_elements(ChebSpec{Float32}(5))
