@@ -13,10 +13,11 @@ An involutory matrix is a matrix that is its own inverse.
 """
 struct Involutory{T<:Number} <: AbstractMatrix{T}
     n::Integer
+    M::AbstractMatrix{T}
 
     function Involutory{T}(n::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
-        return new{T}(n)
+        return new{T}(n, Hilbert{T}(n))
     end
 end
 
@@ -36,7 +37,7 @@ size(A::Involutory) = (A.n, A.n)
 
     # size and hilbert element
     n = T(A.n)
-    element = Hilbert{T}(A.n)[i, j]
+    element = A.M[i, j]
 
     # compute element
     d = -n
