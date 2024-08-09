@@ -21,30 +21,39 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     # variables
     matrix = Matrix(A)
     determinant = det(matrix)
-    result = Dict()
+    results = Dict{Function,Bool}()
 
     # linear algebra functions
-    @try_catch result[isdiag] = isdiag(A) == isdiag(matrix)
-    @try_catch result[ishermitian] = ishermitian(A) == ishermitian(matrix)
-    @try_catch result[issymmetric] = issymmetric(A) == issymmetric(matrix)
-    @try_catch result[adjoint] = adjoint(A) ≈ adjoint(matrix)
-    @try_catch result[transpose] = transpose(A) ≈ transpose(matrix)
-    @try_catch result[det] = det(A) == determinant
-    @try_catch result[eigvals] = eigvals(A) ≈ eigvals(matrix)
+    @try_catch results[isdiag] = isdiag(A) == isdiag(matrix)
+    @try_catch results[ishermitian] = ishermitian(A) == ishermitian(matrix)
+    @try_catch results[issymmetric] = issymmetric(A) == issymmetric(matrix)
+    @try_catch results[adjoint] = adjoint(A) ≈ adjoint(matrix)
+    @try_catch results[transpose] = transpose(A) ≈ transpose(matrix)
+    @try_catch results[det] = det(A) ≈ determinant
+    @try_catch results[eigvals] = eigvals(A) ≈ eigvals(matrix)
 
     # https://github.com/JuliaLang/julia/issues/55404
     if VERSION >= v"1.10"
-        @try_catch result[isposdef] = isposdef(A) == isposdef(matrix)
+        @try_catch results[isposdef] = isposdef(A) == isposdef(matrix)
 
         if determinant != 0
-            @try_catch result[inv] = inv(A) ≈ inv(matrix)
+            @try_catch results[inv] = inv(A) ≈ inv(matrix)
         end
     end
 
-    if all(values(result))
+    if all(values(results))
         return true
     else
-        @error result
+        # error message
+        display(A)
+        msgs = ["Following functions are not equal for matrix $(typeof(A)):"]
+        for (func, result) = results
+            if !result
+                push!(msgs, "$func(A) = $(func(A)), but $func(matrix) = $(func(matrix))")
+            end
+        end
+        @error join(msgs, "\n")
+
         return false
     end
 end
