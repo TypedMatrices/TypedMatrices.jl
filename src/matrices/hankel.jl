@@ -32,7 +32,8 @@ struct Hankel{T<:Number} <: AbstractMatrix{T}
 end
 
 # constructors
-Hankel(n::T) where {T<:Integer} = Hankel(T[1:n;])
+Hankel(n::Integer) = Hankel{Int}(n)
+Hankel{T}(n::Integer) where {T<:Number} = Hankel(T[1:n;])
 Hankel(v::AbstractVector{T}) where {T} = Hankel(v, T[])
 
 # metadata
