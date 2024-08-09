@@ -22,7 +22,7 @@ makedocs(
 
 if "deploy" in ARGS
     deploydocs(
-        repo = "github.com/AnzhiZhang/TypedMatrices.jl.git",
+        repo = "github.com/TypedMatrices/TypedMatrices.jl.git",
     )
 else
     @info "Skipping deployment ('deploy' not passed)"
