@@ -25,7 +25,7 @@ end
 # constructors
 KMS(n::Integer) = KMS(n, 0.5)
 KMS(n::Integer, rho::T) where {T<:Number} = KMS{T}(n, rho)
-KMS{T}(n::Integer) where {T<:Number} = KMS{T}(n, 0.5)
+KMS{T}(n::Integer) where {T<:Number} = KMS{T}(n, T(0.5))
 KMS{T}(n::Integer, rho::Number) where {T<:Number} = KMS{T}(n, convert(T, rho))
 
 # metadata
