@@ -30,8 +30,8 @@ We sincerly appreciate the following packages:
 [license-url]: LICENSE
 [action-img]: https://github.com/TypedMatrices/TypedMatrices.jl/actions/workflows/CI.yml/badge.svg?branch=master
 [action-url]: https://github.com/TypedMatrices/TypedMatrices.jl/actions/workflows/CI.yml?query=branch%3Amaster
-[codecov-img]: https://codecov.io/github/TypedMatrices/TypedMatrices.jl/coverage.svg
-[codecov-url]: https://codecov.io/github/TypedMatrices/TypedMatrices.jl
+[codecov-img]: https://codecov.io/gh/TypedMatrices/TypedMatrices.jl/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/TypedMatrices/TypedMatrices.jl
 [docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
 [docs-stable-url]: https://typedmatrices.github.io/TypedMatrices.jl/stable/
 [docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
