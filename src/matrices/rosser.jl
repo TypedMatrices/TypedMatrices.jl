@@ -39,14 +39,14 @@ struct Rosser{T<:Number} <: AbstractMatrix{T}
             lgn = 0
         else
             lgn = round(Integer, log2(n))
-        end
-        2^lgn != n && throw(ArgumentError("n must be positive integer and a power of 2."))
-
-        if n == 1 # handle 1-d case
-            return 611 * ones(T, 1, 1)
+            2^lgn != n && throw(ArgumentError("n must be positive integer and a power of 2."))
         end
 
-        if n == 2
+        if n == 0
+            A = Matrix{T}(undef, 0, 0)
+        elseif n == 1
+            A = 611 * ones(T, 1, 1)
+        elseif n == 2
             #eigenvalues are 500, 510
             B = T[101 1; 1 101]
             P = T[2 1; 1 -2]
@@ -104,8 +104,14 @@ end
 
 # constructors
 Rosser(n::Integer) = Rosser(n, rand(1:5), rand(1:5))
-Rosser(n::Integer, a::T, b::T) where {T<:Number} = Rosser{T}(n, a, b)
 Rosser{T}(n::Integer) where {T<:Number} = Rosser{T}(n, T(rand(1:5)), T(rand(1:5)))
+Rosser{T}(n::Integer, a::Number, b::Number) where {T<:Number} = Rosser{T}(n, convert(T, a), convert(T, b))
+function Rosser(n::Integer, a::Number, b::Number)
+    Ta = typeof(a)
+    Tb = typeof(b)
+    T = promote_type(Ta, Tb)
+    return Rosser{T}(n, convert(T, a), convert(T, b))
+end
 
 # metadata
 @properties Rosser [:illcond, :eigen, :random]
