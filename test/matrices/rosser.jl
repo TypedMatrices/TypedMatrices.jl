@@ -6,6 +6,7 @@
     size(Rosser{Float64}(4, 1, 1)),
 ])
 @test !isnothing(Rosser(0))
+@test !isnothing(Rosser(1))
 
 # linear algebra functions
 run_test_linearalgrbra_functions(Rosser.((2) .^ (1:4)))
