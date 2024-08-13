@@ -3,6 +3,7 @@
     KMS(5),
     KMS(5, 0.5),
     KMS{Float64}(5),
+    KMS{Float64}(5, Float32(0.5)),
     KMS{Float64}(5, 0.5),
 ])
 
