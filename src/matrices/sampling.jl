@@ -36,6 +36,10 @@ size(A::Sampling) = (A.n, A.n)
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Sampling{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
+    if A.n == 1
+        return zero(T)
+    end
+
     if i == j
         element = sum([A[i, index] for index = 1:A.n if index != i])
     else
