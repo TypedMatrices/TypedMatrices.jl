@@ -51,9 +51,6 @@ struct Magic{T<:Number} <: AbstractMatrix{T}
             p = div(n, 2)
             M = oddmagic(T, p)
             M = [M M.+2*p^2; M.+3*p^2 M.+p^2]
-            if n == 2
-                return M
-            end
             i = [1:p;]
             k = div(n - 2, 4)
             j = [[1:k;]; [(n-k+2):n;]]
