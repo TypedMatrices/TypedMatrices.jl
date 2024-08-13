@@ -8,7 +8,7 @@
 @test !isnothing(Rosser(0))
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Rohess.((2) .^ (1:4)))
+run_test_linearalgrbra_functions(Rosser.((2) .^ (1:4)))
 
 # eltype
-@test test_matrix_elements(Rohess{Float32}(4))
+@test test_matrix_elements(Rosser{Float32}(4))
