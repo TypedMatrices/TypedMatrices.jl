@@ -69,6 +69,12 @@ if VERSION < v"1.8"
 end
 
 @testset "TypedMatrices.jl" begin
+    SINGLE_TEST = false
+    if SINGLE_TEST
+        include("matrices/hilbert.jl")
+        return
+    end
+
     @info "Testing core features"
     @testset "core" begin
         include("types.jl")
