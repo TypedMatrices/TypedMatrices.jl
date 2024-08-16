@@ -40,7 +40,7 @@ Oscillate(n::Integer, mode::Integer) = Oscillate{Float64}(n, mode)
 Oscillate{T}(n::Integer) where {T<:Number} = Oscillate{T}(n, 2)
 function Oscillate{T}(n::Integer, mode::Integer) where {T<:Number}
     n >= 0 || throw(ArgumentError("$n < 0"))
-    mode ∈ [1, 2] || throw(ArgumentError("mode must be 1 or 2"))
+    mode ∈ 1:2 || throw(ArgumentError("mode must be 1 or 2"))
 
     κ = sqrt(1 / eps(T))
     if mode == 1
