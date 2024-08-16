@@ -15,6 +15,7 @@ makedocs(
         "Home" => "index.md",
         "Manual" => [
             "manual/getting-started.md",
+            "manual/performance.md",
         ],
         "Reference" => "reference.md",
     ],
