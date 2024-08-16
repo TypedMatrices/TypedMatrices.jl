@@ -14,6 +14,7 @@ struct Comparison{T<:Number} <: AbstractMatrix{T}
     k::Integer
 
     function Comparison(A::AbstractMatrix{T}, k::Integer) where {T}
+        k ∈ 0:1 || throw(ArgumentError("k must be 0 or 1."))
         return new{T}(A, k)
     end
 end
