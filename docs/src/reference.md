@@ -34,6 +34,7 @@ TypedMatrices.Companion
 TypedMatrices.Comparison
 TypedMatrices.Cycol
 TypedMatrices.DingDong
+TypedMatrices.Dorr
 TypedMatrices.Fiedler
 TypedMatrices.Forsythe
 TypedMatrices.Frank
