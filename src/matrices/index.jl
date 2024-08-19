@@ -13,6 +13,7 @@ export
     Fiedler,
     Forsythe,
     Frank,
+    GCDMat,
     Golub,
     Grcar,
     Hadamard,
@@ -61,6 +62,7 @@ include("dorr.jl")
 include("fiedler.jl")
 include("forsythe.jl")
 include("frank.jl")
+include("gcdmat.jl")
 include("golub.jl")
 include("grcar.jl")
 include("hadamard.jl")
@@ -109,6 +111,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Fiedler,
     Forsythe,
     Frank,
+    GCDMat,
     Golub,
     Grcar,
     Hadamard,

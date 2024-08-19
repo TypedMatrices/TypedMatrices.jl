@@ -38,6 +38,7 @@ TypedMatrices.Dorr
 TypedMatrices.Fiedler
 TypedMatrices.Forsythe
 TypedMatrices.Frank
+TypedMatrices.GCDMat
 TypedMatrices.Golub
 TypedMatrices.Grcar
 TypedMatrices.Hadamard
