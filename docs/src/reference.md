@@ -32,6 +32,7 @@ TypedMatrices.Circulant
 TypedMatrices.Clement
 TypedMatrices.Companion
 TypedMatrices.Comparison
+TypedMatrices.Cycol
 TypedMatrices.DingDong
 TypedMatrices.Fiedler
 TypedMatrices.Forsythe

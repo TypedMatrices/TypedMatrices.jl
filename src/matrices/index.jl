@@ -7,6 +7,7 @@ export
     Clement,
     Companion,
     Comparison,
+    Cycol,
     DingDong,
     Fiedler,
     Forsythe,
@@ -53,6 +54,7 @@ include("circulant.jl")
 include("clement.jl")
 include("companion.jl")
 include("comparison.jl")
+include("cycol.jl")
 include("dingdong.jl")
 include("fiedler.jl")
 include("forsythe.jl")
@@ -99,6 +101,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Clement,
     Companion,
     Comparison,
+    Cycol,
     DingDong,
     Fiedler,
     Forsythe,
