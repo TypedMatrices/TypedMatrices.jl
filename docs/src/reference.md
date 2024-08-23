@@ -40,6 +40,7 @@ TypedMatrices.Fiedler
 TypedMatrices.Forsythe
 TypedMatrices.Frank
 TypedMatrices.GCDMat
+TypedMatrices.GearMat
 TypedMatrices.Golub
 TypedMatrices.Grcar
 TypedMatrices.Hadamard
