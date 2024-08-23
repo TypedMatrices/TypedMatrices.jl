@@ -51,6 +51,7 @@ TypedMatrices.InverseHilbert
 TypedMatrices.Invhess
 TypedMatrices.Involutory
 TypedMatrices.Ipjfact
+TypedMatrices.JordBloc
 TypedMatrices.Kahan
 TypedMatrices.KMS
 TypedMatrices.Lehmer
