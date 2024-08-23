@@ -10,6 +10,7 @@ export
     Cycol,
     DingDong,
     Dorr,
+    Dramadah,
     Fiedler,
     Forsythe,
     Frank,
@@ -60,6 +61,7 @@ include("comparison.jl")
 include("cycol.jl")
 include("dingdong.jl")
 include("dorr.jl")
+include("dramadah.jl")
 include("fiedler.jl")
 include("forsythe.jl")
 include("frank.jl")
@@ -110,6 +112,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Cycol,
     DingDong,
     Dorr,
+    Dramadah,
     Fiedler,
     Forsythe,
     Frank,
