@@ -63,6 +63,7 @@ TypedMatrices.Prolate
 TypedMatrices.Randcorr
 TypedMatrices.Rando
 TypedMatrices.RandSVD
+TypedMatrices.RIS
 TypedMatrices.Rohess
 TypedMatrices.Rosser
 TypedMatrices.Sampling
