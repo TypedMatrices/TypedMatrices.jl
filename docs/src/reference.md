@@ -45,6 +45,7 @@ TypedMatrices.Golub
 TypedMatrices.Grcar
 TypedMatrices.Hadamard
 TypedMatrices.Hankel
+TypedMatrices.Hanowa
 TypedMatrices.Hilbert
 TypedMatrices.InverseHilbert
 TypedMatrices.Involutory
