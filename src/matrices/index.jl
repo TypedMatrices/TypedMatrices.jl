@@ -47,6 +47,7 @@ export
     Rohess,
     Rosser,
     Sampling,
+    Smoke,
     Toeplitz,
     Triw,
     Wathen,
@@ -102,6 +103,7 @@ include("ris.jl")
 include("rohess.jl")
 include("rosser.jl")
 include("sampling.jl")
+include("smoke.jl")
 include("toeplitz.jl")
 include("triw.jl")
 include("wathen.jl")
@@ -157,6 +159,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Rohess,
     Rosser,
     Sampling,
+    Smoke,
     Toeplitz,
     Triw,
     Wathen,

@@ -72,6 +72,7 @@ TypedMatrices.RIS
 TypedMatrices.Rohess
 TypedMatrices.Rosser
 TypedMatrices.Sampling
+TypedMatrices.Smoke
 TypedMatrices.Toeplitz
 TypedMatrices.Triw
 TypedMatrices.Wathen
