@@ -48,6 +48,7 @@ TypedMatrices.Hankel
 TypedMatrices.Hanowa
 TypedMatrices.Hilbert
 TypedMatrices.InverseHilbert
+TypedMatrices.Invhess
 TypedMatrices.Involutory
 TypedMatrices.Kahan
 TypedMatrices.KMS

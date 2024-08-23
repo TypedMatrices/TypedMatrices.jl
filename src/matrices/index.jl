@@ -23,6 +23,7 @@ export
     Hanowa,
     Hilbert,
     InverseHilbert,
+    Invhess,
     Involutory,
     Kahan,
     KMS,
@@ -76,6 +77,7 @@ include("hankel.jl")
 include("hanowa.jl")
 include("hilbert.jl")
 include("inversehilbert.jl")
+include("invhess.jl")
 include("involutory.jl")
 include("kahan.jl")
 include("kms.jl")
@@ -129,6 +131,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Hanowa,
     Hilbert,
     InverseHilbert,
+    Invhess,
     Involutory,
     Kahan,
     KMS,
