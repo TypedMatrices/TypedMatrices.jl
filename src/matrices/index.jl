@@ -25,6 +25,7 @@ export
     InverseHilbert,
     Invhess,
     Involutory,
+    Ipjfact,
     Kahan,
     KMS,
     Lehmer,
@@ -79,6 +80,7 @@ include("hilbert.jl")
 include("inversehilbert.jl")
 include("invhess.jl")
 include("involutory.jl")
+include("ipjfact.jl")
 include("kahan.jl")
 include("kms.jl")
 include("lehmer.jl")
@@ -133,6 +135,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     InverseHilbert,
     Invhess,
     Involutory,
+    Ipjfact,
     Kahan,
     KMS,
     Lehmer,

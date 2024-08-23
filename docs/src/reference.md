@@ -50,6 +50,7 @@ TypedMatrices.Hilbert
 TypedMatrices.InverseHilbert
 TypedMatrices.Invhess
 TypedMatrices.Involutory
+TypedMatrices.Ipjfact
 TypedMatrices.Kahan
 TypedMatrices.KMS
 TypedMatrices.Lehmer
