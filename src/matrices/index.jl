@@ -29,6 +29,7 @@ export
     JordBloc,
     Kahan,
     KMS,
+    Krylov,
     Lehmer,
     Lotkin,
     Magic,
@@ -86,6 +87,7 @@ include("ipjfact.jl")
 include("jordbloc.jl")
 include("kahan.jl")
 include("kms.jl")
+include("krylov.jl")
 include("lehmer.jl")
 include("lotkin.jl")
 include("magic.jl")
@@ -143,6 +145,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     JordBloc,
     Kahan,
     KMS,
+    Krylov,
     Lehmer,
     Lotkin,
     Magic,
