@@ -16,7 +16,7 @@ struct Hankel{T<:Number} <: AbstractMatrix{T}
     n::Integer
     p::Vector{T}
 
-    function Hankel(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T}
+    function Hankel(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T<:Number}
         lenc = length(vc)
 
         # if vr is empty
@@ -34,7 +34,7 @@ end
 # constructors
 Hankel(n::Integer) = Hankel{Int}(n)
 Hankel{T}(n::Integer) where {T<:Number} = Hankel(T[1:n;])
-Hankel(v::AbstractVector{T}) where {T} = Hankel(v, T[])
+Hankel(v::AbstractVector{T}) where {T<:Number} = Hankel(v, T[])
 
 # metadata
 @properties Hankel [:symmetric]

@@ -1,4 +1,4 @@
-function oddmagic(::Type{T}, n::Integer) where {T}
+function oddmagic(::Type{T}, n::Integer) where {T<:Number}
     # compute the magic square of odd orders
     A = zeros(T, n, n)
     i = 1
@@ -31,7 +31,7 @@ struct Magic{T<:Number} <: AbstractMatrix{T}
     n::Integer
     M::Matrix{T}
 
-    function Magic{T}(n::Integer) where {T}
+    function Magic{T}(n::Integer) where {T<:Number}
         n >= 3 || throw(ArgumentError("$n < 3"))
 
         # generate matrix

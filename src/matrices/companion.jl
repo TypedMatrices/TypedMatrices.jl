@@ -17,7 +17,7 @@ struct Companion{T<:Number} <: AbstractMatrix{T}
     n::Integer
     v::AbstractVector{T}
 
-    function Companion(v::AbstractVector{T}) where {T}
+    function Companion(v::AbstractVector{T}) where {T<:Number}
         return new{T}(length(v), v)
     end
 end

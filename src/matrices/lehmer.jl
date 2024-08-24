@@ -18,7 +18,7 @@ The Lehmer matrix is a symmetric positive definite matrix.
 struct Lehmer{T<:Number} <: AbstractMatrix{T}
     n::Integer
 
-    function Lehmer{T}(n::Integer) where {T}
+    function Lehmer{T}(n::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
         return new{T}(n)
     end

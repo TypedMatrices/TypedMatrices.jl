@@ -1,7 +1,7 @@
 """
 Pre-multiply by random orthogonal matrix
 """
-function qmult!(A::Matrix{T}) where {T}
+function qmult!(A::Matrix{T}) where {T<:Number}
     n, m = size(A)
 
     d = zeros(T, n)

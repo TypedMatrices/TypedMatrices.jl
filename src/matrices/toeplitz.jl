@@ -15,7 +15,7 @@ struct Toeplitz{T<:Number} <: AbstractMatrix{T}
     vc::Vector{T}
     vr::Vector{T}
 
-    function Toeplitz(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T}
+    function Toeplitz(vc::AbstractVector{T}, vr::AbstractVector{T}) where {T<:Number}
         n = length(vr)
         n == length(vc) || throw(DimensionMismatch("length of vc and vr must be equal"))
         vc[1] == vr[1] || throw(ArgumentError("first element of vc must be equal to first element of vr"))

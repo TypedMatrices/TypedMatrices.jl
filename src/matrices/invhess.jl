@@ -13,7 +13,7 @@ struct Invhess{T<:Number} <: AbstractMatrix{T}
     x::Vector{T}
     y::Vector{T}
 
-    function Invhess(x::AbstractVector{T}, y::AbstractVector{T}) where {T}
+    function Invhess(x::AbstractVector{T}, y::AbstractVector{T}) where {T<:Number}
         n = length(x)
         n - 1 == length(y) || throw(DimensionMismatch("length of y must be one less than length of x"))
         return new{T}(n, x, y)

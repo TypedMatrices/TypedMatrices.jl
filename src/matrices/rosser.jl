@@ -4,7 +4,7 @@ See Rosser matrix References 2.
 
 for a = d = 2, b = c = 1, P_block' * P_block = 10 * Identity
 """
-P_block(::Type{T}, a, b, c, d) where {T} =
+P_block(::Type{T}, a, b, c, d) where {T<:Number} =
     reshape(T[a, b, c, d, b, -a, -d, c, c, d, -a, -b, d, -c, b, -a], 4, 4)
 
 """
