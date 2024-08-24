@@ -73,6 +73,7 @@ TypedMatrices.Prolate
 TypedMatrices.Randcorr
 TypedMatrices.Rando
 TypedMatrices.RandSVD
+TypedMatrices.Riemann
 TypedMatrices.RIS
 TypedMatrices.Rohess
 TypedMatrices.Rosser
