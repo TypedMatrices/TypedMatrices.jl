@@ -48,6 +48,7 @@ export
     Randcorr,
     Rando,
     RandSVD,
+    Redheff,
     Riemann,
     RIS,
     Rohess,
@@ -110,6 +111,7 @@ include("prolate.jl")
 include("randcorr.jl")
 include("rando.jl")
 include("randsvd.jl")
+include("redheff.jl")
 include("riemann.jl")
 include("ris.jl")
 include("rohess.jl")
@@ -172,6 +174,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Randcorr,
     Rando,
     RandSVD,
+    Redheff,
     Riemann,
     RIS,
     Rohess,
