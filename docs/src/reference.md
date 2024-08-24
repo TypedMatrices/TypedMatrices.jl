@@ -58,6 +58,7 @@ TypedMatrices.Krylov
 TypedMatrices.Lauchli
 TypedMatrices.Lehmer
 TypedMatrices.Leslie
+TypedMatrices.Lesp
 TypedMatrices.Lotkin
 TypedMatrices.Magic
 TypedMatrices.Minij
