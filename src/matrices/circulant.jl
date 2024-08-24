@@ -16,7 +16,7 @@ struct Circulant{T<:Number} <: AbstractMatrix{T}
     n::Integer
     v::AbstractVector{T}
 
-    function Circulant(v::AbstractVector{T}) where {T}
+    function Circulant(v::AbstractVector{T}) where {T<:Number}
         return new{T}(length(v), v)
     end
 end
