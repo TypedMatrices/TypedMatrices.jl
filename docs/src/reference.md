@@ -55,6 +55,7 @@ TypedMatrices.JordBloc
 TypedMatrices.Kahan
 TypedMatrices.KMS
 TypedMatrices.Krylov
+TypedMatrices.Lauchli
 TypedMatrices.Lehmer
 TypedMatrices.Lotkin
 TypedMatrices.Magic

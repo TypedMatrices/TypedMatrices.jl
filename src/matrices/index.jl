@@ -30,6 +30,7 @@ export
     Kahan,
     KMS,
     Krylov,
+    Lauchli,
     Lehmer,
     Lotkin,
     Magic,
@@ -88,6 +89,7 @@ include("jordbloc.jl")
 include("kahan.jl")
 include("kms.jl")
 include("krylov.jl")
+include("lauchli.jl")
 include("lehmer.jl")
 include("lotkin.jl")
 include("magic.jl")
@@ -146,6 +148,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Kahan,
     KMS,
     Krylov,
+    Lauchli,
     Lehmer,
     Lotkin,
     Magic,
