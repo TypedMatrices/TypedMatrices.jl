@@ -32,6 +32,7 @@ export
     Krylov,
     Lauchli,
     Lehmer,
+    Leslie,
     Lotkin,
     Magic,
     Minij,
@@ -91,6 +92,7 @@ include("kms.jl")
 include("krylov.jl")
 include("lauchli.jl")
 include("lehmer.jl")
+include("leslie.jl")
 include("lotkin.jl")
 include("magic.jl")
 include("minij.jl")
@@ -150,6 +152,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Krylov,
     Lauchli,
     Lehmer,
+    Leslie,
     Lotkin,
     Magic,
     Minij,
