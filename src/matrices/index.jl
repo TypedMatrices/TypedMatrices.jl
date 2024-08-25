@@ -39,6 +39,7 @@ export
     Minij,
     Moler,
     Neumann,
+    Orthog,
     Oscillate,
     Parter,
     Pascal,
@@ -102,6 +103,7 @@ include("magic.jl")
 include("minij.jl")
 include("moler.jl")
 include("neumann.jl")
+include("orthog.jl")
 include("oscillate.jl")
 include("parter.jl")
 include("pascal.jl")
@@ -165,6 +167,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Minij,
     Moler,
     Neumann,
+    Orthog,
     Oscillate,
     Parter,
     Pascal,

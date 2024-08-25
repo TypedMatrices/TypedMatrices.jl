@@ -64,6 +64,7 @@ TypedMatrices.Magic
 TypedMatrices.Minij
 TypedMatrices.Moler
 TypedMatrices.Neumann
+TypedMatrices.Orthog
 TypedMatrices.Oscillate
 TypedMatrices.Parter
 TypedMatrices.Pascal
