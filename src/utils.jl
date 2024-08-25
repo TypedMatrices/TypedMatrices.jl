@@ -1,4 +1,11 @@
 """
+newsign: newsign(0) = 1
+"""
+function newsign(x)
+    return x == 0 ? 1 : sign(x)
+end
+
+"""
 Pre-multiply by random orthogonal matrix
 """
 function qmult!(A::Matrix{T}) where {T<:Number}

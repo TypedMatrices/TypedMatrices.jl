@@ -1,11 +1,4 @@
 """
-newsign: newsign(0) = 1
-"""
-function newsign(x)
-    return x == 0 ? 1 : sign(x)
-end
-
-"""
 Random Correlation Matrix
 =========================
 A random correlation matrix is a symmetric positive
