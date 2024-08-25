@@ -1,4 +1,16 @@
+"""
+Randcolu Matrix
+===============
+Random matrix with normalized columns and given singular values.
 
+# Input Options
+- dim: the dimension of the matrix, `x` will be generated randomly.
+- n, m: the size of the matrix.
+- n, m, k: size and k flag. Enable initial transformation if k = 0.
+- x: the x vector.
+- x, m: the x vector and m.
+- x, m, k: the x vector, m, and k flag.
+"""
 struct Randcolu{T<:Number} <: AbstractMatrix{T}
     m::Integer
     n::Integer
