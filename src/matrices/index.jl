@@ -46,6 +46,7 @@ export
     Pei,
     Poisson,
     Prolate,
+    Randcolu,
     Randcorr,
     Rando,
     RandSVD,
@@ -110,6 +111,7 @@ include("pascal.jl")
 include("pei.jl")
 include("poisson.jl")
 include("prolate.jl")
+include("randcolu.jl")
 include("randcorr.jl")
 include("rando.jl")
 include("randsvd.jl")
@@ -174,6 +176,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Pei,
     Poisson,
     Prolate,
+    Randcolu,
     Randcorr,
     Rando,
     RandSVD,

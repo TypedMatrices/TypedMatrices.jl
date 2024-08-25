@@ -71,6 +71,7 @@ TypedMatrices.Pascal
 TypedMatrices.Pei
 TypedMatrices.Poisson
 TypedMatrices.Prolate
+TypedMatrices.Randcolu
 TypedMatrices.Randcorr
 TypedMatrices.Rando
 TypedMatrices.RandSVD
