@@ -23,6 +23,9 @@ JordBloc(n::Integer) = JordBloc(n, 1)
 JordBloc(n::Integer, lambda::Number) = JordBloc{Int}(n, lambda)
 JordBloc{T}(n::Integer) where {T<:Number} = JordBloc{T}(n, T(1))
 
+# metadata
+@properties JordBloc Symbol[]
+
 # properties
 size(A::JordBloc) = (A.n, A.n)
 

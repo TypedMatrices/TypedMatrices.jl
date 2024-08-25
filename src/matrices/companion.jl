@@ -28,6 +28,9 @@ Companion(polynomial::Polynomial) = Companion{Float64}(polynomial)
 Companion{T}(n::Integer) where {T<:Number} = Companion(T[1:n;])
 Companion{T}(polynomial::Polynomial) where {T<:Number} = Companion(T.(-polynomial.coeffs[end-1:-1:begin] ./ polynomial.coeffs[end]))
 
+# metadata
+@properties Companion Symbol[]
+
 # properties
 size(A::Companion) = (A.n, A.n)
 LinearAlgebra.isdiag(A::Companion) = A.n <= 1 ? true : false

@@ -28,6 +28,9 @@ Toeplitz(n::Integer) = Toeplitz([1:n;])
 Toeplitz(v::AbstractVector) = Toeplitz(v, v)
 Toeplitz{T}(n::Integer) where {T<:Number} = Toeplitz(T[1:n;])
 
+# metadata
+@properties Toeplitz Symbol[]
+
 # properties
 size(A::Toeplitz) = (A.n, A.n)
 
