@@ -71,7 +71,9 @@ end
 @testset "TypedMatrices.jl" begin
     SINGLE_TEST = false
     if SINGLE_TEST
-        include("matrices/hilbert.jl")
+        NAME = "hilbert"
+        @info "Testing $NAME"
+        include("matrices/$NAME.jl")
         return
     end
 
