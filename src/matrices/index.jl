@@ -48,6 +48,7 @@ export
     Prolate,
     Randcolu,
     Randcorr,
+    Randjorth,
     Rando,
     RandSVD,
     Redheff,
@@ -113,6 +114,7 @@ include("poisson.jl")
 include("prolate.jl")
 include("randcolu.jl")
 include("randcorr.jl")
+include("randjorth.jl")
 include("rando.jl")
 include("randsvd.jl")
 include("redheff.jl")
@@ -178,6 +180,7 @@ MATRIX_GROUPS[GROUP_BUILTIN] = Set([
     Prolate,
     Randcolu,
     Randcorr,
+    Randjorth,
     Rando,
     RandSVD,
     Redheff,

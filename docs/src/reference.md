@@ -73,6 +73,7 @@ TypedMatrices.Poisson
 TypedMatrices.Prolate
 TypedMatrices.Randcolu
 TypedMatrices.Randcorr
+TypedMatrices.Randjorth
 TypedMatrices.Rando
 TypedMatrices.RandSVD
 TypedMatrices.Redheff
