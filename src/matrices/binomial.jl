@@ -22,6 +22,9 @@ end
 # constructors
 Binomial(n::Integer) = Binomial{Int}(n)
 
+# metadata
+@properties Binomial [:involutory, :integer]
+
 # properties
 size(A::Binomial) = (A.n, A.n)
 

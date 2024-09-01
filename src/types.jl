@@ -20,6 +20,8 @@ module PropertyTypes
 abstract type AbstractProperty end
 struct Symmetric <: AbstractProperty end
 struct Inverse <: AbstractProperty end
+struct Involutory <: AbstractProperty end
+struct Integer <: AbstractProperty end
 struct IllCond <: AbstractProperty end
 struct PosDef <: AbstractProperty end
 struct Eigen <: AbstractProperty end
