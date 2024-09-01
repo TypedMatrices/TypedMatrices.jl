@@ -18,7 +18,9 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.RegProb => :regprob,
         PropertyTypes.Graph => :graph,
         PropertyTypes.TotPos => :totpos,
-        PropertyTypes.InfDiv => :infdiv
+        PropertyTypes.InfDiv => :infdiv,
+        PropertyTypes.Defective => :defective,
+        PropertyTypes.Nilpotent => :nilpotent
     )
 )
 
