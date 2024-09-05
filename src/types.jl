@@ -37,6 +37,8 @@ struct Hessenberg <: AbstractProperty end
 struct Toeplitz <: AbstractProperty end
 struct Binary <: AbstractProperty end
 struct RankDef <: AbstractProperty end
+struct Circulant <: AbstractProperty end
+struct Normal <: AbstractProperty end
 end
 
 """
