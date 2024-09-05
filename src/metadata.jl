@@ -20,7 +20,11 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.TotPos => :totpos,
         PropertyTypes.InfDiv => :infdiv,
         PropertyTypes.Defective => :defective,
-        PropertyTypes.Nilpotent => :nilpotent
+        PropertyTypes.Nilpotent => :nilpotent,
+        PropertyTypes.Hessenberg => :hessenberg,
+        PropertyTypes.Toeplitz => :toeplitz,
+        PropertyTypes.Binary => :binary,
+        PropertyTypes.RankDef => :rankdef
     )
 )
 

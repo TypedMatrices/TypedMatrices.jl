@@ -33,6 +33,10 @@ struct TotPos <: AbstractProperty end
 struct InfDiv <: AbstractProperty end
 struct Defective <: AbstractProperty end
 struct Nilpotent <: AbstractProperty end
+struct Hessenberg <: AbstractProperty end
+struct Toeplitz <: AbstractProperty end
+struct Binary <: AbstractProperty end
+struct RankDef <: AbstractProperty end
 end
 
 """

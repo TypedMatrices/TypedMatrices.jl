@@ -30,7 +30,7 @@ Chow(n::Integer, alpha, delta) = Chow{Int}(n, alpha, delta)
 Chow{T}(n::Integer) where {T<:Number} = Chow{T}(n, 1, 0)
 
 # metadata
-@properties Chow [:eigen]
+@properties Chow [:hessenberg, :toeplitz, :binary, :eigen, :rankdef]
 
 # properties
 size(A::Chow) = (A.n, A.n)
