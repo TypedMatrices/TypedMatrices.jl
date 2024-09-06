@@ -21,7 +21,7 @@ RIS(n::Integer) = RIS{Int}(n)
 RIS{T}(n::Integer) where {T<:Integer} = RIS{Rational{T}}(n)
 
 # metadata
-@properties RIS [:symmetric]
+@properties RIS [:hankel, :symmetric, :indefinite]
 
 # properties
 size(A::RIS) = (A.n, A.n)
