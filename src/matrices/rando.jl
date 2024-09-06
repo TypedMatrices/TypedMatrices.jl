@@ -41,7 +41,7 @@ Rando{T}(n::Integer) where {T<:Number} = Rando{T}(n, 1)
 Rando{T}(n::Integer, k::Integer) where {T<:Number} = Rando{T}(n, n, k)
 
 # metadata
-@properties Rando [:random]
+@properties Rando [:random, :rectangular, :integer]
 
 # properties
 size(A::Rando) = (A.m, A.n)
