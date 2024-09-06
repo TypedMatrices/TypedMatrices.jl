@@ -29,7 +29,7 @@ Fiedler(n::Integer) = Fiedler{Int}(n)
 Fiedler{T}(n::Integer) where {T<:Number} = Fiedler(T[1:n;])
 
 # metadata
-@properties Fiedler [:inverse, :symmetric, :eigen]
+@properties Fiedler [:inverse, :indefinite, :symmetric, :eigen]
 
 # properties
 size(A::Fiedler) = (A.n, A.n)

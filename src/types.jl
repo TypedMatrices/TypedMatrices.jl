@@ -31,6 +31,7 @@ struct RegProb <: AbstractProperty end
 struct Graph <: AbstractProperty end
 struct TotPos <: AbstractProperty end
 struct InfDiv <: AbstractProperty end
+struct Indefinite <: AbstractProperty end
 struct Defective <: AbstractProperty end
 struct Nilpotent <: AbstractProperty end
 struct Hessenberg <: AbstractProperty end

@@ -19,6 +19,7 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.Graph => :graph,
         PropertyTypes.TotPos => :totpos,
         PropertyTypes.InfDiv => :infdiv,
+        PropertyTypes.Indefinite => :indefinite,
         PropertyTypes.Defective => :defective,
         PropertyTypes.Nilpotent => :nilpotent,
         PropertyTypes.Hessenberg => :hessenberg,
