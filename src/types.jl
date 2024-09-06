@@ -44,6 +44,8 @@ struct SingVal <: AbstractProperty end
 struct Rectangular <: AbstractProperty end
 struct Hankel <: AbstractProperty end
 struct DiagDom <: AbstractProperty end
+struct NonNeg <: AbstractProperty end
+struct Unimodular <: AbstractProperty end
 end
 
 """
