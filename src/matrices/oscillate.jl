@@ -54,7 +54,7 @@ function Oscillate{T}(n::Integer, mode::Integer) where {T<:Number}
 end
 
 # metadata
-@properties Oscillate [:symmetric, :illcond, :posdef, :eigen, :random]
+@properties Oscillate [:illcond, :eigen, :random]
 
 # properties
 size(A::Oscillate) = (A.n, A.n)
