@@ -12,6 +12,7 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.Involutory => :involutory,
         PropertyTypes.Integer => :integer,
         PropertyTypes.PosDef => :posdef,
+        PropertyTypes.Correlation => :correlation,
         PropertyTypes.Eigen => :eigen,
         PropertyTypes.Sparse => :sparse,
         PropertyTypes.Random => :random,

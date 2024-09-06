@@ -59,7 +59,7 @@ end
 Randcorr(n::Integer) = Randcorr{Float64}(n)
 
 # metadata
-@properties Randcorr [:symmetric, :random]
+@properties Randcorr [:symmetric, :random, :correlation]
 
 # properties
 size(A::Randcorr) = (A.n, A.n)

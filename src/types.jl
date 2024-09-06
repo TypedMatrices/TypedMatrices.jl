@@ -24,6 +24,7 @@ struct Involutory <: AbstractProperty end
 struct Integer <: AbstractProperty end
 struct IllCond <: AbstractProperty end
 struct PosDef <: AbstractProperty end
+struct Correlation <: AbstractProperty end
 struct Eigen <: AbstractProperty end
 struct Sparse <: AbstractProperty end
 struct Random <: AbstractProperty end
