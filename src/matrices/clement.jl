@@ -39,4 +39,4 @@ function Clement{T}(n::Integer, k::Integer) where {T}
 end
 
 # metadata
-@properties Clement [:symmetric, :inverse, :eigen]
+@properties Clement [:tridiagonal, :eigen, :singval]

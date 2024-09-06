@@ -26,7 +26,9 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.Binary => :binary,
         PropertyTypes.RankDef => :rankdef,
         PropertyTypes.Circulant => :circulant,
-        PropertyTypes.Normal => :normal
+        PropertyTypes.Normal => :normal,
+        PropertyTypes.Tridiagonal => :tridiagonal,
+        PropertyTypes.SingVal => :singval,
     )
 )
 
