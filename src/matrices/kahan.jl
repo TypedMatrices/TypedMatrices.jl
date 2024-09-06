@@ -46,7 +46,7 @@ function Kahan(m::Integer, n::Integer, theta::AbstractFloat, pert::AbstractFloat
 end
 
 # metadata
-@properties Kahan [:inverse, :illcond]
+@properties Kahan [:rectangular, :triangular, :inverse, :illcond]
 
 # properties
 size(A::Kahan) = (A.m, A.n)

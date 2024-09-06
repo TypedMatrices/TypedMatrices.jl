@@ -43,6 +43,7 @@ struct Circulant <: AbstractProperty end
 struct Normal <: AbstractProperty end
 struct Bidiagonal <: AbstractProperty end
 struct Tridiagonal <: AbstractProperty end
+struct Triangular <: AbstractProperty end
 struct SingVal <: AbstractProperty end
 struct Rectangular <: AbstractProperty end
 struct Hankel <: AbstractProperty end
