@@ -36,7 +36,7 @@ Triw{T}(n::Integer, alpha::Number) where {T<:Number} = Triw{T}(n, alpha, n - 1)
 Triw{T}(n::Integer, alpha::Number, k::Integer) where {T<:Number} = Triw{T}(n, convert(T, alpha), k)
 
 # metadata
-@properties Triw [:inverse, :illcond]
+@properties Triw [:defective, :rectangular, :triangular, :inverse, :illcond]
 
 # properties
 size(A::Triw) = (A.n, A.n)
