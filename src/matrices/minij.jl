@@ -26,7 +26,7 @@ end
 Minij(n::Integer) = Minij{Int}(n)
 
 # metadata
-@properties Minij [:symmetric, :inverse, :posdef, :eigen]
+@properties Minij [:symmetric, :inverse, :posdef, :infdiv, :eigen, :integer, :positive]
 
 # properties
 size(A::Minij) = (A.n, A.n)
