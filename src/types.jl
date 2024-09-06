@@ -29,6 +29,7 @@ struct Sparse <: AbstractProperty end
 struct Random <: AbstractProperty end
 struct RegProb <: AbstractProperty end
 struct Graph <: AbstractProperty end
+struct TotNonNeg <: AbstractProperty end
 struct TotPos <: AbstractProperty end
 struct InfDiv <: AbstractProperty end
 struct Indefinite <: AbstractProperty end
