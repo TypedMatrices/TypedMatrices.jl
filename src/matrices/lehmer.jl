@@ -29,7 +29,7 @@ Lehmer(n::Integer) = Lehmer{Int}(n)
 Lehmer{T}(n::Integer) where {T<:Integer} = Lehmer{Rational{T}}(n)
 
 # metadata
-@properties Lehmer [:symmetric, :inverse, :posdef]
+@properties Lehmer [:symmetric, :inverse, :posdef, :totnonneg, :infdiv]
 
 # properties
 size(A::Lehmer) = (A.n, A.n)
