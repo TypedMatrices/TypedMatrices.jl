@@ -19,7 +19,7 @@ end
 Lesp(n::Integer) = Lesp{Float64}(n)
 
 # metadata
-@properties Lesp Symbol[]
+@properties Lesp Symbol[:tridiagonal, :eigen]
 
 # properties
 size(A::Lesp) = (A.n, A.n)
