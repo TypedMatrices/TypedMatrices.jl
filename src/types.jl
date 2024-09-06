@@ -42,6 +42,7 @@ struct Normal <: AbstractProperty end
 struct Tridiagonal <: AbstractProperty end
 struct SingVal <: AbstractProperty end
 struct Rectangular <: AbstractProperty end
+struct Hankel <: AbstractProperty end
 end
 
 """
