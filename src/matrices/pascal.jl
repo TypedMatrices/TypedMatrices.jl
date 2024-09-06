@@ -29,7 +29,7 @@ end
 Pascal(n::Integer) = Pascal{Int}(n)
 
 # metadata
-@properties Pascal [:symmetric,:inverse, :illcond,  :posdef, :eigen]
+@properties Pascal [:symmetric, :inverse, :illcond, :posdef, :eigen, :integer, :involutory, :totpos]
 
 # properties
 size(A::Pascal) = (A.n, A.n)
