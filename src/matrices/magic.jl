@@ -68,7 +68,7 @@ end
 Magic(n::Integer) = Magic{Int}(n)
 
 # metadata
-@properties Magic [:inverse]
+@properties Magic [:integer, :positive]
 
 # properties
 size(A::Magic) = (A.n, A.n)
