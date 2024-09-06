@@ -41,6 +41,7 @@ struct Circulant <: AbstractProperty end
 struct Normal <: AbstractProperty end
 struct Tridiagonal <: AbstractProperty end
 struct SingVal <: AbstractProperty end
+struct Rectangular <: AbstractProperty end
 end
 
 """
