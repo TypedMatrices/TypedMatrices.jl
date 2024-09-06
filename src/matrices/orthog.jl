@@ -37,7 +37,7 @@ Orthog(n::Integer, k::Integer) = Orthog{Float64}(n, k)
 Orthog{T}(n::Integer) where {T<:Number} = Orthog{T}(n, 1)
 
 # metadata
-@properties Orthog Symbol[]
+@properties Orthog Symbol[:orthogonal]
 
 # properties
 size(A::Orthog) = (A.n, A.n)
