@@ -29,7 +29,7 @@ Smoke{T}(n::Integer) where {T<:Number} = Smoke{T}(n, 0)
 Smoke{T}(n::Integer, k::Integer) where {T<:AbstractFloat} = Smoke{Complex{T}}(n, k)
 
 # metadata
-@properties Smoke [:symmetric]
+@properties Smoke [:complex, :eigen]
 
 # properties
 size(A::Smoke) = (A.n, A.n)

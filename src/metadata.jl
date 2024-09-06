@@ -41,8 +41,9 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.NonNeg => :nonneg,
         PropertyTypes.Unimodular => :unimodular,
         PropertyTypes.Positive => :positive,
-        PropertyTypes.FixedSize => :fixedsize
-        )
+        PropertyTypes.FixedSize => :fixedsize,
+        PropertyTypes.Complex => :complex
+    )
 )
 
 """
