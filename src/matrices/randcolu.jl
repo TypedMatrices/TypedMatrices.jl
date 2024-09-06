@@ -88,7 +88,7 @@ function Randcolu{T}(n::Integer, m::Integer, k::Integer) where {T<:Number}
 end
 
 # metadata
-@properties Randcolu [:random]
+@properties Randcolu [:random, :rectangular]
 
 # properties
 size(A::Randcolu) = (A.m, A.n)
