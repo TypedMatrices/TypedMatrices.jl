@@ -41,6 +41,7 @@ struct Binary <: AbstractProperty end
 struct RankDef <: AbstractProperty end
 struct Circulant <: AbstractProperty end
 struct Normal <: AbstractProperty end
+struct Bidiagonal <: AbstractProperty end
 struct Tridiagonal <: AbstractProperty end
 struct SingVal <: AbstractProperty end
 struct Rectangular <: AbstractProperty end
