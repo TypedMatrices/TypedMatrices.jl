@@ -43,6 +43,7 @@ struct Tridiagonal <: AbstractProperty end
 struct SingVal <: AbstractProperty end
 struct Rectangular <: AbstractProperty end
 struct Hankel <: AbstractProperty end
+struct DiagDom <: AbstractProperty end
 end
 
 """

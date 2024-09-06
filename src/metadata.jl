@@ -30,7 +30,8 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.Tridiagonal => :tridiagonal,
         PropertyTypes.SingVal => :singval,
         PropertyTypes.Rectangular => :rectangular,
-        PropertyTypes.Hankel => :hankel
+        PropertyTypes.Hankel => :hankel,
+        PropertyTypes.DiagDom => :diagdom
     )
 )
 

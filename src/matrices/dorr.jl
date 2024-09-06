@@ -44,4 +44,4 @@ function Dorr{T}(n::Integer, theta::T) where {T<:Number}
 end
 
 # metadata
-@properties Dorr [:illcond, :sparse]
+@properties Dorr [:tridiagonal, :diagdom, :illcond, :sparse]
