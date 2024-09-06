@@ -20,7 +20,7 @@ end
 GCDMat(n::Integer) = GCDMat{Int}(n)
 
 # metadata
-@properties GCDMat [:symmetric, :posdef]
+@properties GCDMat [:symmetric, :posdef, :integer, :positive, :infdiv]
 
 # properties
 size(A::GCDMat) = (A.n, A.n)
