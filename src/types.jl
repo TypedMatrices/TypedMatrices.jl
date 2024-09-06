@@ -49,6 +49,7 @@ struct DiagDom <: AbstractProperty end
 struct NonNeg <: AbstractProperty end
 struct Unimodular <: AbstractProperty end
 struct Positive <: AbstractProperty end
+struct FixedSize <: AbstractProperty end
 end
 
 """

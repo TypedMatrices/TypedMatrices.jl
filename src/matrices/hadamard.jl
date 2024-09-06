@@ -34,7 +34,7 @@ end
 Hadamard(n::Integer) = Hadamard{Int}(n)
 
 # metadata
-@properties Hadamard [:inverse, :eigen]
+@properties Hadamard [:inverse, :integer, :fixedsize]
 
 # properties
 size(A::Hadamard) = (A.n, A.n)
