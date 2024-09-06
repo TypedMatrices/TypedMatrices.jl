@@ -26,7 +26,7 @@ Ipjfact(n::Integer, k::Integer) = Ipjfact{Int}(n, k)
 Ipjfact{T}(n::Integer) where {T<:Number} = Ipjfact{T}(n, 0)
 
 # metadata
-@properties Ipjfact [:symmetric]
+@properties Ipjfact [:symmetric, :posdef, :hankel, :illcond, :positive]
 
 # properties
 size(A::Ipjfact) = (A.n, A.n)
