@@ -28,7 +28,7 @@ GearMat(n::Integer, i::Integer, j::Integer) = GearMat{Int}(n, i, j)
 GearMat{T}(n::Integer) where {T<:Number} = GearMat{T}(n, n, -n)
 
 # metadata
-@properties GearMat Symbol[]
+@properties GearMat Symbol[:eigen, :rankdef, :integer]
 
 # properties
 size(A::GearMat) = (A.n, A.n)
