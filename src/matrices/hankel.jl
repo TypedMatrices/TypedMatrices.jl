@@ -37,7 +37,7 @@ Hankel{T}(n::Integer) where {T<:Number} = Hankel(T[1:n;])
 Hankel(v::AbstractVector{T}) where {T<:Number} = Hankel(v, T[])
 
 # metadata
-@properties Hankel [:symmetric]
+@properties Hankel [:symmetric, :hankel]
 
 # properties
 size(A::Hankel) = (A.m, A.n)
