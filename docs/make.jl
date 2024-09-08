@@ -17,7 +17,12 @@ makedocs(
             "manual/getting-started.md",
             "manual/performance.md",
         ],
-        "Reference" => "reference.md",
+        "References" => [
+            "references/1.types.md",
+            "references/2.interfaces.md",
+            "references/3.properties.md",
+            "references/4.builtin-matrices.md",
+        ],
     ],
 )
 

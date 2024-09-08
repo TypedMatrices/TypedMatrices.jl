@@ -36,7 +36,7 @@ Most matrices can accept a type parameter to specify the element type. For examp
 Hilbert{Float64}(5)
 ```
 
-Please check [Builtin Matrices](@ref) in [Reference](@ref) for all available builtin matrices.
+Please check [Builtin Matrices](@ref) for all available builtin matrices.
 
 ## Properties
 
