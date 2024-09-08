@@ -14,8 +14,8 @@ makedocs(
     pages=[
         "Home" => "index.md",
         "Manual" => [
-            "manual/getting-started.md",
-            "manual/performance.md",
+            "manual/1.getting-started.md",
+            "manual/2.performance.md",
         ],
         "References" => [
             "references/1.types.md",
