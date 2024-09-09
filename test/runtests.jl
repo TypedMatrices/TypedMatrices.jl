@@ -17,7 +17,7 @@ function test_matrix_elements(A::AbstractMatrix{T}) where {T}
     return all(typeof(A[i]) == T for i = eachindex(A))
 end
 
-function test_linearalgrbra_functions(A::AbstractMatrix)
+function test_linear_algebra_functions(A::AbstractMatrix)
     # variables
     matrix = Matrix(A)
     determinant = det(matrix)
@@ -58,9 +58,9 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     end
 end
 
-function run_test_linearalgrbra_functions(matrices::Vector{<:AbstractMatrix})
+function run_test_linear_algebra_functions(matrices::Vector{<:AbstractMatrix})
     for matrix = matrices
-        @test test_linearalgrbra_functions(matrix)
+        @test test_linear_algebra_functions(matrix)
     end
 end
 

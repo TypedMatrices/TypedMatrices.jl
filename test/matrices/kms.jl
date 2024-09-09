@@ -8,9 +8,9 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(KMS.(1:5))
-run_test_linearalgrbra_functions(KMS.(1:5, 3))
-run_test_linearalgrbra_functions(KMS.(1:5, 3 + 2im))
+run_test_linear_algebra_functions(KMS.(1:5))
+run_test_linear_algebra_functions(KMS.(1:5, 3))
+run_test_linear_algebra_functions(KMS.(1:5, 3 + 2im))
 
 # eltype
 @test test_matrix_elements(KMS{Float32}(5))

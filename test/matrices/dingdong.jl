@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(DingDong.(1:5))
+run_test_linear_algebra_functions(DingDong.(1:5))
 
 # eltype
 @test test_matrix_elements(DingDong{Int32}(5))

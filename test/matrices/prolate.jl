@@ -7,7 +7,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Prolate.(1:5))
+run_test_linear_algebra_functions(Prolate.(1:5))
 
 # eltype
 @test test_matrix_elements(Prolate{Float32}(5))
