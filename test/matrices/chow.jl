@@ -7,7 +7,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions([Chow.(1:5); Chow.(1:5, 2, 3)])
+run_test_linear_algebra_functions([Chow.(1:5); Chow.(1:5, 2, 3)])
 
 # eltype
 @test test_matrix_elements(Chow{Int32}(5))

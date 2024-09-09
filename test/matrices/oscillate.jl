@@ -12,7 +12,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Oscillate.(2:5))
+run_test_linear_algebra_functions(Oscillate.(2:5))
 
 # eltype
 @test test_matrix_elements(Oscillate{Float32}(5))

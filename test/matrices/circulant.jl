@@ -6,7 +6,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Circulant.(1:5))
+run_test_linear_algebra_functions(Circulant.(1:5))
 
 # eltype
 @test test_matrix_elements(Circulant{Int32}(5))
