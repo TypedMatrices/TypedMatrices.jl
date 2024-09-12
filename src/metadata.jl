@@ -50,7 +50,6 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
     list_properties()
 
 List all properties.
-```
 """
 list_properties() = collect(values(PROPERTIES))
 
