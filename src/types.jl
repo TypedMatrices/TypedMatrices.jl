@@ -22,15 +22,15 @@ This is an abstract type for properties.
 """
 abstract type AbstractProperty end
 """
-The matrix is bidiagonal (eigher upper or lower)..
+The matrix is upper or lower bidiagonal.
 """
 struct Bidiagonal <: AbstractProperty end
 """
-The matrix has binary entries.
+The matrix has entries from a binary set.
 """
 struct Binary <: AbstractProperty end
 """
-The matrix is a Circulant matrix.
+The matrix is circulant.
 """
 struct Circulant <: AbstractProperty end
 """
@@ -38,15 +38,15 @@ The matrix has complex entries.
 """
 struct Complex <: AbstractProperty end
 """
-Correlation
+The matrix is a correlation matrix.
 """
 struct Correlation <: AbstractProperty end
 """
-Defective
+The matrix is defective.
 """
 struct Defective <: AbstractProperty end
 """
-DiagDom
+The matrix is diagonally dominant.
 """
 struct DiagDom <: AbstractProperty end
 """
@@ -54,11 +54,11 @@ Part of the eigensystem of the matrix is explicitly known.
 """
 struct Eigen <: AbstractProperty end
 """
-The matrix has a fixed size.
+The matrix is only available in some fixed sizes.
 """
 struct FixedSize <: AbstractProperty end
 """
-An adjacency matrix of a graph.
+The matrix is the adjacency matrix of a graph.
 """
 struct Graph <: AbstractProperty end
 """
@@ -66,7 +66,7 @@ The matrix is a Hankel matrix.
 """
 struct Hankel <: AbstractProperty end
 """
-The matrix is a Hessenberg matrix.
+The matrix is an upper or lower Hessenberg matrix.
 """
 struct Hessenberg <: AbstractProperty end
 """
@@ -78,7 +78,7 @@ The matrix is indefinite for some parameter values.
 """
 struct Indefinite <: AbstractProperty end
 """
-InfDiv
+The matrix is infinitely divisible.
 """
 struct InfDiv <: AbstractProperty end
 """
@@ -90,19 +90,19 @@ The inverse of the matrix is known explicitly.
 """
 struct Inverse <: AbstractProperty end
 """
-The matrix is a Involutory matrix.
+The matrix is involutory for some parameter values.
 """
 struct Involutory <: AbstractProperty end
 """
-Nilpotent
+The matrix is nilpotent for some parameter values.
 """
 struct Nilpotent <: AbstractProperty end
 """
-Nonneg
+The matrix is nonnegative for some parameter values.
 """
 struct NonNeg <: AbstractProperty end
 """
-Normal
+The matrix is normal.
 """
 struct Normal  <: AbstractProperty end
 """
@@ -122,19 +122,19 @@ The matrix has random entries.
 """
 struct Random <: AbstractProperty end
 """
-RankDef
+The matrix is rank deficient.
 """
 struct RankDef <: AbstractProperty end
 """
-The matrix is rectangular.
+The matrix is rectangular for some parameter values.
 """
 struct Rectangular <: AbstractProperty end
 """
-The output is a test problem for Regularization Methods.
+The output is a test problem for regularization methods.
 """
 struct RegProb <: AbstractProperty end
 """
-SingVal
+Part of the singular values and vectors of the matrix is explicitly known.
 """
 struct SingVal <: AbstractProperty end
 """
@@ -146,7 +146,7 @@ The matrix is symmetric for some parameter values.
 """
 struct Symmetric <: AbstractProperty end
 """
-The matrix is triangular (eigher upper or lower).
+The matrix is upper or lower trinagular.
 """
 struct Triangular <: AbstractProperty end
 """
@@ -154,19 +154,19 @@ The matrix is tridiagonal.
 """
 struct Tridiagonal <: AbstractProperty end
 """
-The matrix is a Toeplitz matrix.
+The matrix is Toeplitz.
 """
 struct Toeplitz <: AbstractProperty end
 """
-TotNonNeg
+The matrix is totally nonnegative for some parameter values.
 """
 struct TotNonNeg <: AbstractProperty end
 """
-TotPos
+The matrix is totally positive for some parameter values.
 """
 struct TotPos <: AbstractProperty end
 """
-Unimodular
+The matrix is unimodular for some parameter values.
 """
 struct Unimodular <: AbstractProperty end
 end
