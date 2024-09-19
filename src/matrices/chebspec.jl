@@ -13,7 +13,8 @@ If `k = 0`,the generated matrix is nilpotent and a vector with
 
 # References
 **L. N. Trefethen and M. R. Trummer**, An instability
-        phenomenon in spectral methods, SIAM J. Numer. Anal., 24 (1987), pp. 1008-1023.
+phenomenon in spectral methods, SIAM J. Numer. Anal., 24 (1987),
+pp. 1008-1023, https://doi.org/10.1137/0724066.
 """
 struct ChebSpec{T<:Number} <: AbstractMatrix{T}
     n::Int

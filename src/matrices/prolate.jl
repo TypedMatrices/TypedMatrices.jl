@@ -8,8 +8,8 @@ A prolate matrix is a symmetirc, ill-conditioned Toeplitz matrix.
 - dim: the case when `w = 0.25`.
 
 # References
-**J. M. Varah**. The Prolate Matrix. Linear Algebra and Appl.
-             187:267--278, 1993.
+**J. M. Varah**. The Prolate matrix. Linear Algebra Appl., 187 (1993),
+pp. 267-278, https://doi.org/10.1016/0024-3795(93)90142-B.
 """
 struct Prolate{T<:Number} <: AbstractMatrix{T}
     n::Integer

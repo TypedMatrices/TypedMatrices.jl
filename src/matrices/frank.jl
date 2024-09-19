@@ -11,9 +11,10 @@ very ill conditioned.
 - dim: the dimension of the matrix.
 
 # References
-**W. L. Frank**, Computing eigenvalues of complex matrices
-    by determinant evaluation and by methods of Danilewski and Wielandt,
-    J. Soc. Indust. Appl. Math., 6 (1958), pp. 378-392 (see pp. 385, 388).
+**W. L. Frank**, Computing eigenvalues of complex matrices by determinant
+evaluation and by methods of Danilewski and Wielandt, J. Soc. Indust.
+Appl. Math., 6 (1958), pp. 378-392, https://doi.org/10.1137/0106026.
+See pp. 385 and 388.
 """
 struct Frank{T<:Number} <: AbstractMatrix{T}
     n::Integer

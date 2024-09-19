@@ -8,6 +8,11 @@ other elements are 0.
 # Input Options
 - dim: the dimension of the matrix. `i = n` and `j = -n` by default.
 - dim, i, j: the dimension of the matrix and the position of the 1's.
+
+# References
+**C. W. Gear**, A simple set of test matrices for eigenvalue programs,
+Math. Comp., 23 (1969), pp. 119-125,
+https://doi.org/10.1090/S0025-5718-1969-0238477-8.
 """
 struct GearMat{T<:Number} <: AbstractMatrix{T}
     n::Integer

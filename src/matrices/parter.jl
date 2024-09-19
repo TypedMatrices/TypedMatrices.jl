@@ -8,10 +8,11 @@ The Parter matrix is a Toeplitz and Cauchy matrix
 - dim: the dimension of the matrix.
 
 # References
-The MathWorks Newsletter, Volume 1, Issue 1,
-            March 1986, page 2. S. V. Parter, On the distribution of the
-            singular values of Toeplitz matrices, Linear Algebra and
-            Appl., 80 (1986), pp. 115-130.
+The MathWorks Newsletter, Volume 1, Issue 1, March 1986, page 2.
+
+**S. V. Parter**, On the distribution of the singular values of
+Toeplitz matrices, Linear Algebra Appl., 80 (1986), pp. 115-130,
+https://doi.org/10.1016/0024-3795(86)90280-6.
 """
 struct Parter{T<:Number} <: AbstractMatrix{T}
     n::Integer

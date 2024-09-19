@@ -13,8 +13,8 @@ The Kahan matrix is an upper trapezoidal matrix, i.e., the
 - dim: `θ = 1.2`, `pert = 25`.
 
 # References
-**W. Kahan**, Numerical linear algebra, Canadian Math.
-    Bulletin, 9 (1966), pp. 757-801.
+**W. Kahan**, Numerical linear algebra, Canadian Math. Bulletin,
+9 (1966), pp. 757-801, https://doi.org/10.4153/CMB-1966-083-2.
 """
 struct Kahan{T<:Number} <: AbstractMatrix{T}
     m::Integer

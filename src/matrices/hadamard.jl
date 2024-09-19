@@ -9,8 +9,9 @@ a Hadamard matrix are orthogonal.
 - dim: the dimension of the matrix, `dim` is a power of 2.
 
 # References
-**S. W. Golomb and L. D. Baumert**, The search for
-Hadamard matrices, Amer. Math. Monthly, 70 (1963) pp. 12-17
+**S. W. Golomb and L. D. Baumert**, The search for Hadamard
+matrices, Amer. Math. Monthly, 70 (1963) pp. 12-17,
+https://doi.org/10.1080/00029890.1963.11990035.
 """
 struct Hadamard{T<:Number} <: AbstractMatrix{T}
     n::Integer

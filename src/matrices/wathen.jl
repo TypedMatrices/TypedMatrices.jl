@@ -16,9 +16,9 @@ the consistent mass matrix for a regular nx-by-ny grid of
 *Groups:* ["symmetric", "posdef", "eigen", "random", "sparse"]
 
 # References
-**A. J. Wathen**, Realistic eigenvalue bounds for
-    the Galerkin mass matrix, IMA J. Numer. Anal., 7 (1987),
-    pp. 449-457.
+**A. J. Wathen**, Realistic eigenvalue bounds for the Galerkin
+mass matrix, IMA J. Numer. Anal., 7 (1987), pp. 449-457,
+https://doi.org/10.1093/imanum/7.4.449.
 """
 struct Wathen{T<:Number} <: AbstractMatrix{T}
     nx::Integer

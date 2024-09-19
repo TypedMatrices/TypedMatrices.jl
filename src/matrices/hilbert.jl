@@ -13,11 +13,12 @@ See also [`InverseHilbert`](@ref).
 
 # References
 **M. D. Choi**, Tricks or treats with the Hilbert matrix,
-Amer. Math. Monthly, 90 (1983), pp. 301-312.
+Amer. Math. Monthly, 90 (1983), pp. 301-312,
+https://doi.org/10.1080/00029890.1983.11971218.
 
 **N. J. Higham**, Accuracy and Stability of Numerical Algorithms,
 second edition, Society for Industrial and Applied Mathematics,
-Philadelphia, PA, USA, 2002; sec. 28.1.
+Philadelphia, PA, USA, 2002. See sect. 28.1.
 """
 struct Hilbert{T<:Number} <: AbstractMatrix{T}
     m::Integer

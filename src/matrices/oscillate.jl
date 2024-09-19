@@ -13,9 +13,9 @@ A matrix `A` is called oscillating if `A` is totally
 - dim: `mode = 1`.
 
 # References
-**Per Christian Hansen**, Test matrices for
-    regularization methods. SIAM J. SCI. COMPUT Vol 16,
-    No2, pp 506-512 (1995).
+**P. C. Hansen**, Test matrices for regularization methods, SIAM J.
+Sci. Comput., 16 (1995), pp. 506-512, https://doi.org/10.1137/0916032.
+.
 """
 struct Oscillate{T<:Number} <: AbstractMatrix{T}
     n::Integer
