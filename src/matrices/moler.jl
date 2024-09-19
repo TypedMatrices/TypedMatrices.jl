@@ -11,8 +11,8 @@ It has one small eigenvalue.
 
 # References
 **J.C. Nash**, Compact Numerical Methods for Computers:
-    Linear Algebra and Function Minimisation, second edition,
-    Adam Hilger, Bristol, 1990 (Appendix 1).
+Linear Algebra and Function Minimisation, second edition,
+Adam Hilger, Bristol, 1990 (Appendix 1).
 """
 struct Moler{T<:Number} <: AbstractMatrix{T}
     n::Integer

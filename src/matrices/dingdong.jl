@@ -9,9 +9,9 @@ The eigenvalues cluster around `π/2` and `-π/2`.
 - dim: the dimension of the matrix.
 
 # References
-**J. C. Nash**, Compact Numerical Methods for
-Computers: Linear Algebra and Function Minimisation,
-second edition, Adam Hilger, Bristol, 1990 (Appendix 1).
+**J. C. Nash**, Compact Numerical Methods for Computers:
+Linear Algebra and Function Minimisation, second edition,
+Adam Hilger, Bristol, 1990 (Appendix 1).
 """
 struct DingDong{T<:Number} <: AbstractMatrix{T}
     n::Integer

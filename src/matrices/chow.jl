@@ -11,7 +11,8 @@ The Chow matrix is a singular Toeplitz lower Hessenberg matrix.
 
 # References
 **T. S. Chow**, A class of Hessenberg matrices with known
-                eigenvalues and inverses, SIAM Review, 11 (1969), pp. 391-395.
+eigenvalues and inverses, SIAM Rev., 11 (1969), pp. 391-395,
+https://doi.org/10.1137/1011065.
 """
 struct Chow{T<:Number} <: AbstractMatrix{T}
     n::Integer

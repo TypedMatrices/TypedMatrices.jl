@@ -12,8 +12,9 @@ Given two vectors `x` and `y`, the `(i,j)` entry of the Cauchy matrix is
 
 # References
 **N. J. Higham**, Accuracy and Stability of Numerical Algorithms,
-second edition, Society for Industrial and Applied Mathematics, Philadelphia, PA, USA,
-2002; sec. 28.1
+second edition, Society for Industrial and Applied Mathematics,
+Philadelphia, PA, USA, 2002, https://doi.org/10.1137/1.9780898718027.
+See sect. 28.1.
 """
 struct Cauchy{T<:Number,X<:AbstractVector,Y<:AbstractVector} <: AbstractMatrix{T}
     x::X

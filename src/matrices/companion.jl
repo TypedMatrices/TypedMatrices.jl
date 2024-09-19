@@ -11,7 +11,12 @@ The companion matrix to a monic polynomial
 # Input Options
 - vec: `vec` is a vector of coefficients.
 - dim: `vec = [1:dim;]`. `dim` is the dimension of the matrix.
-- polynomial: `polynomial` is a polynomial. vector will be appropriate values from coefficients.
+- polynomial: `polynomial` is a polynomial. Last column will contain
+its coefficients.
+
+# References
+**N. J. Higham**, What Is the Companion Matrix?,
+https://nhigham.com/2021/03/23/what-is-a-companion-matrix/
 """
 struct Companion{T<:Number} <: AbstractMatrix{T}
     n::Integer

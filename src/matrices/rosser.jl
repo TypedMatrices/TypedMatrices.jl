@@ -21,10 +21,9 @@ The Rosser matrix’s eigenvalues are very close together
 - dim: `a = rand(1:5), b = rand(1:5)`.
 
 # References
-**J. B. Rosser, C. Lanczos, M. R. Hestenes, W. Karush**,
-            Separation of close eigenvalues of a real symmetric matrix,
-            Journal of Research of the National Bureau of Standards, v(47)
-            (1951)
+**J. B. Rosser, C. Lanczos, M. R. Hestenes, and W. Karush**,
+Separation of close eigenvalues of a real symmetric matrix,
+J. Research National Bureau Standards, 47 (1951), pp. 291-297.
 """
 struct Rosser{T<:Number} <: AbstractMatrix{T}
     n::Integer

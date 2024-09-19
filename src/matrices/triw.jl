@@ -11,9 +11,9 @@ Upper triangular matrices discussed by Wilkinson and others.
 - dim: the dimension of the matrix.
 
 # References
-**G. H. Golub and J. H. Wilkinson**, Ill-conditioned
-eigensystems and the computation of the Jordan canonical form,
-SIAM Review, 18(4), 1976, pp. 578-6
+**G. H. Golub and J. H. Wilkinson**, Ill-conditioned eigensystems
+and the computation of the Jordan canonical form, SIAM Rev., 18
+(1976), pp. 578-619, https://doi.org/10.1137/1018113.
 """
 struct Triw{T<:Number} <: AbstractMatrix{T}
     n::Integer

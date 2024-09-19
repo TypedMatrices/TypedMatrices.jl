@@ -11,8 +11,9 @@ The Clement matrix is a tridiagonal matrix with zero
 - dim: `k = 0`.
 
 # References
-**P. A. Clement**, A class of triple-diagonal
-        matrices for test purposes, SIAM Review, 1 (1959), pp. 50-52.
+**P. A. Clement**, A class of triple-diagonal matrices
+for test purposes, SIAM Rev., 1 (1959), pp. 50-52,
+https://doi.org/10.1137/1001006.
 """
 abstract type Clement{T<:Number} <: AbstractMatrix{T} end
 

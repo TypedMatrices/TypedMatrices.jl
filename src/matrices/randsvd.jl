@@ -17,7 +17,7 @@ Random Matrix with Pre-assigned Singular Values
 # References
 **N. J. Higham**, Accuracy and Stability of Numerical
 Algorithms, second edition, Society for Industrial and Applied Mathematics,
-Philadelphia, PA, USA, 2002; sec. 28.3.
+Philadelphia, PA, USA, 2002. See sect. 28.3.
 """
 struct RandSVD{T<:Number} <: AbstractMatrix{T}
     m::Integer

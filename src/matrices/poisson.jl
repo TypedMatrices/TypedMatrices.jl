@@ -10,8 +10,8 @@ A block tridiagonal matrix from Poisson’s equation.
 
 # References
 **G. H. Golub and C. F. Van Loan**, Matrix Computations,
-          second edition, Johns Hopkins University Press, Baltimore,
-          Maryland, 1989 (Section 4.5.4).
+second edition, Johns Hopkins University Press, Baltimore,
+Maryland, 1989. See sect. 4.5.4.
 """
 struct Poisson{T<:Number} <: AbstractMatrix{T}
     n::Integer

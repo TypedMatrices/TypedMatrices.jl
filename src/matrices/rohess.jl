@@ -7,8 +7,9 @@ The matrix is constructed via a product of Givens rotations.
 - dim: the dimension of the matrix.
 
 # References
-**W. B. Gragg**, The QR algorithm for unitary
-    Hessenberg matrices, J. Comp. Appl. Math., 16 (1986), pp. 1-8.
+**W. B. Gragg**, The QR algorithm for unitary Hessenberg matrices,
+J. Comp. Appl. Math., 16 (1986), pp. 1-8,
+https://doi.org/10.1016/0377-0427(86)90169-X.
 """
 struct Rohess{T<:Number} <: AbstractMatrix{T}
     n::Integer
