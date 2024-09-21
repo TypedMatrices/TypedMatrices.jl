@@ -8,8 +8,8 @@ Check [Getting Started](@ref) for a quick start.
 
 ## Features
 
-- Types of matercies, can be used in algorithm tests or other.
-- Optimized matrix operations for these types
-- Properties (tags) for matrices.
-- Grouping matercies and allow user to define their own types.
-- Filtering matrices by properties or groups.
+- Matrix Types: Types representing special matrices that can be used for algorithm testing or other computations.
+- Linear Algebra Operations: Operations are fine-tuned to enhance the performance of these matrix types.
+- Matrix Properties (Tags): Users can add properties (tags) to matrices, which can be used for organization or computation.
+- Matrix Grouping: Matrices can be grouped together depending on types or properties, with the flexibility for users to define their own types.
+- Filtering by Properties/Groups: Matrices can be filtered by property or group for more targeted computations.
