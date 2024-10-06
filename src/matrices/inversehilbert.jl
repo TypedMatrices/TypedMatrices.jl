@@ -1,6 +1,7 @@
 """
 Inverse of the Hilbert Matrix
 =============================
+This is the inverse of the Hilbert matrix.
 
 See also [`Hilbert`](@ref).
 

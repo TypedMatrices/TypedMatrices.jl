@@ -1,7 +1,7 @@
 """
 Chow Matrix
 ===========
-The Chow matrix is a singular Toeplitz lower Hessenberg matrix.
+The Chow matrix is a singular Toeplitz lower-Hessenberg matrix.
 
 # Input Options
 - dim, alpha, delta: `dim` is dimension of the matrix.

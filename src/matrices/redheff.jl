@@ -1,7 +1,7 @@
 """
 Redheffer Matrix
 ================
-Redheffer matrix of 1s and 0s.
+The Redheffer matrix contains only 1s and 0s.
 
 # Input Options
 - dim: the dimension of the matrix.

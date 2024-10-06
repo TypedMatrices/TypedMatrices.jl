@@ -1,8 +1,8 @@
 """
 Poisson Matrix
 ==============
-A block tridiagonal matrix from Poisson’s equation.
-     This matrix is sparse, symmetric positive definite and
+A block tridiagonal matrix from Poisson's equation.
+     This matrix is sparse, symmetric positive definite, and
      has known eigenvalues.
 
 # Input Options

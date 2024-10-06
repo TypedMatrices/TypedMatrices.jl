@@ -1,9 +1,10 @@
 """
 Golub Matrix
 ============
-Golub matrix is the product of two random unit lower and upper
-    triangular matrices respectively. LU factorization without pivoting
-    fails to reveal that such matrices are badly conditioned.
+The Golub matrix is the product of two random matrices, the first is
+unit lower triangular and the second is upper triangular. The LU
+factorization without pivoting fails to reveal that such matrices
+are badly conditioned.
 
 # Input Options
 - dim: the dimension of the matrix.

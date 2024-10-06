@@ -1,9 +1,9 @@
 """
 Hadamard Matrix
 ===============
-The Hadamard matrix is a square matrix whose entries are
-1 or -1. It was named after Jacques Hadamard. The rows of
-a Hadamard matrix are orthogonal.
+The Hadamard matrix is a square matrix of order a power of 2,
+whose entries are `1` or `–1`. It was named after Jacques
+Hadamard. The rows of a Hadamard matrix are orthogonal.
 
 # Input Options
 - dim: the dimension of the matrix, `dim` is a power of 2.

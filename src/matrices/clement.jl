@@ -2,7 +2,7 @@
 Clement Matrix
 ==============
 The Clement matrix is a tridiagonal matrix with zero
-        diagonal entries. If k = 1, the matrix is symmetric.
+diagonal entries. If k = 1, the matrix is symmetric.
 
 # Input Options
 - dim, k: `dim` is the dimension of the matrix.

@@ -1,7 +1,8 @@
 """
 Hanowa Matrix
 =============
-The Hanowa matrix is a matrix which eigenvalues lie on a vertical line in the complex plane.
+The Hanowa matrix is a matrix whose eigenvalues lie
+on a vertical line in the complex plane.
 
 # Input Options
 - dim: the dimension of the matrix and `alpha = -1`.

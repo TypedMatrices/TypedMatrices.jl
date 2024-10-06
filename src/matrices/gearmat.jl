@@ -1,13 +1,15 @@
 """
 Gear Matrix
 ===========
-A gear matrix. 1's on the sub and super diagonal,
-sign(i) on the (1,abs(i)) and sign(j) on the (n,n+1-abs(j)) position,
-other elements are 0.
+The Gear matrix has ones on the first subdiagonal and superdiagonal, and
+has two additional entries of value ±1. Given the two integers
+`-n ≤ i ≤ n` and `-n ≤ j ≤ n`, the matrix has the elements 
+`sign(i)` in position `(1, abs(i))` and `sign(j)` in position `(n, n+1-abs(j))`.
+The other elements are zeros.
 
 # Input Options
+- dim, i, j: the dimension of the matrix and the position of the 1s.
 - dim: the dimension of the matrix. `i = n` and `j = -n` by default.
-- dim, i, j: the dimension of the matrix and the position of the 1's.
 
 # References
 **C. W. Gear**, A simple set of test matrices for eigenvalue programs,

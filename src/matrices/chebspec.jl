@@ -1,14 +1,16 @@
 """
 Chebyshev Spectral Differentiation Matrix
 =========================================
+The Chebyshev Spectral Differentiation Matrix is used to approximate
+numerically the derivatives of a function evaluated at Chebyshev nodes.
+
 If `k = 0`,the generated matrix is nilpotent and a vector with
-        all one entries is a null vector. If `k = 1`, the generated
-        matrix is nonsingular and well-conditioned. Its eigenvalues
-        have negative real parts.
+all one entries is a null vector. If `k = 1`, the generated
+matrix is nonsingular and well-conditioned. Its eigenvalues
+have negative real parts.
 
 # Input Options
-- dim, k: `dim` is the dimension of the matrix and
-        `k = 0 or 1`.
+- dim, k: `dim` is the dimension of the matrix and `k` is either `0` or `1`.
 - dim: `k=0`.
 
 # References

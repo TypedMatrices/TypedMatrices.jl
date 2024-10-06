@@ -6,6 +6,11 @@ A matrix with ones on the first row, `mu` on the subdiagonal, and zeros elsewher
 # Input Options
 - dim: the dimension of the matrix. `mu = sqrt(eps())` by default.
 - dim, mu: the dimension and subdiagonal value of the matrix.
+
+# References
+**P. Lauchli**, Jordan-Elimination und Ausgleichung nach kleinsten
+Quadraten, Numer. Math, 3 (1961), pp. 226-240.
+https://doi.org/10.1007/BF01386022
 """
 struct Lauchli{T<:Number} <: AbstractMatrix{T}
     m::Integer

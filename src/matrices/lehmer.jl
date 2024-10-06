@@ -2,8 +2,8 @@
 Lehmer Matrix
 =============
 The Lehmer matrix is a symmetric positive definite matrix.
-            It is totally nonnegative. The inverse is tridiagonal and
-            explicitly known
+It is totally nonnegative. The inverse is tridiagonal and
+explicitly known.
 
 # Input Options
 - dim: the dimension of the matrix.
