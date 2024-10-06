@@ -48,11 +48,11 @@ struct Defective <: AbstractProperty end
 """
 The matrix is diagonally dominant.
 """
-struct DiagDom <: AbstractProperty end
+struct DiagonallyDominant <: AbstractProperty end
 """
 Part of the eigensystem of the matrix is explicitly known.
 """
-struct Eigen <: AbstractProperty end
+struct Eigensystem <: AbstractProperty end
 """
 The matrix is only available in some fixed sizes.
 """
@@ -72,7 +72,7 @@ struct Hessenberg <: AbstractProperty end
 """
 The matrix is ill-conditioned for some parameter values.
 """
-struct IllCond <: AbstractProperty end
+struct IllConditioned <: AbstractProperty end
 """
 The matrix is indefinite for some parameter values.
 """
@@ -80,7 +80,7 @@ struct Indefinite <: AbstractProperty end
 """
 The matrix is infinitely divisible.
 """
-struct InfDiv <: AbstractProperty end
+struct InfintelyDivisible <: AbstractProperty end
 """
 The matrix has integer entries.
 """
@@ -100,7 +100,7 @@ struct Nilpotent <: AbstractProperty end
 """
 The matrix is nonnegative for some parameter values.
 """
-struct NonNeg <: AbstractProperty end
+struct Nonnegative <: AbstractProperty end
 """
 The matrix is normal.
 """
@@ -116,7 +116,7 @@ struct Positive <: AbstractProperty end
 """
 The matrix is positive definite for some parameter values.
 """
-struct PosDef <: AbstractProperty end
+struct PositiveDefinite <: AbstractProperty end
 """
 The matrix has random entries.
 """
@@ -124,7 +124,7 @@ struct Random <: AbstractProperty end
 """
 The matrix is rank deficient.
 """
-struct RankDef <: AbstractProperty end
+struct RankDeficient <: AbstractProperty end
 """
 The matrix is rectangular for some parameter values.
 """
@@ -132,11 +132,11 @@ struct Rectangular <: AbstractProperty end
 """
 The output is a test problem for regularization methods.
 """
-struct RegProb <: AbstractProperty end
+struct RegularisationProblem <: AbstractProperty end
 """
 Part of the singular values and vectors of the matrix is explicitly known.
 """
-struct SingVal <: AbstractProperty end
+struct SingularValues <: AbstractProperty end
 """
 The matrix is sparse.
 """
@@ -160,11 +160,11 @@ struct Toeplitz <: AbstractProperty end
 """
 The matrix is totally nonnegative for some parameter values.
 """
-struct TotNonNeg <: AbstractProperty end
+struct TotallyNonnegative <: AbstractProperty end
 """
 The matrix is totally positive for some parameter values.
 """
-struct TotPos <: AbstractProperty end
+struct TotallyPositive <: AbstractProperty end
 """
 The matrix is unimodular for some parameter values.
 """
