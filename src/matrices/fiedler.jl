@@ -1,8 +1,8 @@
 """
 Fiedler Matrix
 ==============
-The Fiedler matrix is symmetric matrix with a dominant
-      positive eigenvalue and all the other eigenvalues are negative.
+The Fiedler matrix has exactly one positive eigenvalue, the dominant one.
+All the other eigenvalues are negative.
 
 # Input Options
 - vec: a vector.

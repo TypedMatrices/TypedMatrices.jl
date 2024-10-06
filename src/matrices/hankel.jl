@@ -1,8 +1,7 @@
 """
 Hankel Matrix
 =============
-A Hankel matrix is a matrix that is symmetric and constant
-                across the anti-diagonals.
+A Hankel matrix is constant across the anti-diagonals. It is symmetric.
 
 # Input Options
 - vc, vr: `vc` and `vc` are the first column and last row of the

@@ -1,7 +1,8 @@
 """
 Krylov Matrix
 =============
-Krylow matrix equal to [x, B*x, B^2*x, ..., B^(k-1)*x].
+The basis of a Krylow subspace. The matrix has columns
+`[x, A*x, A^2*x, ..., A^(k-1)*x]`.
 
 # Input Options
 - dim: dimension of the matrix. `A = randn(dim, dim)`. `x = ones(dim)`. `k = dim`.
@@ -9,7 +10,7 @@ Krylow matrix equal to [x, B*x, B^2*x, ..., B^(k-1)*x].
 - dim, x, k: dimension of the matrix, x and k.
 - A: matrix. `x = ones(size(A, 1))`. `k = size(A, 1)`.
 - A, x: matrix and x. `k = size(A, 1)`.
-- A, x, k: matrix, x and k.
+- A, x, k: matrix, x, and k.
 """
 struct Krylov{T<:Number} <: AbstractMatrix{T}
     n::Integer

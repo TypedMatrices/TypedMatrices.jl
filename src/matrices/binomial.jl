@@ -1,7 +1,7 @@
 """
 Binomial Matrix
 ===============
-The matrix is a multiple of an involutory matrix.
+The binomial matrix is a multiple of an involutory matrix.
 
 # Input Options
 - dim: the dimension of the matrix.

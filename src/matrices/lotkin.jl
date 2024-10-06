@@ -2,8 +2,8 @@
 Lotkin Matrix
 =============
 The Lotkin matrix is the Hilbert matrix with its first row
-        altered to all ones. It is unsymmetric, illcond and
-        has many negative eigenvalues of small magnitude.
+altered to all ones. It is ill conditioned and has many
+negative eigenvalues of small magnitude.
 
 # Input Options
 - dim: `dim` is the dimension of the matrix.

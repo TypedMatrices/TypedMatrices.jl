@@ -2,8 +2,7 @@
 Wilkinson Matrix
 ================
 The Wilkinson matrix is a symmetric tridiagonal matrix with pairs
-of nearly equal eigenvalues. The most frequently used case
-is the matrix of size 21.
+of nearly equal eigenvalues. The most frequently used ordre is 21.
 
 # Input Options
 - dim: the dimension of the matrix.

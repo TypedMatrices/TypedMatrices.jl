@@ -2,7 +2,7 @@
 Frank Matrix
 ============
 The Frank matrix is an upper Hessenberg matrix with
-determinant 1. The eigenvalues are real, positive and
+determinant 1. The eigenvalues are real, positive, and
 very ill conditioned.
 
 # Input Options

@@ -3,8 +3,9 @@ Kahan Matrix
 ============
 The Kahan matrix is an upper trapezoidal matrix, i.e., the
 `(i,j)` element is equal to `0` if `i > j`. The useful range of
-    `θ` is `0 < θ < π`. The diagonal is perturbed by
-    `pert*eps()*diagm([n:-1:1;])`.
+`θ` is `0 < θ < π`.
+
+The diagonal is perturbed by `pert*eps()*diagm([n:-1:1;])`.
 
 # Input Options
 - rowdim, coldim, θ, pert: `rowdim` and `coldim` are the row and column
