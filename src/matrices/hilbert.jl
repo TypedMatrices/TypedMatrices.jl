@@ -38,7 +38,7 @@ Hilbert{T}(n::Integer) where {T<:Number} = Hilbert{T}(n, n)
 Hilbert{T}(m::Integer, n::Integer) where {T<:Integer} = Hilbert{Rational{T}}(m, n)
 
 # metadata
-@properties Hilbert [:symmetric, :inverse, :illcond, :posdef, :totpos]
+@properties Hilbert [:symmetric, :inverse, :hankel, :illcond, :posdef, :totpos]
 
 # properties
 size(A::Hilbert) = (A.m, A.n)

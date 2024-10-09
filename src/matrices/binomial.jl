@@ -24,7 +24,7 @@ end
 Binomial(n::Integer) = Binomial{Int}(n)
 
 # metadata
-@properties Binomial [:involutory, :integer]
+@properties Binomial [:integer] # It is not :involutory, but a multiple thereof.
 
 # properties
 size(A::Binomial) = (A.n, A.n)
