@@ -40,4 +40,4 @@ function Clement{T}(n::Integer, k::Integer) where {T}
 end
 
 # metadata
-@properties Clement [:tridiagonal, :eigen, :singval]
+@properties Clement [:tridiagonal, :eigen, :nonneg, :singval] # :posdef if k = 0, :symmetric if k = 1.

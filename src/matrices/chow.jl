@@ -6,7 +6,7 @@ The Chow matrix is a singular Toeplitz lower-Hessenberg matrix.
 # Input Options
 - dim, alpha, delta: `dim` is dimension of the matrix.
             `alpha`, `delta` are scalars such that `A[i,i] = alpha + delta` and
-            `A[i,j] = alpha^(i + 1 -j)` for `j + 1 <= i`.
+            `A[i,j] = alpha^(i - j + 1)` for `j + 1 <= i`.
 - dim: `alpha = 1`, `delta = 0`.
 
 # References
@@ -27,11 +27,12 @@ end
 
 # constructors
 Chow(n::Integer) = Chow(n, 1, 0)
-Chow(n::Integer, alpha, delta) = Chow{Int}(n, alpha, delta)
+Chow(n::Integer, alpha::T, delta::T) where {T<:Number} = Chow{T}(n, alpha, delta)
+Chow(n::Integer, alpha::S, delta::T) where {S,T<:Number} = Chow{typejoin(S,T)}(n, alpha, delta)
 Chow{T}(n::Integer) where {T<:Number} = Chow{T}(n, 1, 0)
 
 # metadata
-@properties Chow [:hessenberg, :toeplitz, :binary, :eigen, :rankdef, :inverse]
+@properties Chow [:hessenberg, :toeplitz, :eigen, :inverse]
 
 # properties
 size(A::Chow) = (A.n, A.n)
