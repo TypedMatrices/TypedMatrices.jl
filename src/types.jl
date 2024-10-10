@@ -80,7 +80,7 @@ struct Indefinite <: AbstractProperty end
 """
 The matrix is infinitely divisible.
 """
-struct InfintelyDivisible <: AbstractProperty end
+struct InfinitelyDivisible <: AbstractProperty end
 """
 The matrix has integer entries.
 """
