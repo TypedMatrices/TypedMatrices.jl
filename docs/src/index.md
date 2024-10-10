@@ -1,15 +1,14 @@
-# TypedMatrices.jl Documentation
+# TypedMatrices.jl
 
-Welcome to the documentation for TypedMatrices.jl.
+Welcome to the documentation of `TypedMatrices.jl`, an extensible matrix collection for Julia. The matrices in the library can be used to test algorithms or check (and potentially disprove) linear algebra conjectures numerically.
 
-An extensible Julia matrix collection utilizing type system to enhance performance.
+The package relies on the Julia type system to enhance performance by improving the matrix generation time and reducing storage requirements.
 
-Check [Getting Started](@ref) for a quick start.
+To get started, check out the [Getting Started](@ref) section.
 
 ## Features
 
-- Matrix Types: Types representing special matrices that can be used for algorithm testing or other computations.
-- Linear Algebra Operations: Operations are fine-tuned to enhance the performance of these matrix types.
-- Matrix Properties (Tags): Users can add properties (tags) to matrices, which can be used for organization or computation.
-- Matrix Grouping: Matrices can be grouped together depending on types or properties, with the flexibility for users to define their own types.
-- Filtering by Properties/Groups: Matrices can be filtered by property or group for more targeted computations.
+- Each special matrix has its own Julia type, and users can define new types compatible with the package using the interface provided.
+- Many linear algebra operations are implemented using explicit formulas, when known, to enhance performance.
+- The matrices in the collection can be filtered by property, to find examples that satisfy a set of properties of interest.
+- Users can create matrix groups to retrieve and organize the types in the collection.
