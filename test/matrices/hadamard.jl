@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Hadamard.((2) .^ (1:4)))
+run_test_linear_algebra_functions(Hadamard.((2) .^ (1:4)))
 
 # eltype
 @test test_matrix_elements(Hadamard{Int32}(4))

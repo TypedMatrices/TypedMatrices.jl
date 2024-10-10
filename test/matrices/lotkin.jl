@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Lotkin.(1:5))
+run_test_linear_algebra_functions(Lotkin.(1:5))
 
 # eltype
 @test test_matrix_elements(Lotkin{Int32}(5))

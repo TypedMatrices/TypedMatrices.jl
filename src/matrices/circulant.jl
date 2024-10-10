@@ -7,7 +7,7 @@ step forward.
 
 # Input Options
 - vec: a vector.
-- dim: an integer, as vector 1:dim.
+- dim: an integer, as vector `1:dim`.
 
 # References
 **P. J. Davis**, Circulant Matrices, John Wiley, 1977.

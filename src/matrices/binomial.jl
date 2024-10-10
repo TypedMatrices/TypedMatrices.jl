@@ -1,14 +1,15 @@
 """
 Binomial Matrix
 ===============
-The matrix is a multiple of an involutory matrix.
+The binomial matrix is a multiple of an involutory matrix.
 
 # Input Options
 - dim: the dimension of the matrix.
 
 # References
-**G. Boyd, C.A. Micchelli, G. Strang and D.X. Zhou**,
-Binomial matrices, Adv. in Comput. Math., 14 (2001), pp 379-391.
+**G. Boyd, C. A. Micchelli, G. Strang and D. X. Zhou**,
+Binomial matrices, Adv. Comput. Math., 14 (2001), pp. 379-391,
+https://doi.org/10.1023/A:1012207124894.
 """
 struct Binomial{T<:Number} <: AbstractMatrix{T}
     n::Integer
@@ -23,7 +24,7 @@ end
 Binomial(n::Integer) = Binomial{Int}(n)
 
 # metadata
-@properties Binomial [:involutory, :integer]
+@properties Binomial [:integer] # It is not :involutory, but a multiple thereof.
 
 # properties
 size(A::Binomial) = (A.n, A.n)

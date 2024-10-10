@@ -2,7 +2,8 @@
 Smoke Matrix
 ============
 Complex matrix with a "smoke ring" pseudospectrum.
-1's on the superdiagonal, cos(w) + sin(w) * im on the diagonal.
+The matrix has ones on the superdiagonal, and
+cos(w) + sin(w) * im on the diagonal.
 The `A(n, 1)`` entry is 1 if k = 0, 0 if k = 1.
 
 # Input Options

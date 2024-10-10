@@ -9,9 +9,9 @@ A nonsymmetric matrix with eigenvalues 0, 1, 2, ... n-1.
             `vec = [1:dim;]/dim`.
 
 # References
-**L. Bondesson and I. Traat**, A nonsymmetric matrix
-            with integer eigenvalues, linear and multilinear algebra, 55(3)
-            (2007), pp. 239-247
+**L. Bondesson and I. Traat**, A nonsymmetric matrix with integer
+eigenvalues, Linear Multilinear Algebra, 55 (2007), pp. 239-247,
+https://doi.org/10.1080/03081080600906455.
 """
 struct Sampling{T<:Number} <: AbstractMatrix{T}
     n::Integer

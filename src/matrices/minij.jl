@@ -9,9 +9,9 @@ A matrix with `(i,j)` entry `min(i,j)`. It is a symmetric positive
 - dim: the dimension of the matrix.
 
 # References
-**J. Fortiana and C. M. Cuadras**, A family of matrices,
-            the discretized Brownian bridge, and distance-based regression,
-            Linear Algebra Appl., 264 (1997), 173-188.  (For the eigensystem of A.)
+**J. Fortiana and C. M. Cuadras**, A family of matrices, the discretized
+Brownian bridge, and distance-based regression, Linear Algebra Appl.,
+264 (1997), pp. 173-188, https://doi.org/10.1016/S0024-3795(97)00051-7.
 """
 struct Minij{T<:Number} <: AbstractMatrix{T}
     n::Integer

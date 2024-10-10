@@ -1,7 +1,8 @@
 """
 Dramadah Matrix
 ================
-Dramadah matrix is a matrix with 0s and 1s.
+The Dramadah matrix is a matrix of 0s and 1s whose inverse has
+comparatively large Frobenius norm.
 
 # Input Options
 - dim, k: the dimension of the matrix and k.
@@ -9,6 +10,11 @@ Dramadah matrix is a matrix with 0s and 1s.
     `k = 2` the inverse has integer entries.
     `k = 3` det(A) is equal to nth Fibonacci number.
 - dim: `k = 1`.
+
+# References
+**R.L. Graham and N.J.A. Sloane**, Anti-Hadamard matrices, 
+Linear Algebra and Appl., 62 (1984), pp. 113-137.
+https://doi.org/10.1016/0024-3795(84)90090-9
 """
 struct Dramadah{T<:Number} <: AbstractMatrix{T}
     n::Integer

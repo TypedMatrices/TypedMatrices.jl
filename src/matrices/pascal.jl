@@ -14,7 +14,7 @@ The Pascal matrix’s anti-diagonals form the Pascal’s triangle.
 
 **N. J. Higham**, Accuracy and Stability of Numerical Algorithms,
 second edition, Society for Industrial and Applied Mathematics, Philadelphia, PA,
-USA, 2002; sec. 28.4.
+USA, 2002. See sect. 28.4.
 """
 struct Pascal{T<:Number} <: AbstractMatrix{T}
     n::Integer

@@ -7,7 +7,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Hanowa.(2:2:8))
+run_test_linear_algebra_functions(Hanowa.(2:2:8))
 
 # eltype
 @test test_matrix_elements(Hanowa{Int32}(6))

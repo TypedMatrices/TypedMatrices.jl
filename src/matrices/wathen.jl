@@ -3,22 +3,19 @@ using SparseArrays: sparse
 """
 Wathen Matrix
 =============
-Wathen Matrix is a sparse, symmetric positive, random matrix
-arose from the finite element method. The generated matrix is
-the consistent mass matrix for a regular nx-by-ny grid of
-8-nodes.
+The Wathen Matrix is the consistent mass matrix of a regular `nx`-by-`ny`` grid of
+8 nodes in the finite element method. The matrix is a sparse, symmetric positive
+definite, and has random entries.
 
 # Input Options
 - [type,] nx, ny: the dimension of the matrix is equal to
     `3 * nx * ny + 2 * nx * ny + 1`.
 - [type,] n: `nx = ny = n`.
 
-*Groups:* ["symmetric", "posdef", "eigen", "random", "sparse"]
-
 # References
-**A. J. Wathen**, Realistic eigenvalue bounds for
-    the Galerkin mass matrix, IMA J. Numer. Anal., 7 (1987),
-    pp. 449-457.
+**A. J. Wathen**, Realistic eigenvalue bounds for the Galerkin
+mass matrix, IMA J. Numer. Anal., 7 (1987), pp. 449-457,
+https://doi.org/10.1093/imanum/7.4.449.
 """
 struct Wathen{T<:Number} <: AbstractMatrix{T}
     nx::Integer

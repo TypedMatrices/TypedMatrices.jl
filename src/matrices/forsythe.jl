@@ -1,7 +1,7 @@
 """
 Forsythe Matrix
 ===============
-The Forsythe matrix is a n-by-n perturbed Jordan block.
+The Forsythe matrix is an `n`-by-`n` perturbed Jordan block.
 This generator is adapted from N. J. Higham's Test Matrix Toolbox.
 
 # Input Options

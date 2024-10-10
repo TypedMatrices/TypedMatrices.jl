@@ -2,14 +2,15 @@
 Lotkin Matrix
 =============
 The Lotkin matrix is the Hilbert matrix with its first row
-        altered to all ones. It is unsymmetric, illcond and
-        has many negative eigenvalues of small magnitude.
+altered to all ones. It is ill conditioned and has many
+negative eigenvalues of small magnitude.
 
 # Input Options
 - dim: `dim` is the dimension of the matrix.
 
 # References
-**M. Lotkin**, A set of test matrices, MTAC, 9 (1955), pp. 153-161.
+**M. Lotkin**, A set of test matrices, Math. Tables Aid Comput.,
+9 (1955), pp. 153-161, https://doi.org/10.2307/2002051.
 """
 struct Lotkin{T<:Number} <: AbstractMatrix{T}
     n::Integer

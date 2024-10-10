@@ -8,9 +8,12 @@ Kac-Murdock-Szego Toeplitz matrix
 - dim: `rho = 0.5`.
 
 # References
-**W. F. Trench**, Numerical solution of the eigenvalue
-    problem for Hermitian Toeplitz matrices, SIAM J. Matrix Analysis
-    and Appl., 10 (1989), pp. 135-146 (and see the references therein).
+**W. F. Trench**, Numerical solution of the eigenvalue problem for Hermitian
+Toeplitz matrices, SIAM J. Matrix Anal. Appl., 10 (1989), pp. 135-146,
+https://doi.org/10.1137/0610010.
+
+**N. J. Higham**, What Is the Kac-Murdock-Szegö Matrix?,
+https://nhigham.com/2021/07/06/what-is-the-kac-murdock-szego-matrix/
 """
 struct KMS{T<:Number} <: AbstractMatrix{T}
     n::Integer

@@ -10,7 +10,7 @@ The Pei matrix is a symmetric matrix with known inversion.
 
 # References
 **M. L. Pei**, A test matrix for inversion procedures,
-    Comm. ACM, 5 (1962), p. 508.
+Comm. ACM, 5 (1962), p. 508, https://doi.org/10.1145/368959.368975.
 """
 struct Pei{T<:Number} <: AbstractMatrix{T}
     n::Integer

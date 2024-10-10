@@ -1,12 +1,18 @@
 """
 Dorr Matrix
 ============
-Dorr Matrix is a diagonally dominant, illcond, tridiagonal sparse matrix.
+The Dorr Matrix is a diagonally dominant, ill-conditioned,
+tridiagonal sparse matrix.
 
 # Input Options
 - dim, theta: `dim` is the dimension of the matrix and
         `theta` is the parameter of the matrix.
 - dim: `theta = 0.01`.
+
+# References
+**F. W. Dorr**, An example of ill-conditioning in the numerical solution
+of singular perturbation problems, Math. Comp., 25 (1971), pp. 271-283,
+https://doi.org/10.1090/S0025-5718-1971-0297142-0.
 """
 abstract type Dorr{T<:Number} <: AbstractMatrix{T} end
 

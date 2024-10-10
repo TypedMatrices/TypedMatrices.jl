@@ -3,8 +3,9 @@ Kahan Matrix
 ============
 The Kahan matrix is an upper trapezoidal matrix, i.e., the
 `(i,j)` element is equal to `0` if `i > j`. The useful range of
-    `θ` is `0 < θ < π`. The diagonal is perturbed by
-    `pert*eps()*diagm([n:-1:1;])`.
+`θ` is `0 < θ < π`.
+
+The diagonal is perturbed by `pert*eps()*diagm([n:-1:1;])`.
 
 # Input Options
 - rowdim, coldim, θ, pert: `rowdim` and `coldim` are the row and column
@@ -13,8 +14,8 @@ The Kahan matrix is an upper trapezoidal matrix, i.e., the
 - dim: `θ = 1.2`, `pert = 25`.
 
 # References
-**W. Kahan**, Numerical linear algebra, Canadian Math.
-    Bulletin, 9 (1966), pp. 757-801.
+**W. Kahan**, Numerical linear algebra, Canadian Math. Bulletin,
+9 (1966), pp. 757-801, https://doi.org/10.4153/CMB-1966-083-2.
 """
 struct Kahan{T<:Number} <: AbstractMatrix{T}
     m::Integer

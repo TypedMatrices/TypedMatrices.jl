@@ -7,9 +7,9 @@ An involutory matrix is a matrix that is its own inverse.
 - dim: `dim` is the dimension of the matrix.
 
 # References
-**A. S. Householder and J. A. Carpenter**, The
-        singular values of involutory and of idempotent matrices,
-        Numer. Math. 5 (1963), pp. 234-237.
+**A. S. Householder and J. A. Carpenter**, The singular values
+of involutory and of idempotent matrices, Numer. Math. 5 (1963),
+pp. 234-237, https://doi.org/10.1007/BF01385894.
 """
 struct Involutory{T<:Number} <: AbstractMatrix{T}
     n::Integer

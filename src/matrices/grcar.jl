@@ -10,9 +10,9 @@ eigenvalues.
 - dim: the dimension of the matrix.
 
 # References
-**J. F. Grcar**, Operator coefficient methods
-    for linear equations, Report SAND89-8691, Sandia National
-    Laboratories, Albuquerque, New Mexico, 1989 (Appendix 2).
+**J. F. Grcar**, Operator coefficient methods for linear equations,
+Report SAND89-8691, Sandia National Laboratories, Albuquerque,
+New Mexico, 1989 (Appendix 2).
 """
 struct Grcar{T<:Number} <: AbstractMatrix{T}
     n::Integer
