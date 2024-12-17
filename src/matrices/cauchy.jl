@@ -39,7 +39,8 @@ Cauchy{T}(x::AbstractVector) where {T<:Number} = Cauchy{T}(x, x)
 Cauchy{T}(x::AbstractVector{S}, y::AbstractVector{N}) where {T<:Integer,S<:Number,N<:Number} = Cauchy{Rational{T}}(x, y)
 
 # metadata
-@properties Cauchy [:symmetric, :inverse, :illcond, :posdef, :totpos, :infdiv]
+# It is :totpos, :symmetric, :posdef only if x == y.
+@properties Cauchy [:inverse, :illcond, :infdiv]
 
 # properties
 size(A::Cauchy) = (length(A.x), length(A.y))
@@ -52,27 +53,45 @@ end
 
 # TODO: den may be zero
 # https://en.wikipedia.org/wiki/Cauchy_matrix#Cauchy_determinants
-# function LinearAlgebra.det(A::Cauchy{T}) where {T}
-#     LinearAlgebra.checksquare(A)
-#     n = size(A, 1)
-#     x = A.x
-#     y = A.y
 
-#     num = 1
-#     for i = 2:n
-#         for j = 1:i-1
-#             num *= (x[i] - x[j]) * (y[j] - y[i])
-#         end
-#     end
+function LinearAlgebra.det(A::Cauchy)
+    n = length(A.x)
+    result = 1.0
+    for j in 1:n
+        numerator = 1.0
+        denominator = 1.0
+        for i in 1:j-1
+            numerator *= (A.x[j] - A.x[i]) * (A.y[j] - A.y[i])
+            denominator *= (A.x[i] + A.y[j])
+        end
+        for i in j:n
+            denominator *= (A.x[i] + A.y[j])
+        end
+        # numerator *= prod((A.x[j] - A.x[i]) * (A.y[j] - A.y[i]) for i in 1:j-1; init = 1)
+        # denominator *= prod((A.x[i] + A.y[j]) for i in 1:n)
+        result *= numerator / denominator
+    end
+    return result
+end
+#= function LinearAlgebra.det(A::Cauchy{T}) where {T}
+    LinearAlgebra.checksquare(A)
+    n = size(A, 1)
+    x = A.x
+    y = A.y
 
-#     den = 1
-#     for i = 1:n
-#         for j = 1:n
-#             den *= (x[i] - y[j])
-#         end
-#     end
+    num = 1
+    for i = 2:n
+        for j = 1:i-1
+            num *= (x[i] - x[j]) * (y[j] - y[i])
+        end
+    end
 
-#     @show num, den
+    den = 1
+    for i = 1:n
+        for j = 1:n
+            den *= (x[i] - y[j])
+        end
+    end
 
-#     return num / den
-# end
+    return num / den
+end =#

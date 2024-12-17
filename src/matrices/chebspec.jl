@@ -52,7 +52,8 @@ ChebSpec(n::Integer, k::Integer) = ChebSpec{Float64}(n, k)
 ChebSpec{T}(n::Integer) where {T<:Number} = ChebSpec{T}(n, 0)
 
 # metadata
-@properties ChebSpec [:defective, :nilpotent]
+# Only :nilpotent, :illcond, and :rankdef if k = 0.
+@properties ChebSpec [:defective]
 
 # properties
 size(A::ChebSpec) = (A.n, A.n)
