@@ -12,7 +12,8 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Cauchy{Float64}.(1:5))
+run_test_linear_algebra_functions(Cauchy{Float64}.(1:5))
+run_test_properties(Cauchy{Float64}(randn(5), randn(5)))
 
 # eltype
 @test test_matrix_elements(Cauchy{Float32}(5))

@@ -7,7 +7,8 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Clement.(1:5))
+run_test_linear_algebra_functions(Clement.(1:5))
+run_test_properties(Clement.(5, 1))
 
 # eltype
 @test test_matrix_elements(Clement{Float32}(5))
