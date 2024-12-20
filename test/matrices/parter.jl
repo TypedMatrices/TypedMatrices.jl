@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Parter.(1:5))
+run_test_linear_algebra_functions(Parter.(1:5))
 
 # eltype
 @test test_matrix_elements(Parter{Int32}(5))

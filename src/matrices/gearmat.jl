@@ -1,13 +1,20 @@
 """
 Gear Matrix
 ===========
-A gear matrix. 1's on the sub and super diagonal,
-sign(i) on the (1,abs(i)) and sign(j) on the (n,n+1-abs(j)) position,
-other elements are 0.
+The Gear matrix has ones on the first subdiagonal and superdiagonal, and
+has two additional entries of value ±1. Given the two integers
+`-n ≤ i ≤ n` and `-n ≤ j ≤ n`, the matrix has the elements 
+`sign(i)` in position `(1, abs(i))` and `sign(j)` in position `(n, n+1-abs(j))`.
+The other elements are zeros.
 
 # Input Options
+- dim, i, j: the dimension of the matrix and the position of the 1s.
 - dim: the dimension of the matrix. `i = n` and `j = -n` by default.
-- dim, i, j: the dimension of the matrix and the position of the 1's.
+
+# References
+**C. W. Gear**, A simple set of test matrices for eigenvalue programs,
+Math. Comp., 23 (1969), pp. 119-125,
+https://doi.org/10.1090/S0025-5718-1969-0238477-8.
 """
 struct GearMat{T<:Number} <: AbstractMatrix{T}
     n::Integer
@@ -28,7 +35,7 @@ GearMat(n::Integer, i::Integer, j::Integer) = GearMat{Int}(n, i, j)
 GearMat{T}(n::Integer) where {T<:Number} = GearMat{T}(n, n, -n)
 
 # metadata
-@properties GearMat Symbol[:eigen, :rankdef, :integer]
+@properties GearMat Symbol[:defective, :eigen, :rankdef, :integer, :sparse]
 
 # properties
 size(A::GearMat) = (A.n, A.n)

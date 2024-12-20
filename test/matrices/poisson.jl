@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Poisson.((1:3) .^ 2))
+run_test_linear_algebra_functions(Poisson.((1:3) .^ 2))
 
 # eltype
 @test test_matrix_elements(Poisson{Int32}(4))

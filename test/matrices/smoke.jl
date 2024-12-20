@@ -9,7 +9,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Smoke.(1:5))
+run_test_linear_algebra_functions(Smoke.(1:5))
 
 # eltype
 @test test_matrix_elements(Smoke{Float32}(5))

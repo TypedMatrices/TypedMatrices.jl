@@ -3,15 +3,22 @@ using Polynomials: Polynomial
 """
 Companion Matrix
 ================
-The companion matrix to a monic polynomial
-    `a(x) = a_0 + a_1x + ... + a_{n-1}x^{n-1} + x^n`
-    is the n-by-n matrix with ones on the subdiagonal and
-    the last column given by the coefficients of `a(x)`.
+The companion matrix to the monic polynomial
+```
+a(x) = a_0 + a_1x + ... + a_{n-1}x^{n-1} + x^n
+```
+is the `n`-by-`n` matrix with ones on the first subdiagonal and
+the last column given by the coefficients of `a(x)`.
 
 # Input Options
 - vec: `vec` is a vector of coefficients.
 - dim: `vec = [1:dim;]`. `dim` is the dimension of the matrix.
-- polynomial: `polynomial` is a polynomial. vector will be appropriate values from coefficients.
+- polynomial: `polynomial` is a polynomial. Last column will contain
+its coefficients.
+
+# References
+**N. J. Higham**, What Is the Companion Matrix?,
+https://nhigham.com/2021/03/23/what-is-a-companion-matrix/
 """
 struct Companion{T<:Number} <: AbstractMatrix{T}
     n::Integer

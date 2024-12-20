@@ -1,7 +1,7 @@
 """
 Invhess Matrix
 ==============
-Inverse of upper Hessenberg matrix.
+This matrix is thenverse of an upper Hessenberg matrix.
 
 # Input Options
 - dim: the dimension of the matrix. `x = [1:dim;]`.

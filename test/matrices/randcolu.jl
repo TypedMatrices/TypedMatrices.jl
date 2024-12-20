@@ -16,7 +16,7 @@ x = sqrt(5.0) * x / norm(x)
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Randcolu.(1:5))
+run_test_linear_algebra_functions(Randcolu.(1:5))
 
 # eltype
 @test test_matrix_elements(Randcolu{Float32}(5))

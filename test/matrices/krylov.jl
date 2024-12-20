@@ -17,7 +17,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Krylov.(1:5))
+run_test_linear_algebra_functions(Krylov.(1:5))
 
 # eltype
 @test test_matrix_elements(Krylov{Float32}(5))

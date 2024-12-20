@@ -1,17 +1,17 @@
 """
 Dingdong Matrix
 ===============
-The Dingdong matrix is a symmetric Hankel matrix invented
-by DR. F. N. Ris of IBM, Thomas J Watson Research Centre.
+The Dingdong matrix is a Hankel matrix due to
+F. N. Ris of IBM Thomas J. Watson Research Centre.
 The eigenvalues cluster around `π/2` and `-π/2`.
 
 # Input Options
 - dim: the dimension of the matrix.
 
 # References
-**J. C. Nash**, Compact Numerical Methods for
-Computers: Linear Algebra and Function Minimisation,
-second edition, Adam Hilger, Bristol, 1990 (Appendix 1).
+**J. C. Nash**, Compact Numerical Methods for Computers:
+Linear Algebra and Function Minimisation, second edition,
+Adam Hilger, Bristol, 1990 (Appendix 1).
 """
 struct DingDong{T<:Number} <: AbstractMatrix{T}
     n::Integer

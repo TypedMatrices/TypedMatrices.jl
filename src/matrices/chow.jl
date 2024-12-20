@@ -1,17 +1,18 @@
 """
 Chow Matrix
 ===========
-The Chow matrix is a singular Toeplitz lower Hessenberg matrix.
+The Chow matrix is a singular Toeplitz lower-Hessenberg matrix.
 
 # Input Options
 - dim, alpha, delta: `dim` is dimension of the matrix.
             `alpha`, `delta` are scalars such that `A[i,i] = alpha + delta` and
-            `A[i,j] = alpha^(i + 1 -j)` for `j + 1 <= i`.
+            `A[i,j] = alpha^(i - j + 1)` for `j + 1 <= i`.
 - dim: `alpha = 1`, `delta = 0`.
 
 # References
 **T. S. Chow**, A class of Hessenberg matrices with known
-                eigenvalues and inverses, SIAM Review, 11 (1969), pp. 391-395.
+eigenvalues and inverses, SIAM Rev., 11 (1969), pp. 391-395,
+https://doi.org/10.1137/1011065.
 """
 struct Chow{T<:Number} <: AbstractMatrix{T}
     n::Integer
@@ -26,11 +27,12 @@ end
 
 # constructors
 Chow(n::Integer) = Chow(n, 1, 0)
-Chow(n::Integer, alpha, delta) = Chow{Int}(n, alpha, delta)
+Chow(n::Integer, alpha::T, delta::T) where {T<:Number} = Chow{T}(n, alpha, delta)
+Chow(n::Integer, alpha::S, delta::T) where {S,T<:Number} = Chow{typejoin(S,T)}(n, alpha, delta)
 Chow{T}(n::Integer) where {T<:Number} = Chow{T}(n, 1, 0)
 
 # metadata
-@properties Chow [:hessenberg, :toeplitz, :binary, :eigen, :rankdef]
+@properties Chow [:hessenberg, :toeplitz, :eigen, :inverse]
 
 # properties
 size(A::Chow) = (A.n, A.n)

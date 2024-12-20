@@ -1,10 +1,10 @@
 """
 Cycol Matrix
 ============
-The cycol matrix repeats columns.
+This matrix has columns that repeat cyclically.
 
 # Input Options
-- m, n, k: `m` and `n` are size of the matrix. The repetition is randn(m, k).
+- m, n, k: `m` and `n` are size of the matrix. The repeated columns are randn(m, k).
 - n, k: `n` is size of the matrix. The repetition is randn(n, k).
 - n: `n` is size of the matrix. `k = round(n/4)`
 """

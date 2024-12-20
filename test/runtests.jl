@@ -17,28 +17,28 @@ function test_matrix_elements(A::AbstractMatrix{T}) where {T}
     return all(typeof(A[i]) == T for i = eachindex(A))
 end
 
-function test_linearalgrbra_functions(A::AbstractMatrix)
+function test_linear_algebra_functions(A::AbstractMatrix)
     # variables
     matrix = Matrix(A)
     determinant = det(matrix)
     results = Dict{Function,Bool}()
 
     # linear algebra functions
-    @try_catch results[isdiag] = isdiag(A) == isdiag(matrix)
-    @try_catch results[ishermitian] = ishermitian(A) == ishermitian(matrix)
-    @try_catch results[issymmetric] = issymmetric(A) == issymmetric(matrix)
-    @try_catch results[adjoint] = adjoint(A) ≈ adjoint(matrix)
-    @try_catch results[transpose] = transpose(A) ≈ transpose(matrix)
-    @try_catch results[det] = det(A) ≈ determinant
-    @try_catch results[eigvals] = eigvals(A) ≈ eigvals(matrix)
-
+    property_functions = [isdiag, ishermitian, issymmetric]
     # https://github.com/JuliaLang/julia/issues/55404
     if VERSION >= v"1.10"
-        @try_catch results[isposdef] = isposdef(A) == isposdef(matrix)
+        append!(property_functions, [isposdef])
+    end
+    for func in property_functions
+        @try_catch results[func] = func(A) == func(matrix)
+    end
 
-        if determinant != 0
-            @try_catch results[inv] = inv(A) ≈ inv(matrix)
-        end
+    computation_functions = [adjoint, transpose, det, eigvals]
+    if determinant != 0
+        append!(computation_functions, [inv])
+    end
+    for func in property_functions
+        @try_catch results[func] = func(A) ≈ func(matrix)
     end
 
     if all(values(results))
@@ -58,9 +58,9 @@ function test_linearalgrbra_functions(A::AbstractMatrix)
     end
 end
 
-function run_test_linearalgrbra_functions(matrices::Vector{<:AbstractMatrix})
+function run_test_linear_algebra_functions(matrices::Vector{<:AbstractMatrix})
     for matrix = matrices
-        @test test_linearalgrbra_functions(matrix)
+        @test test_linear_algebra_functions(matrix)
     end
 end
 

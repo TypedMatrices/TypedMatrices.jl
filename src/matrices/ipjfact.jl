@@ -8,6 +8,11 @@ Hankel matrix with factorial elements.
 - dim, k:
     `k = 0` element `(i, j)` is `factorial(i + j)`.
     `k = 1` element `(i, j)` is `1 / factorial(i + j)`.
+
+# References
+**K. Habermann*, An explicit formula for the inverse of a factorial
+Hankel matrix, Australasian J. Comb., 79 (2021), pp. 250-255.
+https://ajc.maths.uq.edu.au/pdf/79/ajc_v79_p250.pdf
 """
 struct Ipjfact{T<:Number} <: AbstractMatrix{T}
     n::Integer

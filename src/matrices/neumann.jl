@@ -8,8 +8,8 @@ A singular matrix from the discrete Neumann problem.
 - dim: the dimension of the matrix, must be a perfect square integer.
 
 # References
-**R. J. Plemmons**, Regular splittings and the
-          discrete Neumann problem, Numer. Math., 25 (1976), pp. 153-161.
+**R. J. Plemmons**, Regular splittings and the discrete Neumann problem,
+Numer. Math., 25 (1976), pp. 153-161, https://doi.org/10.1007/BF01462269.
 """
 struct Neumann{T<:Number} <: AbstractMatrix{T}
     n::Integer

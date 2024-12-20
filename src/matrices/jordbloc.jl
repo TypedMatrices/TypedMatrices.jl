@@ -1,8 +1,7 @@
 """
 Jordan Block Matrix
 ===================
-Jordan block matrix with `lambda` on the diagonal and 1 on the superdiagonal.
-It's eigenvalues are `lambda`.
+Jordan block corresponding to the eigenvalue λ.
 
 # Input Options
 - dim: dimension of the matrix. `lambda = 1`.

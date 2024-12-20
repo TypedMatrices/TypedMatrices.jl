@@ -5,7 +5,7 @@
 ])
 
 # linear algebra functions
-run_test_linearalgrbra_functions(Neumann.((0:1) .^ 2))
+run_test_linear_algebra_functions(Neumann.((0:1) .^ 2))
 
 # eltype
 @test test_matrix_elements(Neumann{Int32}(4))

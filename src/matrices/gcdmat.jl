@@ -1,8 +1,8 @@
 """
 GCDMat Matrix
 =============
-A matrix with `(i,j)` entry `gcd(i,j)`. It is a symmetric positive
-     definite matrix.
+A matrix whose `(i,j)` entry is `gcd(i,j)`.
+It is a symmetric positive definite matrix.
 
 # Input Options
 - dim: the dimension of the matrix.

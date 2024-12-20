@@ -2,15 +2,15 @@
 Wilkinson Matrix
 ================
 The Wilkinson matrix is a symmetric tridiagonal matrix with pairs
-of nearly equal eigenvalues. The most frequently used case
-is `matrixdepot("wilkinson", 21)`. The result is of type `Tridiagonal`.
+of nearly equal eigenvalues. The most frequently used ordre is 21.
 
 # Input Options
 - dim: the dimension of the matrix.
 
 # References
-**J. H. Wilkinson**, Error analysis of direct methods
-of matrix inversion, J. Assoc. Comput. Mach., 8 (1961),  pp. 281-330.
+**J. H. Wilkinson**, Error analysis of direct methods of matrix
+inversion, J. Assoc. Comput. Mach., 8 (1961), pp. 281-330,
+https://doi.org/10.1145/321075.321076.
 """
 struct Wilkinson{T<:Number} <: AbstractMatrix{T}
     n::Integer

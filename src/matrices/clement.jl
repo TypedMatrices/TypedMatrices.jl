@@ -2,7 +2,7 @@
 Clement Matrix
 ==============
 The Clement matrix is a tridiagonal matrix with zero
-        diagonal entries. If k = 1, the matrix is symmetric.
+diagonal entries. If k = 1, the matrix is symmetric.
 
 # Input Options
 - dim, k: `dim` is the dimension of the matrix.
@@ -11,8 +11,9 @@ The Clement matrix is a tridiagonal matrix with zero
 - dim: `k = 0`.
 
 # References
-**P. A. Clement**, A class of triple-diagonal
-        matrices for test purposes, SIAM Review, 1 (1959), pp. 50-52.
+**P. A. Clement**, A class of triple-diagonal matrices
+for test purposes, SIAM Rev., 1 (1959), pp. 50-52,
+https://doi.org/10.1137/1001006.
 """
 abstract type Clement{T<:Number} <: AbstractMatrix{T} end
 
@@ -39,4 +40,4 @@ function Clement{T}(n::Integer, k::Integer) where {T}
 end
 
 # metadata
-@properties Clement [:tridiagonal, :eigen, :singval]
+@properties Clement [:tridiagonal, :eigen, :nonneg, :singval] # :posdef if k = 0, :symmetric if k = 1.
