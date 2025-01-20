@@ -52,6 +52,11 @@ LinearAlgebra.issymmetric(A::Hilbert) = A.m == A.n
     return T(one(T) / (i + j - 1))
 end
 
+logc(x) = sum([sum(log.(1:i)) for i = 2:(x-1)])
+function LinearAlgebra.logdet(A::Hilbert)
+    LinearAlgebra.checksquare(A)
+    return (4 * logc(A.n) - logc(2 * A.n))
+end
 LinearAlgebra.det(A::Hilbert) = inv(det(inv(A)))
 
 function inv(A::Hilbert{T}) where {T}
