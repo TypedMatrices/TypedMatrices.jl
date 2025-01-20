@@ -27,7 +27,7 @@ list_groups() = collect(keys(MATRIX_GROUPS))
 """
     add_to_groups(type, groups)
 
-Add a matrix type to groups. If a group is not exists, it will be created.
+Add a matrix type to groups. If a group does not exist, it will be created.
 
 Groups `:builtin` and `:user` are special groups. It is suggested always to add matrices to the `:user` group.
 
@@ -93,12 +93,12 @@ function remove_from_group(type::Type{<:AbstractMatrix}, group::Group)
 
     # check group exists
     if group ∉ keys(MATRIX_GROUPS)
-        throw(ArgumentError("Group $group not exists"))
+        throw(ArgumentError("Group $group does not exist"))
     end
 
     # check type exists in group
     if type ∉ MATRIX_GROUPS[group]
-        throw(ArgumentError("Matrix type $type not exists in group $group"))
+        throw(ArgumentError("Matrix type $type does not exist in group $group"))
     end
 
     # remove from group
@@ -171,13 +171,13 @@ julia> list_matrices([Group(:builtin), Group(:user)])
 """
 function list_matrices(groups::Vector{Group}, props::Vector{Property})
     # check properties
-    check_properties_exists(props...)
+    check_properties_exist(props...)
 
     # groups
     groups_results = union(values(MATRIX_GROUPS)...)
     for group = groups
         if group ∉ keys(MATRIX_GROUPS)
-            throw(ArgumentError("Group $group not exists"))
+            throw(ArgumentError("Group $group does not exist"))
         else
             intersect!(groups_results, MATRIX_GROUPS[group])
         end

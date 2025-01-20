@@ -66,7 +66,7 @@ julia> check_propertie_types(Int)
 ERROR: ArgumentError: Int64 is not a property type
 ```
 """
-function check_propertie_types(props::DataType...)
+function check_property_types(props::DataType...)
     for prop = props
         prop <: PropertyTypes.AbstractProperty || throw(ArgumentError("$prop is not a property type"))
     end
@@ -82,12 +82,12 @@ Check properties exists.
 julia> check_properties_exists(Property(:symmetric), Property(:inverse))
 
 julia> check_properties_exists(Property(:symmetric), Property(:notexists))
-ERROR: ArgumentError: Property Property(:notexists) not exists
+ERROR: ArgumentError: Property Property(:notexists) does not exist
 ```
 """
-function check_properties_exists(props::Property...)
+function check_properties_exist(props::Property...)
     for prop = props
-        prop ∈ values(PROPERTIES) || throw(ArgumentError("Property $prop not exists"))
+        prop ∈ values(PROPERTIES) || throw(ArgumentError("Property $prop does not exist"))
     end
 end
 
@@ -105,7 +105,7 @@ julia> property_types_to_properties(PropertyTypes.Symmetric, PropertyTypes.Inver
 ```
 """
 function property_types_to_properties(props::DataType...)::Vector{Property}
-    check_propertie_types(props...)
+    check_property_types(props...)
     return [PROPERTIES[prop] for prop = props]
 end
 
@@ -153,7 +153,7 @@ julia> register_properties(Matrix, [PropertyTypes.Symmetric(), PropertyTypes.Inv
 """
 function register_properties(T::Type, props::Vector{Property})
     # check props
-    check_properties_exists(props...)
+    check_properties_exist(props...)
 
     # register properties
     @eval properties(::Type{<:$T}) = $props
