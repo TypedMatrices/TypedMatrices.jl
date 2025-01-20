@@ -6,14 +6,14 @@ props = list_properties()
 @test all(isa.(props, Property))
 
 # check_propertie_types
-@test isnothing(TypedMatrices.check_propertie_types(PropertyTypes.Symmetric, PropertyTypes.Inverse))
-@test_throws ArgumentError TypedMatrices.check_propertie_types(Int)
-@test_throws ArgumentError TypedMatrices.check_propertie_types(PropertyTypes.Symmetric, Int)
+@test isnothing(TypedMatrices.check_property_types(PropertyTypes.Symmetric, PropertyTypes.Inverse))
+@test_throws ArgumentError TypedMatrices.check_property_types(Int)
+@test_throws ArgumentError TypedMatrices.check_property_types(PropertyTypes.Symmetric, Int)
 
 # check_properties_exists
-@test isnothing(TypedMatrices.check_properties_exists(Property(:symmetric), Property(:inverse)))
-@test_throws ArgumentError TypedMatrices.check_properties_exists(Property(:notexists))
-@test_throws ArgumentError TypedMatrices.check_properties_exists(Property(:symmetric), Property(:notexists))
+@test isnothing(TypedMatrices.check_properties_exist(Property(:symmetric), Property(:inverse)))
+@test_throws ArgumentError TypedMatrices.check_properties_exist(Property(:notexists))
+@test_throws ArgumentError TypedMatrices.check_properties_exist(Property(:symmetric), Property(:notexists))
 
 # property_types_to_properties
 @test TypedMatrices.property_types_to_properties(PropertyTypes.Symmetric, PropertyTypes.Inverse) == [Property(:symmetric), Property(:inverse)]
