@@ -33,7 +33,7 @@ function test_linear_algebra_functions(A::AbstractMatrix)
         @try_catch results[func] = func(A) == func(matrix)
     end
 
-    computation_functions = [adjoint, transpose, det, eigvals]
+    computation_functions = [adjoint, transpose, det, logdet, eigvals]
     if determinant != 0
         append!(computation_functions, [inv])
     end
