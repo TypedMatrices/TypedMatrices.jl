@@ -37,7 +37,7 @@ function test_linear_algebra_functions(A::AbstractMatrix)
     if determinant != 0
         append!(computation_functions, [inv])
     end
-    for func in property_functions
+    for func in computation_functions
         @try_catch results[func] = func(A) ≈ func(matrix)
     end
 
