@@ -3,6 +3,8 @@ export
     add_to_groups,
     remove_from_group,
     remove_from_all_groups,
+    save_group,
+    load_group,
     list_matrices
 
 # matrix groups
@@ -132,6 +134,59 @@ function remove_from_all_groups(type::Type{<:AbstractMatrix})
         end
     end
 end
+
+"""
+    save_group(group, file_name)
+
+Save matrices to a group.
+
+`group` can be `Group` or symbol.
+"""
+function save_group(group::Group, file_name::String)
+    if group ∉ keys(MATRIX_GROUPS)
+        throw(ArgumentError("Group $group does not exist"))
+    end
+
+    group_matrices = MATRIX_GROUPS[group]
+    open(file_name, "w") do io
+        for matrix in group_matrices
+            println(io, matrix)
+        end
+    end
+end
+
+# save group alternative interfaces
+save_group(group::Symbol, file_name::String) = save_group(Group(group), file_name)
+
+"""
+    load_group(group, file_name)
+
+Load matrices to a group.
+
+`group` can be `Group` or symbol.
+"""
+function load_group(group::Group, file_name::String)
+    # check group is builtin
+    if group == GROUP_BUILTIN
+        throw(ArgumentError("Cannot load matrices to builtin group"))
+    end
+
+    group_matrices = Set()
+    open(file_name, "r") do io
+        for line in eachline(io)
+            matrix = Symbol(line)
+            try
+                push!(group_matrices, eval(matrix))
+            catch
+                throw(ArgumentError("Error loading matrices from file $file_name, matrix $matrix does not exist"))
+            end
+        end
+    end
+    MATRIX_GROUPS[group] = group_matrices
+end
+
+# load group alternative interfaces
+load_group(group::Symbol, file_name::String) = load_group(Group(group), file_name)
 
 """
     list_matrices(groups, props)
