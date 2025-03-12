@@ -65,6 +65,7 @@ export
 
 # include all matrices
 include("linearalgebra.jl")
+include("utils.jl")
 include("binomial.jl")
 include("cauchy.jl")
 include("chebspec.jl")
