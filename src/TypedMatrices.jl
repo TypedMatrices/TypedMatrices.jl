@@ -10,5 +10,6 @@ import Base: getindex, size, inv
 include("types.jl")
 include("metadata.jl")
 include("matrices.jl")
+include("interfaces.jl")
 
 end
