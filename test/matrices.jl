@@ -46,7 +46,7 @@ remove_from_all_groups(Tridiagonal)
 # save_group
 add_to_groups(Matrix, USER_GROUP)
 save_group(USER_GROUP, "user.txt")
-save_group(:user, "test.txt")
+save_group(:user, "user.txt")
 @test isfile("user.txt")
 @test_throws ArgumentError save_group(Group(:notexists), "notexists.txt")
 rm("user.txt")
