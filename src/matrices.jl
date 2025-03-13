@@ -198,7 +198,8 @@ function load_group(group::Group, file_name::String)
             try
                 push!(group_matrices, eval(matrix))
             catch
-                throw(UndefVarError(matrix, "Error loading matrices from file $file_name, matrix $matrix does not exist"))
+                @error "Error loading matrices from file $file_name, matrix $matrix does not exist"
+                throw(UndefVarError(matrix))
             end
         end
     end
