@@ -8,7 +8,7 @@ Test an algorithm with all matrix types and sizes.
 
 # Arguments
 - `func::Function`: The function to test, which accepts a matrix as input.
-- `sizes::Vector{Integer}`: The sizes to test.
+- `sizes::Vector{<:Integer}`: The sizes to test.
 - `props::Vector{Property}=Property[]`: The properties to find matrices.
 - `errors_as_warnings::Bool=false`: If true, errors will be shown as warnings.
 - `ignore_errors::Bool=false`: If true, errors will be ignored.
@@ -18,7 +18,7 @@ The `errors_as_warnings` and `ignore_errors` options can be true at the same tim
 """
 function test_algorithm(
     func::Function,
-    sizes::Vector{Integer};
+    sizes::Vector{<:Integer};
     props::Vector{Property}=Property[],
     errors_as_warnings::Bool=false,
     ignore_errors::Bool=false,
