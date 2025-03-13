@@ -64,7 +64,7 @@ remove_from_all_groups(Matrix)
 open("user.txt", "w") do io
     write(io, "MatrixNotExists")
 end
-@test_throws UndefVarError load_group(USER_GROUP, "user.txt")
+@suppress @test_throws UndefVarError load_group(USER_GROUP, "user.txt")
 rm("user.txt")
 
 # list_matrices
