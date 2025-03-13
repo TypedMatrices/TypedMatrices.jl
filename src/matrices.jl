@@ -74,6 +74,8 @@ add_to_groups(type::Type{<:AbstractMatrix}, groups::Vector{Symbol}) = add_to_gro
 
 Remove a matrix type from a group. If the group is empty, it will be deleted.
 
+`group` can be [`Group`](@ref) or symbol.
+
 See also [`add_to_groups`](@ref), [`remove_from_all_groups`](@ref).
 
 # Examples
@@ -140,7 +142,16 @@ end
 
 Save matrices to a group.
 
-`group` can be `Group` or symbol.
+`group` can be [`Group`](@ref) or symbol.
+
+See also [`load_group`](@ref).
+
+# Examples
+```julia-repl
+julia> save_group(Group(:user), "user_matrices.txt")
+
+julia> save_group(:user, "user_matrices.txt")
+```
 """
 function save_group(group::Group, file_name::String)
     if group ∉ keys(MATRIX_GROUPS)
@@ -163,7 +174,16 @@ save_group(group::Symbol, file_name::String) = save_group(Group(group), file_nam
 
 Load matrices to a group.
 
-`group` can be `Group` or symbol.
+`group` can be [`Group`](@ref) or symbol.
+
+See also [`save_group`](@ref).
+
+# Examples
+```julia-repl
+julia> load_group(Group(:user), "user_matrices.txt")
+
+julia> load_group(:user, "user_matrices.txt")
+```
 """
 function load_group(group::Group, file_name::String)
     # check group is builtin
@@ -193,9 +213,9 @@ load_group(group::Symbol, file_name::String) = load_group(Group(group), file_nam
 
 List all matrices that are in groups and have properties.
 
-`groups` can be vector/varargs of `Group` or symbol.
+`groups` can be vector/varargs of [`Group`](@ref) or symbol.
 
-`props` can be vector/varargs of `Property`, symbol, subtype of PropertyTypes.AbstractProperty or instance of AbstractProperty.
+`props` can be vector/varargs of [`Property`](@ref), symbol, subtype of PropertyTypes.AbstractProperty or instance of AbstractProperty.
 
 # Examples
 ```julia-repl
