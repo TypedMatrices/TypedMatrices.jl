@@ -19,7 +19,7 @@ props = list_properties()
 @test_throws ArgumentError TypedMatrices.property_types_to_properties(PropertyTypes.Symmetric, Int)
 
 # supress method overwritten warning
-@suppress begin
+@suppress_err begin
     # @properties
     @test isnothing(@properties Matrix [:symmetric, :inverse])
     @test_throws ArgumentError @properties Matrix [:symmetric, :notexists]

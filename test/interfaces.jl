@@ -3,7 +3,7 @@ function sum_elements(A::AbstractMatrix)
 end
 
 # test_algorithm
-@suppress begin
+@suppress_err begin
     @test isa(test_algorithm(sum_elements, [1, 2, 3], errors_as_warnings=true), Vector)
     @test isa(test_algorithm(sum_elements, [1, 2, 3], ignore_errors=true), Vector)
     @test isa(test_algorithm(sum_elements, [1, 2, 3], errors_as_warnings=true, ignore_errors=true), Vector)
