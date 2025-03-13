@@ -1,4 +1,5 @@
 using Test
+using Suppressor
 using TypedMatrices
 using LinearAlgebra
 

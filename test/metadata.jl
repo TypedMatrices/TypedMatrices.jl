@@ -1,5 +1,3 @@
-using Suppressor
-
 # list_properties
 props = list_properties()
 @test isa(props, Vector)
