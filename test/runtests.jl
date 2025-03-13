@@ -82,6 +82,7 @@ end
         include("types.jl")
         include("metadata.jl")
         include("matrices.jl")
+        include("interfaces.jl")
     end
 
     @testset "matrices" begin
