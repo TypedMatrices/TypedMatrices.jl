@@ -85,10 +85,13 @@ end
         include("interfaces.jl")
     end
 
-    @testset "matrices" begin
-        @testset "$file" for file = readdir("matrices")
-            @info "Testing $file"
-            include("matrices/$file")
+    TEST_MATRICES = true
+    if TEST_MATRICES
+        @testset "matrices" begin
+            @testset "$file" for file = readdir("matrices")
+                @info "Testing $file"
+                include("matrices/$file")
+            end
         end
     end
 end
