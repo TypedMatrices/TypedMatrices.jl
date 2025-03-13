@@ -16,6 +16,7 @@ makedocs(
         "Manual" => [
             "manual/1.getting-started.md",
             "manual/2.performance.md",
+            "manual/3.testing-algorithms.md",
         ],
         "References" => [
             "references/1.types.md",
