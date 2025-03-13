@@ -50,22 +50,23 @@ save_group(:user, "user.txt")
 @test isfile("user.txt")
 @test_throws ArgumentError save_group(Group(:notexists), "notexists.txt")
 rm("user.txt")
+remove_from_all_groups(Matrix)
 
 # load_group
-add_to_groups(Matrix, USER_GROUP)
+add_to_groups(Hilbert, USER_GROUP)
 save_group(USER_GROUP, "user.txt")
 load_group(TEST_GROUP, "user.txt")
-@test Matrix ∈ list_matrices(TEST_GROUP)
-remove_from_group(Matrix, TEST_GROUP)
+@test Hilbert ∈ list_matrices(TEST_GROUP)
+remove_from_group(Hilbert, TEST_GROUP)
 load_group(:test, "user.txt")
-@test Matrix ∈ list_matrices(TEST_GROUP)
-remove_from_all_groups(Matrix)
+@test Hilbert ∈ list_matrices(TEST_GROUP)
 @test_throws ArgumentError load_group(BUILTIN_GROUP, "user.txt")
 open("user.txt", "w") do io
     write(io, "MatrixNotExists")
 end
 @suppress_err @test_throws UndefVarError load_group(USER_GROUP, "user.txt")
 rm("user.txt")
+remove_from_all_groups(Hilbert)
 
 # list_matrices
 matrices = list_matrices()
