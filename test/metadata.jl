@@ -38,7 +38,7 @@ props = list_properties()
     @properties Matrix Property[]
 
     # properties
-    @test properties(Matrix) == []
+    @test properties(AbstractMatrix) == []
     @properties Matrix [:symmetric, :inverse]
     @test properties(Matrix) == [Property(:symmetric), Property(:inverse)]
     @test properties(Matrix(ones(1, 1))) == [Property(:symmetric), Property(:inverse)]
