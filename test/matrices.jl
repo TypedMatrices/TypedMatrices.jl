@@ -64,7 +64,7 @@ remove_from_all_groups(Matrix)
 open("user.txt", "w") do io
     write(io, "MatrixNotExists")
 end
-@suppress @test_throws UndefVarError load_group(USER_GROUP, "user.txt")
+@suppress_err @test_throws UndefVarError load_group(USER_GROUP, "user.txt")
 rm("user.txt")
 
 # list_matrices
@@ -76,7 +76,7 @@ matrices = list_matrices()
 @test_throws ArgumentError list_matrices(Group(:notexists))
 
 # list_matrices filtering
-@suppress @properties Matrix [:symmetric, :inverse]
+@suppress_err @properties Matrix [:symmetric, :inverse]
 add_to_groups(Matrix, USER_GROUP, TEST_GROUP)
 @test Matrix ∉ list_matrices(:posdef)
 @test Matrix ∈ list_matrices(:symmetric)
