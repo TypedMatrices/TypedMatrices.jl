@@ -1,7 +1,7 @@
 name = "TypedMatrices"
 uuid = "a0429a07-0388-4c37-a18a-23d110f8915c"
 authors = ["Andy Zhang <37402126+AnzhiZhang@users.noreply.github.com> and contributors"]
-version = "1.0.0"
+version = "1.1.0"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
