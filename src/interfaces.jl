@@ -9,6 +9,7 @@ Test an algorithm with all matrix types and sizes.
 # Arguments
 - `func::Function`: The function to test, which accepts a matrix as input.
 - `sizes::Vector{<:Integer}`: The sizes to test.
+- `groups::Vector{Group}=Group[]`: The groups to find matrices.
 - `props::Vector{Property}=Property[]`: The properties to find matrices.
 - `errors_as_warnings::Bool=false`: If true, errors will be shown as warnings.
 - `ignore_errors::Bool=false`: If true, errors will be ignored.
@@ -19,6 +20,7 @@ The `errors_as_warnings` and `ignore_errors` options can be true at the same tim
 function test_algorithm(
     func::Function,
     sizes::Vector{<:Integer};
+    groups::Vector{Group}=Group[],
     props::Vector{Property}=Property[],
     errors_as_warnings::Bool=false,
     ignore_errors::Bool=false,
@@ -30,7 +32,7 @@ function test_algorithm(
     end
 
     results = []
-    matrix_types = list_matrices(props)
+    matrix_types = list_matrices(groups, props)
     for matrix_type in matrix_types
         # skip if matrix_type is in excludes
         if matrix_type in excludes
