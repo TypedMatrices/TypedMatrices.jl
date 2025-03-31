@@ -17,6 +17,7 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.FixedSize => :fixedsize,
         PropertyTypes.Graph => :graph,
         PropertyTypes.Hankel => :hankel,
+        PropertyTypes.Hermitian => :hermitian,
         PropertyTypes.Hessenberg => :hessenberg,
         PropertyTypes.IllConditioned => :illcond,
         PropertyTypes.Indefinite => :indefinite,
@@ -30,6 +31,7 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.Orthogonal => :orthogonal,
         PropertyTypes.Positive => :positive,
         PropertyTypes.PositiveDefinite => :posdef,
+        PropertyTypes.PositiveSemidefinite => :possemidef,
         PropertyTypes.Random => :random,
         PropertyTypes.RankDeficient => :rankdef,
         PropertyTypes.Rectangular => :rectangular,
@@ -42,9 +44,72 @@ const PROPERTIES = Dict{Type{<:PropertyTypes.AbstractProperty},Property}(
         PropertyTypes.TotallyPositive => :totpos,
         PropertyTypes.Triangular => :triangular,
         PropertyTypes.Tridiagonal => :tridiagonal,
-        PropertyTypes.Unimodular => :unimodular
+        PropertyTypes.Unimodular => :unimodular,
+        PropertyTypes.Unitary => :unitary
     )
 )
+
+# Handle property implications
+struct PropertyImplication
+    ifPresent::Set{Property}
+    ifAbsent::Set{Property}
+    thenAdd::Set{Property}
+end
+
+const IMPLICATIONS = [
+    PropertyImplication(Set(Property(present)), Set(Property(absent)), Set(Property(toAdd)))
+        for (present::Vector{Symbol}, absent::Vector{Symbol}, toAdd::Vector{Symbol}) in [
+            ([:bidiagonal], [], [:hessenberg, :sparse, :triangular, :tridiagonal]),
+            ([:circulant], [], [:toeplitz, :eigen]),
+            ([:complex], [], [:normal]),
+            ([:correlation], [], [:symmetric, :possemidef]),
+            ([:diagdom], [], [:posdef]),
+            ([:hankel], [], [:symmetric]),
+            ([:hermitian], [], [:normal]),
+            ([:infdiv], [], [:possemidef]),
+            ([:involutory], [], [:inverse]),
+            ([:involutory, :symmetric], [], [:orthogonal]),
+            ([:involutory, :normal], [:complex], [:symmetric, :orthogonal]),
+            ([:involutory, :normal, :complex], [], [:hermitian, :unitary]),
+            ([:orthogonal], [:complex], [:unitary]),
+            ([:positive], [], [:nonneg]),
+            ([:posdef], [], [:possemidef]),
+            ([:posdef], [:complex], [:symmetric]),
+            ([:posdef], [:complex], [:hermitian]),
+            ([:symmetric], [], [:normal]),
+            ([:symmetric], [:complex], [:hermitian]),
+            ([:totnonneg], [], [:nonneg]),
+            ([:totnonneg, :hermitian], [], [:possemidef]),
+            ([:totpos], [], [:positive]),
+            ([:totpos, :hermitian], [], [:posdef]),
+            ([:tridiagonal], [], [:hessenberg]),
+            ([:unimodular], [], [:integer]),
+            ([:unitary], [:complex], [:symmetric])
+    ]
+]
+
+"""
+    add_implied_properties(properties::Set{Symbol})
+
+Add implied properties to a set of properties.
+
+# Examples
+```julia-repl
+julia> add_implied_properties(Set([:posdef]))
+"""
+function add_implied_properties!(properties::Vector{Property})
+    changed = true
+    while changed
+        changed = false
+        for imp in IMPLICATIONS
+            if imp.ifPresent ⊆ properties && isempty(imp.ifAbsent ∩ properties) && !(imp.thenAdd ⊆ properties)
+                    append!(properties, setdiff(imp.thenAdd, properties))
+                    changed = true
+            end
+        end
+    end
+    return properties
+end
 
 """
     list_properties()
@@ -154,6 +219,7 @@ julia> register_properties(Matrix, [PropertyTypes.Symmetric(), PropertyTypes.Inv
 function register_properties(T::Type, props::Vector{Property})
     # check props
     check_properties_exist(props...)
+    add_implied_properties!(props)
 
     # register properties
     @eval properties(::Type{<:$T}) = $props
