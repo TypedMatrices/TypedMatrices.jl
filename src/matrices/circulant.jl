@@ -26,7 +26,7 @@ Circulant(n::Integer) = Circulant{Int}(n)
 Circulant{T}(n::Integer) where {T<:Number} = Circulant(T[1:n;])
 
 # metadata
-@properties Circulant [:circulant, :toeplitz, :normal, :eigen]
+@properties Circulant [:circulant, :normal]
 
 # properties
 size(A::Circulant) = (A.n, A.n)

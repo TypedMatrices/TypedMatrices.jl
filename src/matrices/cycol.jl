@@ -34,7 +34,7 @@ Cycol{T}(n::Integer) where {T<:Number} = Cycol{T}(n, round(Int, n / 4))
 Cycol{T}(n::Integer, k::Integer) where {T<:Number} = Cycol{T}(n, n, k)
 
 # metadata
-@properties Cycol [:rectangular, :rankdef, :random]
+@properties Cycol [:random, :rankdef, :rectangular]
 
 # properties
 size(A::Cycol) = (A.m, A.n)

@@ -33,7 +33,7 @@ Frank(n::Integer, k::Integer) = Frank{Int}(n, k)
 Frank{T}(n::Integer) where {T<:Number} = Frank{T}(n, 0)
 
 # metadata
-@properties Frank [:hessenberg, :integer, :totnonneg, :illcond, :eigen]
+@properties Frank [:eigen, :hessenberg, :illcond, :integer, :totnonneg]
 
 # properties
 size(A::Frank) = (A.n, A.n)

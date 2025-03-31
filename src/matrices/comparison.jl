@@ -27,7 +27,7 @@ end
 Comparison(A::AbstractMatrix{T}) where {T<:Number} = Comparison(A, 0)
 
 # metadata
-@properties Comparison Symbol[]
+@properties Comparison Property[]
 
 # properties
 size(A::Comparison) = size(A.A)
