@@ -54,15 +54,15 @@ List all properties.
 list_properties() = collect(values(PROPERTIES))
 
 """
-    check_propertie_types(props::DataType...)
+    check_property_types(props::DataType...)
 
 Check properties types are valid, i.e., are subtypes of `PropertyTypes.AbstractProperty`.
 
 # Examples
 ```julia-repl
-julia> check_propertie_types(PropertyTypes.Symmetric, PropertyTypes.Inverse)
+julia> check_property_types(PropertyTypes.Symmetric, PropertyTypes.Inverse)
 
-julia> check_propertie_types(Int)
+julia> check_property_types(Int)
 ERROR: ArgumentError: Int64 is not a property type
 ```
 """
@@ -73,15 +73,15 @@ function check_property_types(props::DataType...)
 end
 
 """
-    check_properties_exists(props::Property...)
+    check_properties_exist(props::Property...)
 
-Check properties exists.
+Check properties exist.
 
 # Examples
 ```julia-repl
-julia> check_properties_exists(Property(:symmetric), Property(:inverse))
+julia> check_properties_exist(Property(:symmetric), Property(:inverse))
 
-julia> check_properties_exists(Property(:symmetric), Property(:notexists))
+julia> check_properties_exist(Property(:symmetric), Property(:notexists))
 ERROR: ArgumentError: Property Property(:notexists) does not exist
 ```
 """
