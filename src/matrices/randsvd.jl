@@ -71,7 +71,7 @@ RandSVD{T}(n::Integer, kappa::T) where {T<:Number} = RandSVD{T}(n, kappa, 3)
 RandSVD{T}(n::Integer, kappa::T, mode::Integer) where {T<:Number} = RandSVD{T}(n, n, kappa, mode)
 
 # metadata
-@properties RandSVD [:orthogonal, :rectangular, :illcond, :random]
+@properties RandSVD [:illcond, :orthogonal, :random, :rectangular]
 
 # properties
 size(A::RandSVD) = (A.m, A.n)

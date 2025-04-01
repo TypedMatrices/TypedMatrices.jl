@@ -38,7 +38,7 @@ end
 Poisson(n::Integer) = Poisson{Int}(n)
 
 # metadata
-@properties Poisson [:symmetric, :inverse, :posdef, :eigen, :sparse]
+@properties Poisson [:eigen, :inverse, :posdef, :sparse]
 
 # properties
 size(A::Poisson) = (A.n, A.n)

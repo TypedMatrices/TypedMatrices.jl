@@ -76,7 +76,7 @@ Wathen(nx::Integer, ny::Integer) = Wathen{Float64}(nx, ny)
 Wathen{T}(n::Integer) where {T<:Number} = Wathen{T}(n, n)
 
 # metadata
-@properties Wathen [:symmetric, :posdef, :eigen, :sparse, :random]
+@properties Wathen [:eigen, :posdef, :random, :sparse]
 
 # properties
 size(A::Wathen) = size(A.M)

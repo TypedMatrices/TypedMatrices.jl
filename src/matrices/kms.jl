@@ -32,7 +32,7 @@ KMS{T}(n::Integer) where {T<:Number} = KMS{T}(n, T(0.5))
 KMS{T}(n::Integer, rho::Number) where {T<:Number} = KMS{T}(n, convert(T, rho))
 
 # metadata
-@properties KMS [:symmetric, :inverse, :posdef, :toeplitz]
+@properties KMS [:inverse, :posdef, :toeplitz]
 
 # properties
 size(A::KMS) = (A.n, A.n)

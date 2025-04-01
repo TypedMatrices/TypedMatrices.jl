@@ -31,7 +31,7 @@ Grcar(n::Integer, k::Integer) = Grcar{Int}(n, k)
 Grcar{T}(n::Integer) where {T<:Number} = Grcar{T}(n, 3)
 
 # metadata
-@properties Grcar [:hessenberg, :toeplitz, :integer, :eigen]
+@properties Grcar [:eigen, :hessenberg, :integer, :toeplitz]
 
 # properties
 size(A::Grcar) = (A.n, A.n)

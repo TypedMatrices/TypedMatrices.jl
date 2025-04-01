@@ -29,7 +29,7 @@ Lauchli(n::Integer, mu::T) where {T<:Number} = Lauchli{T}(n, mu)
 Lauchli{T}(n::Integer) where {T<:Number} = Lauchli{T}(n, sqrt(eps(T)))
 
 # metadata
-@properties Lauchli Symbol[:rectangular]
+@properties Lauchli [:rectangular]
 
 # properties
 size(A::Lauchli) = (A.m, A.n)

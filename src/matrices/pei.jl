@@ -28,7 +28,7 @@ Pei(n::Integer, alpha::T) where {T<:Number} = Pei{T}(n, alpha)
 Pei{T}(n::Integer) where {T<:Number} = Pei{T}(n, one(T))
 
 # metadata
-@properties Pei [:symmetric, :inverse, :posdef, :integer, :positive]
+@properties Pei [:integer, :inverse, :posdef, :positive]
 
 # properties
 size(A::Pei) = (A.n, A.n)

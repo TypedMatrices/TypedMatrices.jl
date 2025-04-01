@@ -28,7 +28,7 @@ Parter(n::Integer) = Parter{Int}(n)
 Parter{T}(n::Integer) where {T<:Integer} = Parter{Rational{T}}(n)
 
 # metadata
-@properties Parter [:toeplitz, :eigen]
+@properties Parter [:eigen, :toeplitz]
 
 # properties
 size(A::Parter) = (A.n, A.n)

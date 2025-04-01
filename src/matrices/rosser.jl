@@ -113,7 +113,7 @@ function Rosser(n::Integer, a::Number, b::Number)
 end
 
 # metadata
-@properties Rosser [:fixedsize, :symmetric, :indefinite, :integer, :rankdef, :illcond, :random]
+@properties Rosser [:fixedsize, :illcond, :indefinite, :integer, :random, :rankdef, :symmetric]
 
 # properties
 size(A::Rosser) = (A.n, A.n)

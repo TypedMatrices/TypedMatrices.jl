@@ -31,7 +31,7 @@ function Forsythe(n::Integer, alpha::Number, lambda::Number)
 end
 
 # metadata
-@properties Forsythe [:inverse, :illcond, :eigen]
+@properties Forsythe [:eigen, :illcond, :inverse]
 
 # properties
 size(A::Forsythe) = (A.n, A.n)

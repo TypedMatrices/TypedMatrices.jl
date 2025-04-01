@@ -32,7 +32,7 @@ Chow(n::Integer, alpha::S, delta::T) where {S,T<:Number} = Chow{typejoin(S,T)}(n
 Chow{T}(n::Integer) where {T<:Number} = Chow{T}(n, 1, 0)
 
 # metadata
-@properties Chow [:hessenberg, :toeplitz, :eigen, :inverse]
+@properties Chow [:eigen, :hessenberg, :inverse, :toeplitz]
 
 # properties
 size(A::Chow) = (A.n, A.n)

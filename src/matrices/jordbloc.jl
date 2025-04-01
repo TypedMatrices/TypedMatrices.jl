@@ -23,7 +23,7 @@ JordBloc(n::Integer, lambda::Number) = JordBloc{Int}(n, lambda)
 JordBloc{T}(n::Integer) where {T<:Number} = JordBloc{T}(n, T(1))
 
 # metadata
-@properties JordBloc Symbol[:bidiagonal, :eigen, :binary, :nonneg, :defective, :toeplitz]
+@properties JordBloc [:bidiagonal, :binary, :defective, :eigen, :nonneg, :toeplitz]
 
 # properties
 size(A::JordBloc) = (A.n, A.n)

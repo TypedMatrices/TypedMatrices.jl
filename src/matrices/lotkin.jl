@@ -27,7 +27,7 @@ Lotkin(n::Integer) = Lotkin{Int}(n)
 Lotkin{T}(n::Integer) where {T<:Integer} = Lotkin{Rational{T}}(n)
 
 # metadata
-@properties Lotkin [:inverse, :illcond, :eigen]
+@properties Lotkin [:eigen, :illcond, :inverse]
 
 # properties
 size(A::Lotkin) = (A.n, A.n)

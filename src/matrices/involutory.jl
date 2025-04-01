@@ -26,7 +26,7 @@ Involutory(n::Integer) = Involutory{Int}(n)
 Involutory{T}(n::Integer) where {T<:Integer} = Involutory{Rational{T}}(n)
 
 # metadata
-@properties Involutory [:involutory, :integer, :illcond, :eigen]
+@properties Involutory [:eigen, :illcond, :integer, :involutory]
 
 # properties
 size(A::Involutory) = (A.n, A.n)

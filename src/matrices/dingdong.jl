@@ -27,7 +27,7 @@ DingDong(n::Integer) = DingDong{Int}(n)
 DingDong{T}(n::Integer) where {T<:Integer} = DingDong{Rational{T}}(n)
 
 # metadata
-@properties DingDong [:symmetric, :hankel, :eigen]
+@properties DingDong [:eigen, :hankel]
 
 # properties
 size(A::DingDong) = (A.n, A.n)

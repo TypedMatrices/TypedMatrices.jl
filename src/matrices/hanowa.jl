@@ -25,7 +25,7 @@ Hanowa(n::Integer, alpha::T) where {T<:Number} = Hanowa{T}(n, alpha)
 Hanowa{T}(n::Integer) where {T<:Number} = Hanowa{T}(n, T(-1))
 
 # metadata
-@properties Hanowa Symbol[]
+@properties Hanowa [:eigen]
 
 # properties
 size(A::Hanowa) = (A.n, A.n)

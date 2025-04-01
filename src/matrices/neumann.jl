@@ -45,7 +45,7 @@ end
 Neumann(n::Integer) = Neumann{Int}(n)
 
 # metadata
-@properties Neumann [:eigen, :sparse, :rankdef, :diagdom]
+@properties Neumann [:diagdom, :eigen, :sparse, :rankdef]
 
 # properties
 size(A::Neumann) = (A.n, A.n)

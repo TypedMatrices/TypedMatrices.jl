@@ -34,7 +34,7 @@ Moler{T}(n::Integer) where {T<:Number} = Moler{T}(n, -1)
 Moler{T}(n::Integer, alpha::Number) where {T<:Number} = Moler{T}(n, convert(T, alpha))
 
 # metadata
-@properties Moler [:symmetric, :inverse, :illcond, :posdef, :integer]
+@properties Moler [:illcond, :integer, :inverse, :posdef]
 
 # properties
 size(A::Moler) = (A.n, A.n)

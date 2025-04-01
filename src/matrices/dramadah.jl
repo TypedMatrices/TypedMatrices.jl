@@ -60,7 +60,7 @@ Dramadah(n::Integer, k::Integer) = Dramadah{Int}(n, k)
 Dramadah{T}(n::Integer) where {T<:Number} = Dramadah{T}(n, 1)
 
 # metadata
-@properties Dramadah Symbol[:toeplitz, :integer, :nonneg, :illcond, :unimodular]
+@properties Dramadah [:illcond, :nonneg, :toeplitz, :unimodular]
 
 # properties
 size(A::Dramadah) = (A.n, A.n)

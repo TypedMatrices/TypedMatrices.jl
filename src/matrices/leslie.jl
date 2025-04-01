@@ -24,7 +24,7 @@ Leslie(n::Integer) = Leslie{Int}(n)
 Leslie{T}(n::Integer) where {T<:Number} = Leslie(ones(T, n), ones(T, n - 1))
 
 # metadata
-@properties Leslie Symbol[:nonneg, :binary]
+@properties Leslie [:binary, :nonneg]
 
 # properties
 size(A::Leslie) = (A.n, A.n)

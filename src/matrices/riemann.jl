@@ -19,7 +19,7 @@ end
 Riemann(n::Integer) = Riemann{Int}(n)
 
 # metadata
-@properties Riemann Symbol[:integer, :eigen]
+@properties Riemann [:eigen, :integer]
 
 # properties
 size(A::Riemann) = (A.n, A.n)

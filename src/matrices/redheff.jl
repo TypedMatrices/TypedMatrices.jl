@@ -19,7 +19,7 @@ end
 Redheff(n::Integer) = Redheff{Int}(n)
 
 # metadata
-@properties Redheff Symbol[:binary, :nonneg, :eigen]
+@properties Redheff [:binary, :eigen, :nonneg]
 
 # properties
 size(A::Redheff) = (A.n, A.n)

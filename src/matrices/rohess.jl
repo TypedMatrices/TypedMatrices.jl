@@ -37,7 +37,7 @@ end
 Rohess(n::Integer) = Rohess{Float64}(n)
 
 # metadata
-@properties Rohess [:orthogonal, :random, :inverse]
+@properties Rohess [:inverse, :orthogonal, :random]
 
 # properties
 size(A::Rohess) = (A.n, A.n)

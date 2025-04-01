@@ -26,7 +26,7 @@ Invhess(x::AbstractVector) = Invhess(x, -x[1:end-1])
 Invhess{T}(n::Integer) where {T<:Number} = Invhess(T[1:n;])
 
 # metadata
-@properties Invhess Symbol[:integer]
+@properties Invhess [:integer]
 
 # properties
 size(A::Invhess) = (A.n, A.n)

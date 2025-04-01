@@ -31,7 +31,7 @@ InverseHilbert(n::Integer) = InverseHilbert{Int}(n)
 InverseHilbert{Rational{T}}(n::Integer) where {T<:Number} = InverseHilbert{T}(n)
 
 # metadata
-@properties InverseHilbert [:symmetric, :inverse, :illcond, :posdef]
+@properties InverseHilbert [:illcond, :inverse, :posdef]
 
 # properties
 size(A::InverseHilbert) = (A.n, A.n)

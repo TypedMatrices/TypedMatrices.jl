@@ -38,9 +38,12 @@ props = list_properties()
     @properties Matrix Property[]
 
     # properties
+    @test Property([:symmetric]) == [Property(:symmetric)]
+    @test Property(:symmetric, :inverse) == [Property(:symmetric), Property(:inverse)]
     @test properties(AbstractMatrix) == []
-    @properties Matrix [:symmetric, :inverse]
-    @test properties(Matrix) == [Property(:symmetric), Property(:inverse)]
-    @test properties(Matrix(ones(1, 1))) == [Property(:symmetric), Property(:inverse)]
+    @properties Matrix [:posdef, :inverse]
+    implied_properties = Set([Property(:posdef), Property(:possemidef), Property(:symmetric), Property(:hermitian), Property(:normal), Property(:inverse)])
+    @test Set(properties(Matrix)) == implied_properties
+    @test Set(properties(Matrix(ones(1, 1)))) == implied_properties
     @properties Matrix Property[]
 end
