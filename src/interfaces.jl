@@ -42,7 +42,7 @@ function test_algorithm(
         for size in sizes
             try
                 # create matrix and run function
-                A = matrix_type(size)
+                A = matrix_type(props, size)
                 result = func(A)
                 push!(results, (matrix_type, size, result))
             catch e
