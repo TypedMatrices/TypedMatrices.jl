@@ -36,6 +36,7 @@ props = list_properties()
     @test_throws ArgumentError TypedMatrices.register_properties(Matrix, :notexists)
     @test_throws ArgumentError TypedMatrices.register_properties(Matrix, :symmetric, :notexists)
     @properties Matrix Property[]
+    @properties Matrix Symbol[]
 
     # properties
     @test Property([:symmetric]) == [Property(:symmetric)]
@@ -46,4 +47,5 @@ props = list_properties()
     @test Set(properties(Matrix)) == implied_properties
     @test Set(properties(Matrix(ones(1, 1)))) == implied_properties
     @properties Matrix Property[]
+    @properties Matrix Symbol[]
 end
