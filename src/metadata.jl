@@ -110,6 +110,10 @@ function add_implied_properties!(properties::Vector{Property})
     end
     return properties
 end
+function add_implied_properties(properties::Vector{Property})
+    output = copy(properties)
+    return add_implied_properties!(output)
+end
 
 """
     list_properties()
@@ -186,10 +190,25 @@ See also: [`properties`](@ref).
 julia> @properties Matrix [:symmetric, :inverse, :illcond, :posdef, :eigen]
 ```
 """
-macro properties(type::Symbol, ex::Expr)
-    return quote
-        register_properties($(esc(type)), $ex)
+macro properties(type_name::Symbol, base_properties::Expr, property_to_constructor_assignment::Expr=:(Dict{Vector{Symbol}, Function}()))
+    # Get the actual properties and dictionary from the macro arguments.
+    evaluated_property_to_constructor_assignment = eval(property_to_constructor_assignment)
+    evaluated_base_properties = eval(base_properties)
+
+    # Create the expression for the properties function.
+    all_keys = collect(keys(evaluated_property_to_constructor_assignment))
+    all_symbols = union(evaluated_base_properties, all_keys...)
+    properties_function = quote
+        register_properties($(esc(type_name)), $all_symbols)
     end
+
+    # Create the expression for the constructor function.
+    function_name = string(type_name)
+    constructor_function = quote
+        register_constructor($(esc(type_name)), $function_name, $evaluated_base_properties, $evaluated_property_to_constructor_assignment)
+    end
+
+    return Expr(:toplevel, properties_function, constructor_function)
 end
 
 """
@@ -225,7 +244,7 @@ function register_properties(T::Type, props::Vector{Property})
     @eval properties(::Type{<:$T}) = $props
 
     # return nothing
-    return
+    return nothing
 end
 
 # register properties alternative interfaces
@@ -236,6 +255,53 @@ register_properties(T::Type, props::DataType...) = register_properties(T, collec
 register_properties(T::Type, props::Vector{DataType}) = register_properties(T, property_types_to_properties(props...))
 register_properties(T::Type, props::PropertyTypes.AbstractProperty...) = register_properties(T, collect(props))
 register_properties(T::Type, props::Vector{PropertyTypes.AbstractProperty}) = register_properties(T, [typeof(prop) for prop = props])
+
+"""
+
+    register_constructor(type_name::Type, function_name::String, props::Vector{Property}, property_to_constructor_assignment::Dict{Vector{Property}, Function})
+
+    register_constructor(type_name::Type, function_name::String, props::Vector{Symbol}, property_to_constructor_assignment::Dict{Vector{Symbol}, Function})
+
+    Register a constructor for a type. The constructor is a function that takes a vector of properties and an integer
+    and returns a matrix of the given type with the required properties.
+
+    # Examples
+    ```julia-repl
+    julia> register_constructor(Matrix, "Matrix", [:symmetric, :posdef], Dict{Vector{Symbol}, Function}(
+        [:symmetric] => (n) -> Matrix(n, n),
+        [:posdef] => (n) -> Matrix(n, n)
+    ))
+    ```
+"""
+function register_constructor(type_name::Type, function_name::String, props::Vector{Property}, property_to_constructor_assignment::Dict{Vector{Property}, Function})
+    fname = Symbol(function_name)
+    if isempty(property_to_constructor_assignment)
+        # The function has no parameter-dependent properties.
+        @eval $fname(input_properties::Vector{Symbol}, n::Int) = $type_name(n)
+        @eval $fname(input_properties::Vector{Property}, n::Int) = $type_name(n)
+    else
+        # The function has parameter-dependent properties.
+        add_implied_properties!(props)
+        @eval $fname(input_properties::Vector{Property}, n::Int) = begin
+            add_implied_properties!(input_properties)
+            for (key_properties, action) in $property_to_constructor_assignment
+                if issubset(input_properties, add_implied_properties(key_properties) ∪ $props)
+                    return action(n)
+                end
+            end
+            throw(ArgumentError("No constructor for the given set of properties: \$input_properties"))
+        end
+        @eval $fname(input_properties::Vector{Symbol}, n::Int) = $fname([Property(prop) for prop in input_properties], n)
+    end
+    return nothing
+end
+register_constructor(type_name::Type, function_name::String, props::Vector{Symbol}, property_to_constructor_assignment::Dict{Vector{Symbol}, Function}) =
+    register_constructor(type_name, function_name,
+        [Property(prop) for prop = props],
+        Dict{Vector{Property}, Function}([Property(sym) for sym in k] => v for (k, v) in property_to_constructor_assignment))
+register_constructor(type_name::Type, function_name::String, props::Vector{Property}, property_to_constructor_assignment::Dict{Vector{Symbol}, Function}) =
+    register_constructor(type_name, function_name, props,
+        Dict{Vector{Property}, Function}([Property(sym) for sym in k] => v for (k, v) in property_to_constructor_assignment))
 
 """
     properties(type)
