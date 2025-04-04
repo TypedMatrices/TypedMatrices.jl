@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Pei.(1:5))
+run_test_properties(Pei, 3:5)
 
 # eltype
 @test test_matrix_elements(Pei{Int32}(5))

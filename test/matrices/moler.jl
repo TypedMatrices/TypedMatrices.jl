@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Moler.(1:5))
+run_test_properties(Moler, 10)
 
 # eltype
 @test test_matrix_elements(Moler{Float32}(5))

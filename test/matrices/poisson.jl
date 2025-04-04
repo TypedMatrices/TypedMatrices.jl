@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Poisson.((1:3) .^ 2))
+run_test_properties(Poisson, [25, 36, 49])
 
 # eltype
 @test test_matrix_elements(Poisson{Int32}(4))

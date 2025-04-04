@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Wilkinson.(1:5))
+run_test_properties(Wilkinson, 20)
 
 # eltype
 @test test_matrix_elements(Wilkinson{Float32}(5))
