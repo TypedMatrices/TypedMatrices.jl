@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Toeplitz.(1:5))
+run_test_properties(Toeplitz, 3:5)
 
 # eltype
 @test test_matrix_elements(Toeplitz{Int32}(5))

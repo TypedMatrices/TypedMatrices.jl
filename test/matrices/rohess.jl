@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Rohess.(1:5))
+run_test_properties(Rohess, 3:5)
 
 # eltype
 @test test_matrix_elements(Rohess{Float32}(5))
