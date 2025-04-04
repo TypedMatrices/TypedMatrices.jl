@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(JordBloc.(1:5))
+run_test_properties(JordBloc, 10)
 
 # eltype
 @test test_matrix_elements(JordBloc{Int32}(5))

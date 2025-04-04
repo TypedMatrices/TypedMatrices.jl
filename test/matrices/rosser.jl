@@ -12,6 +12,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Rosser.((2) .^ (1:2)))
+run_test_properties(Rosser, [8, 16, 32])
 
 # eltype
 @test test_matrix_elements(Rosser{Float32}(4))

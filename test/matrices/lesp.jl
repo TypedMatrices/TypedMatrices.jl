@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Lesp.(1:5))
+run_test_properties(Lesp, 3:5)
 
 # eltype
 @test test_matrix_elements(Lesp{Float32}(5))

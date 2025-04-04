@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Neumann.((0:1) .^ 2))
+run_test_properties(Neumann, [25, 36, 49, 64])
 
 # eltype
 @test test_matrix_elements(Neumann{Int32}(4))

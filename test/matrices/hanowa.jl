@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Hanowa.(2:2:8))
+run_test_properties(Hanowa, 3:5)
 
 # eltype
 @test test_matrix_elements(Hanowa{Int32}(6))
