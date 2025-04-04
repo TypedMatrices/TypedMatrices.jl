@@ -1,11 +1,13 @@
 # constructors
 @test allequal([
     Triw(5),
+    Triw(5, 5),
     Triw(5, -1),
     Triw(5, -1, 4),
     Triw{Int}(5),
-    Triw{Int}(5, -1),
-    Triw{Int}(5, -1, 4),
+    Triw{Int}(5, 5),
+    Triw{Int}(5, 5, -1),
+    Triw{Int}(5, 5, -1, 4),
 ])
 
 # linear algebra functions
