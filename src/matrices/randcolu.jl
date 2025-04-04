@@ -88,7 +88,11 @@ function Randcolu{T}(n::Integer, m::Integer, k::Integer) where {T<:Number}
 end
 
 # metadata
-@properties Randcolu [:random, :rectangular]
+@properties Randcolu [:random] Dict{Vector{Symbol}, Function}(
+    [] => (n) -> Randcolu(n),
+    [:illcond] => (n) -> Randcolu(10 .^ LinRange(-4, 4, n), n),
+    [:rectangular] => (n) -> Randcolu(n, 2 * n),
+)
 
 # properties
 size(A::Randcolu) = (A.m, A.n)
