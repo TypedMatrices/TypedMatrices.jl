@@ -61,9 +61,9 @@ const IMPLICATIONS = [
         for (present::Vector{Symbol}, absent::Vector{Symbol}, toAdd::Vector{Symbol}) in [
             ([:bidiagonal], [], [:hessenberg, :sparse, :triangular, :tridiagonal]),
             ([:circulant], [], [:toeplitz, :eigen]),
-            ([:complex], [], [:normal]),
             ([:correlation], [], [:symmetric, :possemidef]),
-            ([:diagdom], [], [:posdef]),
+            ([:diagdom, :symmetric], [:complex], [:posdef]),
+            ([:diagdom, :hermitian, :complex], [], [:posdef]),
             ([:hankel], [], [:symmetric]),
             ([:hermitian], [], [:normal]),
             ([:infdiv], [], [:possemidef]),
@@ -84,7 +84,7 @@ const IMPLICATIONS = [
             ([:totpos, :hermitian], [], [:posdef]),
             ([:tridiagonal], [], [:hessenberg]),
             ([:unimodular], [], [:integer]),
-            ([:unitary], [:complex], [:symmetric])
+            ([:unitary], [:complex], [:orthogonal])
     ]
 ]
 
