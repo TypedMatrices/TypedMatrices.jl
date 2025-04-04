@@ -11,6 +11,7 @@
 run_test_linear_algebra_functions(KMS.(1:5))
 run_test_linear_algebra_functions(KMS.(1:5, 3))
 run_test_linear_algebra_functions(KMS.(1:5, 3 + 2im))
+run_test_properties(KMS, 3:5)
 
 # eltype
 @test test_matrix_elements(KMS{Float32}(5))

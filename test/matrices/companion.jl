@@ -11,6 +11,7 @@ using Polynomials: Polynomial
 
 # linear algebra functions
 run_test_linear_algebra_functions(Companion.(1:5))
+run_test_properties(Companion, 15)
 
 # eltype
 @test test_matrix_elements(Companion{Float32}(5))

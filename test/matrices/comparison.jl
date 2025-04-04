@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Comparison.(Minij.(1:5)))
+run_test_properties(Comparison, 3:5)
 
 # eltype
 @test test_matrix_elements(Comparison(Minij{Int32}(5)))

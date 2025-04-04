@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(GearMat.(1:5))
+run_test_properties(GearMat, 15)
 
 # eltype
 @test test_matrix_elements(GearMat{Int32}(5))

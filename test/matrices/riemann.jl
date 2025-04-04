@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Riemann.(1:5))
+run_test_properties(Riemann, 3:5)
 
 # eltype
 @test test_matrix_elements(Riemann{Int32}(5))

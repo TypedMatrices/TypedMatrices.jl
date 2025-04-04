@@ -14,6 +14,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Rando.(1:5))
+run_test_properties(Rando, 3:5)
 
 # eltype
 @test test_matrix_elements(Rando{Float32}(5))

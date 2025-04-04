@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Pascal.(1:5))
+run_test_properties(Pascal, 4:6)
 
 # eltype
 @test test_matrix_elements(Pascal{Int32}(5))

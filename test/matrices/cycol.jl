@@ -10,6 +10,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Cycol.(1:5))
+run_test_properties(Cycol, 3:5)
 
 # eltype
 @test test_matrix_elements(Cycol{Float32}(5))
