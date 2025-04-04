@@ -7,9 +7,9 @@ Random matrix with normalized columns and given singular values.
 - dim: the dimension of the matrix, `x` will be generated randomly.
 - n, m: the size of the matrix.
 - n, m, k: size and k flag. Enable initial transformation if k = 0.
-- x: the x vector.
-- x, m: the x vector and m.
-- x, m, k: the x vector, m, and k flag.
+- x: the vector of singular values.
+- x, m: the vector of singular values and m.
+- x, m, k: the vector of singular values, m, and flag k.
 """
 struct Randcolu{T<:Number} <: AbstractMatrix{T}
     m::Integer
@@ -23,7 +23,7 @@ struct Randcolu{T<:Number} <: AbstractMatrix{T}
         n > 0 || throw(ArgumentError("$n <= 0"))
         m >= 0 || throw(ArgumentError("$m < 0"))
         m >= n || throw(ArgumentError("$m < $n"))
-        abs(sum(x .^ 2) - n) / n <= 100 * eps(T) || all(x >= 0) || throw(ArgumentError("Invalid x"))
+        abs(sum(x .^ 2) - n) / n <= 100 * eps(T) || all(x .>= 0) || throw(ArgumentError("Invalid x"))
 
         # generate matrix
         A = zeros(T, m, n)
