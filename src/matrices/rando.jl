@@ -41,7 +41,10 @@ Rando{T}(n::Integer) where {T<:Number} = Rando{T}(n, 1)
 Rando{T}(n::Integer, k::Integer) where {T<:Number} = Rando{T}(n, n, k)
 
 # metadata
-@properties Rando [:integer, :random, :rectangular]
+@properties Rando [:integer, :random] Dict{Vector{Symbol}, Function}(
+    [] => (n) -> Rando(n),
+    [:rectangular] => (n) -> Rando(2 * n, n, 1),
+)
 
 # properties
 size(A::Rando) = (A.m, A.n)

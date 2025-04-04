@@ -50,7 +50,10 @@ Krylov{T}(n::Integer, x::Vector{T}) where {T<:Number} = Krylov(randn(T, n, n), x
 Krylov{T}(n::Integer, x::Vector{T}, k::Integer) where {T<:Number} = Krylov(randn(T, n, n), x, k)
 
 # metadata
-@properties Krylov [:random, :rectangular]
+@properties Krylov [:random] Dict{Vector{Symbol}, Function}(
+    [] => (n) -> Krylov(n),
+    [:rectangular] => (n) -> Krylov(2*n, randn(2*n), n)
+)
 
 # properties
 size(A::Krylov) = (A.n, A.n)
