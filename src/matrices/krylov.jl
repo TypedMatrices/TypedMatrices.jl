@@ -56,7 +56,7 @@ Krylov{T}(n::Integer, x::Vector{T}, k::Integer) where {T<:Number} = Krylov(randn
 )
 
 # properties
-size(A::Krylov) = (A.n, A.n)
+size(A::Krylov) = (A.n, A.k)
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Krylov{T}, i::Integer, j::Integer) where {T}
