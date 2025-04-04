@@ -16,30 +16,39 @@ and the computation of the Jordan canonical form, SIAM Rev., 18
 (1976), pp. 578-619, https://doi.org/10.1137/1018113.
 """
 struct Triw{T<:Number} <: AbstractMatrix{T}
+    m::Integer
     n::Integer
     alpha::T
     k::Integer
 
-    function Triw{T}(n::Integer, alpha::T, k::Integer) where {T<:Number}
+    function Triw{T}(m::Integer, n::Integer, alpha::T, k::Integer) where {T<:Number}
+        m >= 0 || throw(ArgumentError("$m < 0"))
         n >= 0 || throw(ArgumentError("$n < 0"))
         k >= 0 || throw(ArgumentError("$k < 0"))
-        return new{T}(n, alpha, k)
+        return new{T}(m, n, alpha, k)
     end
 end
 
 # constructors
-Triw(n::Integer) = Triw(n, -1, n - 1)
-Triw(n::Integer, alpha::T) where {T<:Number} = Triw(n, alpha, n - 1)
-Triw(n::Integer, alpha::T, k::Integer) where {T<:Number} = Triw{T}(n, alpha, k)
-Triw{T}(n::Integer) where {T<:Number} = Triw{T}(n, -1, n - 1)
-Triw{T}(n::Integer, alpha::Number) where {T<:Number} = Triw{T}(n, alpha, n - 1)
-Triw{T}(n::Integer, alpha::Number, k::Integer) where {T<:Number} = Triw{T}(n, convert(T, alpha), k)
+Triw(n::Integer) = Triw(n, n, -1, n - 1)
+Triw(m::Integer, n::Integer) = Triw(m, n, -1, n - 1)
+Triw(m::Integer, n::Integer, alpha::T) where {T<:Number} = Triw(m, n, alpha, n - 1)
+Triw(m::Integer, n::Integer, alpha::T, k::Integer) where {T<:Number} = Triw{T}(m, n, alpha, k)
+
+Triw{T}(n::Integer) where {T<:Number} = Triw{T}(n, n, -1, n - 1)
+Triw{T}(m::Integer, n::Integer) where {T<:Number} = Triw{T}(m, n, -1, n - 1)
+Triw{T}(m::Integer, n::Integer, alpha::T) where {T<:Number} = Triw(m, n, alpha, n - 1)
+Triw{T}(m::Integer, n::Integer, alpha::Number, k::Integer) where {T<:Number} = Triw{T}(m, n, convert(T, alpha), k)
 
 # metadata
-@properties Triw [:defective, :illcond, :inverse, :rectangular, :triangular]
+@properties Triw [:defective, :inverse, :triangular] Dict{Vector{Symbol}, Function}(
+    [:rectangular] => (n) -> Triw(2 * n, n),
+    [:hessenberg] => (n) -> Triw(n, n, 0.5, 1),
+    [:illcond] => (n) -> Triw(n, n , -3)
+)
 
 # properties
-size(A::Triw) = (A.n, A.n)
+size(A::Triw) = (A.m, A.n)
 
 # functions
 @inline Base.@propagate_inbounds function getindex(A::Triw{T}, i::Integer, j::Integer) where {T}
