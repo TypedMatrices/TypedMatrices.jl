@@ -39,7 +39,10 @@ Cauchy{T}(x::AbstractVector) where {T<:Number} = Cauchy{T}(x, x)
 Cauchy{T}(x::AbstractVector{S}, y::AbstractVector{N}) where {T<:Integer,S<:Number,N<:Number} = Cauchy{Rational{T}}(x, y)
 
 # metadata
-@properties Cauchy [:illcond, :infdiv, :inverse, :posdef, :totpos]
+# It is :totpos, :symmetric, :posdef only if x == y.
+@properties Cauchy [:inverse, :illcond, :infdiv] Dict{Vector{Symbol}, Function}(
+    [:totpos, :symmetric, :posdef] => (n) -> Cauchy(n),
+)
 
 # properties
 size(A::Cauchy) = (length(A.x), length(A.y))

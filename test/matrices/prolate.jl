@@ -6,6 +6,8 @@
     Prolate{Float64}(5, 0.25),
 ])
 
+@test_throws ArgumentError Prolate([:posdef, :illcond], 5)
+
 # linear algebra functions
 run_test_linear_algebra_functions(Prolate.(1:5))
 

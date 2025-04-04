@@ -40,4 +40,6 @@ function Clement{T}(n::Integer, k::Integer) where {T}
 end
 
 # metadata
-@properties Clement [:eigen, :nonneg, :singval, :tridiagonal]
+@properties Clement [:eigen, :nonneg, :singval, :tridiagonal] Dict{Vector{Symbol}, Function}(
+     [:symmetric] => (n) -> Clement(n, 1),
+)

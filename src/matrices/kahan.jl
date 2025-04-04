@@ -47,7 +47,11 @@ function Kahan(m::Integer, n::Integer, theta::AbstractFloat, pert::AbstractFloat
 end
 
 # metadata
-@properties Kahan [:illcond, :inverse, :rectangular, :triangular]
+@properties Kahan [:inverse, :triangular] Dict{Vector{Symbol}, Function}(
+    [] => (n) -> Kahan(n),
+    [:illcond] => (n) -> Kahan(n, 0.2, 0.1),
+    [:rectangular] => (n) -> Kahan(2 * n, n)
+)
 
 # properties
 size(A::Kahan) = (A.m, A.n)
