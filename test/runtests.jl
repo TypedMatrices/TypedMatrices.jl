@@ -89,7 +89,7 @@ function iscirculant(A::AbstractMatrix)
 end
 iscomplex(A) = any(imag(A) .!= 0)
 function iscorrelation(A)
-    if !issquare(A) || !isposdef(A) || any(diag(A) .!= 1)
+    if !issquare(A) || !ispositivedefinite(A) || any(diag(A) .!= 1)
         return false
     end
     return true
@@ -119,7 +119,7 @@ function isillcond(A)
     if ~issquare(A)
         return false
     end
-    return cond(A) > size(A, 1) * 100
+    return cond(convert(Matrix{Float64}, A)) > size(A, 1) * 100
 end
 function isindefinite(A)
     if !issquare(A) || !ishermitian(A)
@@ -145,6 +145,7 @@ isnonneg(A) = all(A .≥ 0)
 isnormal(A) =  A' * A ≈ A * A'
 isorthogonal(A) = A' * A ≈ I
 ispositive(A) = all(A .> 0)
+ispositivedefinite(A) = isposdef(convert(Matrix{Float64}, A))
 issparse(A) = count(A .!= 0) < prod(size(A)) / 5
 isrankdef(A) = rank(A) < minimum(size(A))
 isrectangular(A) = !issquare(A)
