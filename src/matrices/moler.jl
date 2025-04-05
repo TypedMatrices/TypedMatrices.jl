@@ -21,7 +21,7 @@ struct Moler{T<:Number} <: AbstractMatrix{T}
 
     function Moler{T}(n::Integer, alpha::T) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
-        triw = Triw{T}(n, alpha)
+        triw = Triw{T}(n, n, alpha)
         M = transpose(triw) * triw
         return new{T}(n, alpha, M)
     end

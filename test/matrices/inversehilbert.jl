@@ -8,6 +8,7 @@
 # linear algebra functions
 run_test_linear_algebra_functions(InverseHilbert.(1:5))
 run_test_linear_algebra_functions([InverseHilbert{BigInt}(5)])
+run_test_properties(InverseHilbert, 3:5)
 
 # eltype
 @test test_matrix_elements(InverseHilbert{Int32}(5))

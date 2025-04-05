@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Frank.(1:5))
+run_test_properties(Frank, 10)
 
 # eltype
 @test test_matrix_elements(Frank{Int32}(5))

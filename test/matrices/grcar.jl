@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Grcar.(1:5))
+run_test_properties(Grcar, 3:5)
 
 # eltype
 @test test_matrix_elements(Grcar{Int32}(5))

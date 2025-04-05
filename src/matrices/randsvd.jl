@@ -62,8 +62,8 @@ struct RandSVD{T<:Number} <: AbstractMatrix{T}
 end
 
 # constructors
-RandSVD(n::Integer) = RandSVD(n, sqrt(1 / eps()))
-RandSVD(n::Integer, kappa::Number) = RandSVD(n, kappa, 3)
+RandSVD(n::Integer) = RandSVD(n, n, sqrt(1 / eps()), 3)
+RandSVD(n::Integer, kappa::Number) = RandSVD(n, n, kappa, 3)
 RandSVD(n::Integer, kappa::Number, mode::Integer) = RandSVD(n, n, kappa, mode)
 RandSVD(m::Integer, n::Integer, kappa::T, mode::Integer) where {T<:Number} = RandSVD{T}(m, n, kappa, mode)
 RandSVD{T}(n::Integer) where {T<:Number} = RandSVD(n, sqrt(1 / eps(T)))
@@ -71,7 +71,10 @@ RandSVD{T}(n::Integer, kappa::T) where {T<:Number} = RandSVD{T}(n, kappa, 3)
 RandSVD{T}(n::Integer, kappa::T, mode::Integer) where {T<:Number} = RandSVD{T}(n, n, kappa, mode)
 
 # metadata
-@properties RandSVD [:illcond, :orthogonal, :random, :rectangular]
+@properties RandSVD [:illcond, :random, :illcond] Dict{Vector{Symbol}, Function}(
+    [:illcond] => (n) -> RandSVD(n),
+    [:rectangular] => (n) -> RandSVD(2 * n, n, sqrt(1 / eps()), 3)
+)
 
 # properties
 size(A::RandSVD) = (A.m, A.n)

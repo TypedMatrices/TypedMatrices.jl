@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Hankel.(1:5))
+run_test_properties(Hankel, 3:5)
 
 # eltype
 @test test_matrix_elements(Hankel{Int32}(5))

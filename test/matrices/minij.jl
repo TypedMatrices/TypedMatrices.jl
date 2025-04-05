@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Minij.(1:5))
+run_test_properties(Minij, 3:5)
 
 # eltype
 @test test_matrix_elements(Minij{Int32}(5))
