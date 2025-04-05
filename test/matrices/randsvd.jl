@@ -18,7 +18,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(RandSVD.(1:5))
-run_test_properties(RandSVD, 10)
+run_test_properties(RandSVD, 20)
 
 # eltype
 @test test_matrix_elements(RandSVD{Float32}(5))
