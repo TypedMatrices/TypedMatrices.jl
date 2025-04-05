@@ -25,6 +25,8 @@ end
 
 # constructors
 Comparison(A::AbstractMatrix{T}) where {T<:Number} = Comparison(A, 0)
+Comparison(n::Integer) = Comparison{Float64}(randn(n, n), 0)
+Comparison{T}(A::AbstractMatrix{T}, k::Integer) where {T<:Number} = Comparison(A, k)
 
 # metadata
 @properties Comparison Property[]

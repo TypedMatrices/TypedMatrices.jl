@@ -245,6 +245,7 @@ function satisfies_property(A::AbstractMatrix, p::Property)
 end
 
 function run_test_properties(matrix_type::Type, sizes::Vector{T}) where T <: Integer
+    @test Set(properties(matrix_type)) == Set(properties(matrix_type(Property[], 16)))
     for property in properties(matrix_type)
         if property ∉ keys(function_to_check_property)
             @info "    Skipping $property"
