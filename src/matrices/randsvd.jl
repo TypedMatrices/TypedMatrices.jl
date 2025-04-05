@@ -71,7 +71,7 @@ RandSVD{T}(n::Integer, kappa::T) where {T<:Number} = RandSVD{T}(n, kappa, 3)
 RandSVD{T}(n::Integer, kappa::T, mode::Integer) where {T<:Number} = RandSVD{T}(n, n, kappa, mode)
 
 # metadata
-@properties RandSVD [:illcond, :random, :illcond] Dict{Vector{Symbol}, Function}(
+@properties RandSVD [:random] Dict{Vector{Symbol}, Function}(
     [:illcond] => (n) -> RandSVD(n),
     [:rectangular] => (n) -> RandSVD(2 * n, n, sqrt(1 / eps()), 3)
 )
