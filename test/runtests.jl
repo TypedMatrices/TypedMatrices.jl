@@ -35,7 +35,7 @@ function test_linear_algebra_functions(A::AbstractMatrix)
     end
 
     computation_functions = [adjoint, transpose, det, logdet, eigvals]
-    if determinant != 0
+    if abs(determinant) > eps(eltype(A) <: AbstractFloat ? eltype(A) : Float64)
         append!(computation_functions, [inv])
     end
     for func in computation_functions
