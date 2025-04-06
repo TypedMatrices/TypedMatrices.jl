@@ -143,7 +143,7 @@ function isnilpotent(A)
 end
 isnonneg(A) = all(A .≥ 0)
 isnormal(A) =  A' * A ≈ A * A'
-isorthogonal(A) = A' * A ≈ I
+isorthogonal(A) = transpose(A) * A ≈ I
 ispositive(A) = all(A .> 0)
 ispositivedefinite(A) = isposdef(convert(Matrix{Float64}, A))
 issparse(A) = count(A .!= 0) < prod(size(A)) / 5
@@ -197,6 +197,7 @@ function isunimodular(A)
     end
     return det(A) ≈ 1 || det(A) ≈ -1
 end
+isunitary(A) = adjoint(A) * A ≈ I
 function_to_check_property = Dict(
     Property(:bidiagonal) => isbidiagonal,
     Property(:binary) => isbinary,
@@ -209,7 +210,7 @@ function_to_check_property = Dict(
     # Property(:fixedsize) =>     # This property cannot be checked.
     # Property(:graph) =>         # This property cannot be checked.
     Property(:hankel) => ishankel,
-    # Property(:hermitian) => # TODO
+    Property(:hermitian) => ishermitian,
     Property(:hessenberg) => ishessenberg,
     Property(:illcond) => isillcond,
     Property(:indefinite) => isindefinite,
@@ -237,7 +238,7 @@ function_to_check_property = Dict(
     Property(:triangular) => istriangular,
     Property(:tridiagonal) => istridiagonal,
     Property(:unimodular) => isunimodular,
-    # Property(:unitary) => # TODO
+    Property(:unitary) => isunitary
     )
 
 function satisfies_property(A::AbstractMatrix, p::Property)
