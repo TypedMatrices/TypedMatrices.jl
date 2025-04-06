@@ -10,8 +10,11 @@
     Kahan{Float64}(5, 5, 1.2, 25.0),
 ])
 
+@test_throws ArgumentError Kahan([:rectangular, :illcond], 5)
+
 # linear algebra functions
 run_test_linear_algebra_functions(Kahan.(1:5))
+run_test_properties(Kahan, 10)
 
 # eltype
 @test test_matrix_elements(Kahan{Float32}(5))

@@ -34,7 +34,10 @@ Prolate(n::Integer, w::T) where {T<:Number} = Prolate{T}(n, w)
 Prolate{T}(n::Integer) where {T<:Number} = Prolate{T}(n, T(0.25))
 
 # metadata
-@properties Prolate [:illcond, :posdef, :toeplitz]
+@properties Prolate [:toeplitz] Dict{Vector{Symbol}, Function}(
+    [:posdef] => (n) -> Prolate(n, 0.5),
+    [:illcond] => (n) -> Prolate(n, 1e-5),
+)
 
 # properties
 size(A::Prolate) = (A.n, A.n)

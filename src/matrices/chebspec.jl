@@ -52,7 +52,9 @@ ChebSpec(n::Integer, k::Integer) = ChebSpec{Float64}(n, k)
 ChebSpec{T}(n::Integer) where {T<:Number} = ChebSpec{T}(n, 0)
 
 # metadata
-@properties ChebSpec [:defective, :nilpotent]
+@properties ChebSpec [:defective] Dict{Vector{Symbol}, Function}(
+    [:nilpotent, :illcond, :rankdef] => (n) -> ChebSpec(n, 0)
+)
 
 # properties
 size(A::ChebSpec) = (A.n, A.n)
