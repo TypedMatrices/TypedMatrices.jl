@@ -154,14 +154,6 @@ The matrix is symmetric for some parameter values.
 """
 struct Symmetric <: AbstractProperty end
 """
-The matrix is upper or lower trinagular.
-"""
-struct Triangular <: AbstractProperty end
-"""
-The matrix is tridiagonal.
-"""
-struct Tridiagonal <: AbstractProperty end
-"""
 The matrix is Toeplitz.
 """
 struct Toeplitz <: AbstractProperty end
@@ -173,6 +165,14 @@ struct TotallyNonnegative <: AbstractProperty end
 The matrix is totally positive for some parameter values.
 """
 struct TotallyPositive <: AbstractProperty end
+"""
+The matrix is upper or lower trinagular.
+"""
+struct Triangular <: AbstractProperty end
+"""
+The matrix is tridiagonal.
+"""
+struct Tridiagonal <: AbstractProperty end
 """
 The matrix is unimodular for some parameter values.
 """
