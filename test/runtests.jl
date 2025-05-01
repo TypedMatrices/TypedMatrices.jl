@@ -69,11 +69,14 @@ function issquare(A)
     dimensions = size(A)
     return length(dimensions) == 2 && allequal(dimensions)
 end
+
 function isbidiagonal(A)
     return issquare(A) && (all(triu(A, 2) .== 0) && all(tril(A, -1) .== 0)) ||
         (all(triu(A, 1) .== 0) && all(tril(A, -2) .== 0))
 end
+
 isbinary(A) = length(unique(A)) == 2
+
 function iscirculant(A::AbstractMatrix)
     if ~issquare(A)
         return false
@@ -87,13 +90,16 @@ function iscirculant(A::AbstractMatrix)
     end
     return true
 end
+
 iscomplex(A) = any(imag(A) .!= 0)
+
 function iscorrelation(A)
     if !issquare(A) || !ispositivedefinite(A) || any(diag(A) .!= 1)
         return false
     end
     return true
 end
+
 function isdiagdom(A)
     if ~issquare(A)
         return false
@@ -103,6 +109,7 @@ function isdiagdom(A)
     end
     return true
 end
+
 function ishankel(A)
     if ~issquare(A)
         return false
@@ -114,6 +121,7 @@ function ishankel(A)
     end
     return true
 end
+
 ishessenberg(A) = eltype(A) <: Integer || all(tril(A, -2) .== 0) || all(triu(A, 2) .== 0)
 function isillcond(A)
     if ~issquare(A)
@@ -121,6 +129,7 @@ function isillcond(A)
     end
     return cond(convert(Matrix{Float64}, A)) > size(A, 1) * 100
 end
+
 function isindefinite(A)
     if !issquare(A) || !ishermitian(A)
         return false
@@ -128,27 +137,39 @@ function isindefinite(A)
     eigenvalues = eigvals(A)
     return any(eigenvalues .> eps()) && any(eigenvalues .< -eps())
 end
+
 isinteger(A) = all(round.(A) .== A)
+
 function isinvolutory(A)
     if !issquare(A)
         return false
     end
     return A * A ≈ I
 end
+
 function isnilpotent(A)
     if !issquare(A)
         return false
     end
     return norm(A^size(A, 1)) ≤ sqrt(eps())
 end
+
 isnonneg(A) = all(A .≥ 0)
+
 isnormal(A) =  A' * A ≈ A * A'
+
 isorthogonal(A) = transpose(A) * A ≈ I
+
 ispositive(A) = all(A .> 0)
+
 ispositivedefinite(A) = isposdef(convert(Matrix{Float64}, A))
+
 issparse(A) = count(A .!= 0) < prod(size(A)) / 5
+
 isrankdef(A) = rank(A) < minimum(size(A))
+
 isrectangular(A) = !issquare(A)
+
 function istoeplitz(A)
     if ~issquare(A)
         return false
@@ -160,6 +181,7 @@ function istoeplitz(A)
     end
     return true
 end
+
 function istotnonneg(A)
     if istotpos(A)
         return false
@@ -176,6 +198,7 @@ function istotnonneg(A)
     end
     return true
 end
+
 function istotpos(A)
     n = size(A, 1)
     for k in 1:n
@@ -189,15 +212,20 @@ function istotpos(A)
     end
     return true
 end
+
 istriangular(A) = istril(A) || istriu(A)
+
 istridiagonal(A) = all(tril(A, -2) .== 0) && all(triu(A, 2) .== 0)
+
 function isunimodular(A)
     if !issquare(A) || !isinteger(A)
         return false
     end
     return det(A) ≈ 1 || det(A) ≈ -1
 end
+
 isunitary(A) = adjoint(A) * A ≈ I
+
 function_to_check_property = Dict(
     Property(:bidiagonal) => isbidiagonal,
     Property(:binary) => isbinary,
