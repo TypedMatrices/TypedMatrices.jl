@@ -25,7 +25,7 @@ end
 Wilkinson(n::Integer) = Wilkinson{Float64}(n)
 
 # metadata
-@properties Wilkinson [:symmetric, :tridiagonal, :sparse, :eigen]
+@properties Wilkinson [:eigen, :symmetric, :sparse, :tridiagonal]
 
 # properties
 size(A::Wilkinson) = (A.n, A.n)

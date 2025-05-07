@@ -34,7 +34,7 @@ Prolate(n::Integer, w::T) where {T<:Number} = Prolate{T}(n, w)
 Prolate{T}(n::Integer) where {T<:Number} = Prolate{T}(n, T(0.25))
 
 # metadata
-@properties Prolate [:symmetric, :posdef, :toeplitz, :illcond]
+@properties Prolate [:illcond, :posdef, :toeplitz]
 
 # properties
 size(A::Prolate) = (A.n, A.n)

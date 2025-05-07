@@ -66,6 +66,10 @@ The matrix is a Hankel matrix.
 """
 struct Hankel <: AbstractProperty end
 """
+The matrix is Hermitian.
+"""
+struct Hermitian <: AbstractProperty end
+"""
 The matrix is an upper or lower Hessenberg matrix.
 """
 struct Hessenberg <: AbstractProperty end
@@ -118,6 +122,10 @@ The matrix is positive definite for some parameter values.
 """
 struct PositiveDefinite <: AbstractProperty end
 """
+The matrix is positive semidefinite for some parameter values.
+"""
+struct PositiveSemidefinite <: AbstractProperty end
+"""
 The matrix has random entries.
 """
 struct Random <: AbstractProperty end
@@ -169,6 +177,10 @@ struct TotallyPositive <: AbstractProperty end
 The matrix is unimodular for some parameter values.
 """
 struct Unimodular <: AbstractProperty end
+"""
+The matrix is unitary for some parameter values.
+"""
+struct Unitary <: AbstractProperty end
 end
 
 """
@@ -181,6 +193,12 @@ See also [`list_properties`](@ref), [`@properties`](@ref), [`properties`](@ref).
 struct Property
     name::Symbol
 end
+# The alternative solution
+#   Property(symbols::Symbols...) = [Property(symbol) for symbol in symbols]
+#   Property(symbols::Vector{Symbol}) = Property(symbols...)
+# is not type stable for vectors of length 1.
+Property(symbols::Symbol...) = [Property(symbol) for symbol in symbols]
+Property(symbols::Vector{Symbol}) = [Property(symbol) for symbol in symbols]
 
 """
     Group
