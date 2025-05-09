@@ -15,8 +15,11 @@ x = sqrt(5.0) * x / norm(x)
     size(Randcolu{Float64}(5, 5, 0)),
 ])
 
+@test_throws ArgumentError Randcolu([:rectangular, :illcond], 5)
+
 # linear algebra functions
 run_test_linear_algebra_functions(Randcolu.(1:5))
+run_test_properties(Randcolu, 3:5)
 
 # eltype
 @test test_matrix_elements(Randcolu{Float32}(5))

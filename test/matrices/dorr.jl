@@ -8,6 +8,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Dorr.(1:5))
+run_test_properties(Dorr, 15)
 
 # eltype
 @test test_matrix_elements(Dorr{Float32}(5))

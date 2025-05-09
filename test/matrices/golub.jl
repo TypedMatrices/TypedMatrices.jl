@@ -7,6 +7,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Golub.(1:5))
+run_test_properties(Golub, 3:5)
 
 # eltype
 @test test_matrix_elements(Golub{Int32}(5))

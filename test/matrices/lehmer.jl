@@ -6,6 +6,7 @@
 
 # linear algebra functions
 run_test_linear_algebra_functions(Lehmer{Float64}.(1:5))
+run_test_properties(Lehmer, 3:5)
 
 # eltype
 @test test_matrix_elements(Lehmer{Int32}(5))
