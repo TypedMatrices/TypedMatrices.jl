@@ -1,6 +1,7 @@
 # TypedMatrices
 
 [![license][license-img]][license-url]
+[![arXiv][arxiv-img]][arxiv-url]
 [![action status][action-img]][action-url]
 [![codecov][codecov-img]][codecov-url]
 [![docs-stable][docs-stable-img]][docs-stable-url]
@@ -28,6 +29,8 @@ We sincerly appreciate the following packages:
 
 [license-img]: https://shields.io/github/license/TypedMatrices/TypedMatrices.jl
 [license-url]: LICENSE
+[arxiv-img]: https://img.shields.io/badge/arXiv-2503.11355-b31b1b.svg?logo=arxiv
+[arxiv-url]: https://arxiv.org/abs/2503.11355
 [action-img]: https://github.com/TypedMatrices/TypedMatrices.jl/actions/workflows/CI.yml/badge.svg?branch=master
 [action-url]: https://github.com/TypedMatrices/TypedMatrices.jl/actions/workflows/CI.yml?query=branch%3Amaster
 [codecov-img]: https://codecov.io/gh/TypedMatrices/TypedMatrices.jl/graph/badge.svg
