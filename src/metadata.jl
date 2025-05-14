@@ -284,6 +284,13 @@ function register_constructor(type_name::Type, function_name::String, props::Vec
         add_implied_properties!(props)
         @eval $fname(input_properties::Vector{Property}, n::Int) = begin
             add_implied_properties!(input_properties)
+
+            # default constructor
+            if issubset(input_properties, $props)
+                return $type_name(n)
+            end
+
+            # property based constructor
             for (key_properties, action) in $property_to_constructor_assignment
                 if issubset(input_properties, add_implied_properties(key_properties) ∪ $props)
                     return action(n)
