@@ -166,7 +166,7 @@ The matrix is totally positive for some parameter values.
 """
 struct TotallyPositive <: AbstractProperty end
 """
-The matrix is upper or lower trinagular.
+The matrix is upper or lower triangular.
 """
 struct Triangular <: AbstractProperty end
 """
