@@ -18,24 +18,24 @@
  (Pascal, 2, 5)
  (Pascal, 3, 19)
  (Pascal, 4, 69)
- (Poisson, 1, 4)
- (Poisson, 4, 8)
  (Minij, 1, 1)
  (Minij, 2, 5)
  (Minij, 3, 14)
- (Minij, 4, 30)</code></pre><p>In this example, the first two arguments specify the target algorithm and the set of matrix sizes to test, respectively. The <code>props</code> keyword argument defines the properties of matrices. The <code>errors_as_warnings</code> flag determines whether runtime errors should be reported as warnings instead of causing test failure.</p><p>The function returns a vector of tuples, each containing three elements: the matrix type, the matrix size, and the corresponding output from the algorithm under test.</p><h3 id="Testing-Using-Groups"><a class="docs-heading-anchor" href="#Testing-Using-Groups">Testing Using Groups</a><a id="Testing-Using-Groups-1"></a><a class="docs-heading-anchor-permalink" href="#Testing-Using-Groups" title="Permalink"></a></h3><p>If you already have predefined groups of matrices and would like to test your algorithm on them, you can pass them to the <code>groups</code> keyword argument, similar to how it&#39;s done with the <a href="../../references/2.interfaces/#TypedMatrices.list_matrices"><code>list_matrices</code></a> function.</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Cauchy, :test)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Hilbert, :test)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; test_algorithm(
+ (Minij, 4, 30)
+ (Poisson, 1, 4)
+ (Poisson, 4, 8)</code></pre><p>In this example, the first two arguments specify the target algorithm and the set of matrix sizes to test, respectively. The <code>props</code> keyword argument defines the properties of matrices. The <code>errors_as_warnings</code> flag determines whether runtime errors should be reported as warnings instead of causing test failure.</p><p>The function returns a vector of tuples, each containing three elements: the matrix type, the matrix size, and the corresponding output from the algorithm under test.</p><h3 id="Testing-Using-Groups"><a class="docs-heading-anchor" href="#Testing-Using-Groups">Testing Using Groups</a><a id="Testing-Using-Groups-1"></a><a class="docs-heading-anchor-permalink" href="#Testing-Using-Groups" title="Permalink"></a></h3><p>If you already have predefined groups of matrices and would like to test your algorithm on them, you can pass them to the <code>groups</code> keyword argument, similar to how it&#39;s done with the <a href="../../references/2.interfaces/#TypedMatrices.list_matrices"><code>list_matrices</code></a> function.</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Cauchy, :test)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; add_to_groups(Hilbert, :test)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; test_algorithm(
            sum_elements,
            [1, 2, 3, 4],
            groups=[Group(:test)],
        )</code><code class="nohighlight hljs ansi" style="display:block;">8-element Vector{Any}:
- (Hilbert, 1, 1//1)
- (Hilbert, 2, 7//3)
- (Hilbert, 3, 37//10)
- (Hilbert, 4, 533//105)
  (Cauchy, 1, 1//2)
  (Cauchy, 2, 17//12)
  (Cauchy, 3, 149//60)
- (Cauchy, 4, 3047//840)</code></pre><h2 id="Performance-and-Memory-Profiling"><a class="docs-heading-anchor" href="#Performance-and-Memory-Profiling">Performance and Memory Profiling</a><a id="Performance-and-Memory-Profiling-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-and-Memory-Profiling" title="Permalink"></a></h2><p>In many cases, it is desirable to capture performance metrics such as execution time and memory allocation alongside the algorithm’s output. To facilitate this, the algorithm can be modified accordingly:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; function sum_elements(A::AbstractMatrix)
+ (Cauchy, 4, 3047//840)
+ (Hilbert, 1, 1//1)
+ (Hilbert, 2, 7//3)
+ (Hilbert, 3, 37//10)
+ (Hilbert, 4, 533//105)</code></pre><h2 id="Performance-and-Memory-Profiling"><a class="docs-heading-anchor" href="#Performance-and-Memory-Profiling">Performance and Memory Profiling</a><a id="Performance-and-Memory-Profiling-1"></a><a class="docs-heading-anchor-permalink" href="#Performance-and-Memory-Profiling" title="Permalink"></a></h2><p>In many cases, it is desirable to capture performance metrics such as execution time and memory allocation alongside the algorithm’s output. To facilitate this, the algorithm can be modified accordingly:</p><pre><code class="language-julia-repl hljs" style="display:block;">julia&gt; function sum_elements(A::AbstractMatrix)
            result = @timed sum(A)
            return result.value, result.time, result.bytes
        end</code><code class="nohighlight hljs ansi" style="display:block;">sum_elements (generic function with 1 method)</code><br/><code class="language-julia-repl hljs" style="display:block;">julia&gt; test_algorithm(
@@ -51,13 +51,13 @@
 ┌ Warning: Error running sum_elements on Poisson with size 3: ArgumentError(&quot;3 is not a perfect square integer&quot;)
 └ @ TypedMatrices ~/work/TypedMatrices.jl/TypedMatrices.jl/src/interfaces.jl:56
 10-element Vector{Any}:
- (Pascal, 1, (1, 8.987e-6, 160))
- (Pascal, 2, (5, 2.204e-6, 448))
- (Pascal, 3, (19, 2.654e-6, 928))
- (Pascal, 4, (69, 3.958e-6, 1600))
- (Poisson, 1, (4, 6.793e-6, 160))
- (Poisson, 4, (8, 6.452e-6, 1600))
- (Minij, 1, (1, 9.237e-6, 160))
- (Minij, 2, (5, 2.314e-6, 448))
- (Minij, 3, (14, 2.354e-6, 928))
- (Minij, 4, (30, 3.737e-6, 1600))</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../2.performance/">« Performance</a><a class="docs-footer-nextpage" href="../../references/1.types/">Types »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.11.2 on <span class="colophon-date" title="Wednesday 14 May 2025 13:39">Wednesday 14 May 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+ (Pascal, 1, (1, 7.625e-6, 160))
+ (Pascal, 2, (5, 2.214e-6, 448))
+ (Pascal, 3, (19, 2.656e-6, 928))
+ (Pascal, 4, (69, 3.957e-6, 1600))
+ (Minij, 1, (1, 7.494e-6, 160))
+ (Minij, 2, (5, 3.076e-6, 448))
+ (Minij, 3, (14, 2.494e-6, 928))
+ (Minij, 4, (30, 3.757e-6, 1600))
+ (Poisson, 1, (4, 8.817e-6, 160))
+ (Poisson, 4, (8, 5.81e-6, 1600))</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../2.performance/">« Performance</a><a class="docs-footer-nextpage" href="../../references/1.types/">Types »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.11.4 on <span class="colophon-date" title="Thursday 29 May 2025 12:55">Thursday 29 May 2025</span>. Using Julia version 1.11.5.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
