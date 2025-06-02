@@ -21,20 +21,14 @@ struct Golub{T<:Number} <: AbstractMatrix{T}
     function Golub{T}(n::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
 
-        # generate random matrix
         s = 10
-        L = Array{T,2}(undef, n, n)
-        U = Array{T,2}(undef, n, n)
+        M = Array{T,2}(undef, n, n)
         if T <: Integer
-            [L[i, j] = round(T, s * randn(), RoundNearestTiesAway) for j = 1:n, i = 1:n]
-            [U[i, j] = round(T, s * randn(), RoundNearestTiesAway) for j = 1:n, i = 1:n]
+            [M[i, j] = round(T, s * randn(), RoundNearestTiesAway) for j = 1:n, i = 1:n]
         else
-            [L[i, j] = s * randn() for j = 1:n, i = 1:n]
-            [U[i, j] = s * randn() for j = 1:n, i = 1:n]
+            [M[i, j] = s * randn() for j = 1:n, i = 1:n]
         end
-        L = tril(L, -1) + Matrix{T}(I, n, n)
-        U = triu(U, 1) + Matrix{T}(I, n, n)
-        A = L * U
+        A = (tril(M, -1) + I) * (triu(M, 1) + I)
 
         return new{T}(n, A)
     end

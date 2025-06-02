@@ -16,10 +16,9 @@ struct Randcorr{T<:Number} <: AbstractMatrix{T}
 
         x = rand(T, n) # x is the vector of random eigenvalues from a uniform distribution.
         x = n * x / sum(x) # x has nonnegtive elements.
-        A = diagm(0 => x)
-        F = qr(randn(n, n))
-        Q = F.Q * diagm(0 => sign.(diag(F.R))) # form a random orthogonal matrix.
-        copyto!(A, Q * A * Q')
+        F = qr(randn(T, n, n))
+        Q = F.Q .* sign.(diag(F.R))' # form a random orthogonal matrix.
+        A = Q * (x .* Q')
 
         a = diag(A)
         l = findall(a .< 1)
@@ -43,15 +42,15 @@ struct Randcorr{T<:Number} <: AbstractMatrix{T}
             A[:, [i, j]] = A[:, [i, j]] * [c s; -s c]
             A[[i, j], :] = [c -s; s c] * A[[i, j], :]
 
-            A[i, i] = 1
+            A[i, i] = one(T)
             a = diag(A)
             l = findall(a .< 1)
             g = findall(a .> 1)
         end
         [A[i, i] = 1 for i = 1:n]
-        M = (A + A') / 2
+        A = (A + A') / 2
 
-        return new{T}(n, M)
+        return new{T}(n, A)
     end
 end
 
