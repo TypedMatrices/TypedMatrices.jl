@@ -6,6 +6,14 @@ A random correlation matrix is a symmetric positive
 
 # Input Options
 - dim: the dimension of the matrix.
+
+# References
+**R. B. Bendel and M. R. Mickey**, Population correlation matrices for
+sampling experiments, Commun. Statist. Simulation Comput., B7 (1978),
+pp. 163-182.
+
+**P. I. Davies and N. J. Higham**, Numerically stable generation of
+correlation matrices and their factors, BIT, 40 (2000), pp. 640-651.
 """
 struct Randcorr{T<:Number} <: AbstractMatrix{T}
     n::Integer
