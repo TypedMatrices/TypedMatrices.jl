@@ -21,20 +21,23 @@ pp. 1008-1023, https://doi.org/10.1137/0724066.
 struct ChebSpec{T<:Number} <: AbstractMatrix{T}
     n::Int
     k::Int
+    kn::Int
     c::Vector{T}
     x::Vector{T}
+    constant::T
 
     function ChebSpec{T}(n::Integer, k::Integer) where {T<:Number}
         n >= 0 || throw(ArgumentError("$n < 0"))
         k == 0 || k == 1 || throw(ArgumentError("k should be 0 or 1"))
 
-        kn = k == 0 ? n : n + 1
+        kn = n + k
 
         # c
         c = ones(T, kn)
         c[1] = 2
         c[2:kn-1] .= 1
         c[kn] = 2
+        constant = (2 * (kn - 1)^2 + 1) / 6
 
         # chebyshev points
         x = ones(T, kn)
@@ -42,7 +45,7 @@ struct ChebSpec{T<:Number} <: AbstractMatrix{T}
             x[i] = cos(pi * (i - 1) / (kn - 1))
         end
 
-        return new{T}(n, k, c, x)
+        return new{T}(n, k, kn, c, x, constant)
     end
 end
 
@@ -62,16 +65,13 @@ size(A::ChebSpec) = (A.n, A.n)
 # functions
 @inline Base.@propagate_inbounds function getindex(A::ChebSpec{T}, i::Integer, j::Integer) where {T}
     @boundscheck checkbounds(A, i, j)
-    if A.k == 1
-        i = i + 1
-        j = j + 1
-    end
-    kn = A.k == 0 ? A.n : A.n + 1
+    i += A.k
+    j += A.k
     c = A.c
     x = A.x
-    element = i != j ? (-1)^(i + j) * c[i] / (c[j] * (x[i] - x[j])) :
-              i == 1 ? (2 * (kn - 1)^2 + 1) / 6 :
-              i == kn ? -(2 * (kn - 1)^2 + 1) / 6 :
+    element = i != j ? (isodd(i + j) ? -one(T) : one(T)) * c[i] / (c[j] * (x[i] - x[j])) :
+              i == 1 ?  A.constant :
+              i == A.kn ? -A.constant :
               -0.5 * x[i] / (1 - x[i]^2)
     return T(element)
 end
