@@ -21,12 +21,12 @@ struct Strakos{T<:Real} <: AbstractMatrix{T}
     λ1::T
     λn::T
 
-    function Strakos{T}(n::Integer, p::T, λ1::T, λn::T) where T <: Real
+    function Strakos{T}(n::Integer, p::Real, λ1::Real, λn::Real) where T <: Real
         n > 1 || throw(ArgumentError("n must be greater than 1. Got n=$n."))
         p >= 0 || throw(ArgumentError("p must be non-negative for posdef. Got p=$p."))
         λ1 > 0 || throw(ArgumentError("λ1 must be positive for posdef. Got λ1=$λ1."))
         λn > λ1 || throw(ArgumentError("λn must be greater than λ1. Got λ1=$λ1, λn=$λn."))
-        return new{T}(n, p, λ1, λn)
+        return new{T}(n, T(p), T(λ1), T(λn))
     end
 end
 
@@ -36,6 +36,9 @@ function Strakos(n::Integer, p::Real, λ1::Real, λn::Real)
     T = typeof(p_)
     return Strakos{T}(n, p_, λ1_, λn_)
 end
+
+Strakos(n::Integer) = Strakos(n, 0.5, 0.1, 100)
+Strakos{T}(n::Integer) where T = Strakos{T}(n, 0.5, 0.1, 100)
 
 # metadata
 @properties Strakos [:eigen, :posdef, :symmetric, :illcond]
